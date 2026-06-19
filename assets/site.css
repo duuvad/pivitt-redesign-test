@@ -480,3 +480,24 @@ footer{display:block}
 .mm-col a:nth-child(2){transition-delay:.04s}.mm-col a:nth-child(3){transition-delay:.08s}.mm-col a:nth-child(4){transition-delay:.12s}.mm-col a:nth-child(5){transition-delay:.16s}.mm-col a:nth-child(6){transition-delay:.2s}
 .mm-cta{margin-top:14px;font-size:13px !important;font-weight:600 !important;letter-spacing:.08em;text-transform:uppercase;color:#fff !important;background:var(--blue);border-radius:100px;padding:15px 26px !important;display:inline-block;text-align:center}
 @media(max-width:560px){.mm-inner{grid-template-columns:1fr;gap:26px}}
+
+/* value / economics (editorial comparison) */
+.value{margin-top:clamp(30px,3.4vw,52px);border-top:1px solid var(--bdr)}
+.value-head,.value-row{display:grid;grid-template-columns:minmax(110px,0.55fr) 1fr 1fr;gap:clamp(22px,3.4vw,56px);align-items:baseline}
+.value-head{padding:16px 0 0}
+.value-head span{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.value-head .h-cost{color:var(--t3)}
+.value-head .h-ret{color:var(--blue)}
+.value-row{padding:clamp(22px,2.4vw,30px) 0;border-bottom:1px solid var(--bdr)}
+.value-row .vlab{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+.value-row .vcost{font-size:clamp(15px,1.15vw,17px);font-weight:300;line-height:1.55;color:var(--t2)}
+.value-row .vret{font-size:clamp(15px,1.15vw,17px);font-weight:300;line-height:1.55;color:var(--t1);padding-left:clamp(18px,2vw,28px);border-left:1px solid rgba(51,102,255,0.32)}
+@media(max-width:760px){
+  .value-head{display:none}
+  .value-row{grid-template-columns:1fr;gap:12px;padding:24px 0}
+  .value-row .vcost,.value-row .vret{position:relative;padding-left:82px}
+  .value-row .vret{border-left:none}
+  .value-row .vcost::before,.value-row .vret::before{position:absolute;left:0;top:1px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+  .value-row .vcost::before{content:'Without'}
+  .value-row .vret::before{content:'With';color:var(--blue)}
+}
