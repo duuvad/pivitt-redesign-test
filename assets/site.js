@@ -283,6 +283,19 @@ if(M360){
   window.addEventListener('resize',function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});
   upd();
 })();
+
+/* ambient aurora: build + scroll-reactive drift */
+(function(){
+  if(document.getElementById('aura'))return;
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var aura=document.createElement('div');aura.id='aura';
+  aura.innerHTML='<span class="ab ab1"></span><span class="ab ab2"></span><span class="ab ab3"></span>';
+  document.body.appendChild(aura);
+  var tick=false;
+  function upd(){tick=false;var se=document.scrollingElement||document.documentElement,h=se.scrollHeight-se.clientHeight,sp=h>0?Math.min(Math.max(se.scrollTop/h,0),1):0;aura.style.setProperty('--sp',sp.toFixed(3));if(!rm){aura.style.transform='translate3d(0,'+(sp*150-75).toFixed(1)+'px,0)';}}
+  function onS(){if(!tick){tick=true;requestAnimationFrame(upd);}}
+  window.addEventListener('scroll',onS,{passive:true});window.addEventListener('resize',onS,{passive:true});upd();
+})();
 doc.classList.remove('no-js');
 requestAnimationFrame(loop);
 })();
