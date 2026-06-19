@@ -102,6 +102,54 @@ if(_rows.length&&!_RM){
     requestAnimationFrame(_kloop);
   })();
 }
+
+/* Pivitt 360 framework wheel */
+var M360=document.getElementById('m360');
+if(M360){
+  var D=[
+    {n:"Brand Strategy",s:"Strategy",st:1,c:"#3B82F6",d:"Purpose, values and the decision-making criteria the whole brand answers to.",items:["Brand Framework","Cultural Foundation","Decision-Making Criteria","Customer Assurance","Quality Commitment","Enhanced Trust & Confidence","Alignment of Values"]},
+    {n:"Target Audience",s:"Audience",st:1,c:"#8B5CF6",d:"Who you are for, how they buy, and where the demand actually sits.",items:["Clarify Goals","Align Objectives with Audience","Analyse Existing Customer Base","Competitor Analysis","Industry Trends"]},
+    {n:"Unique Selling Proposition",s:"USP",st:1,c:"#06B6D4",d:"The defensible difference, stated so a buyer can repeat it.",items:["Unique Features or Attributes","Proprietary Technology","Customisation Options","Brand Story & Heritage","Ethical Practices","Exceptional Performance","Recognition & Awards"]},
+    {n:"Brand Positioning",s:"Positioning",st:1,c:"#10B981",d:"The market space you own, and the promise that holds it.",items:["Target Market Definition","Competitive Analysis","Unique Value Proposition","Brand Promise","Positioning Statement"]},
+    {n:"Brand Identity",s:"Identity",st:2,c:"#F59E0B",d:"The visual and verbal system, built as evidence of the thinking.",items:["Primary Logo & Variations","Logo Usage Guidelines","Icons & Symbols","Primary & Secondary Typefaces","Typography Hierarchy","Colour Palette","Colour Codes: Print & Digital","Design Elements & Patterns"]},
+    {n:"Brand Assets",s:"Assets",st:3,c:"#EC4899",d:"The guidelines and materials that make the system usable at scale.",items:["Logo Usage Rules","Colour Usage Guidelines","Typography Guidelines","Imagery & Photography Guidelines","Tone of Voice Guidelines","Social Media Standards","Approved Photography","Illustrations & Graphics"]}
+  ];
+  var ST={1:"Stage 1 \u00b7 Strategy & Positioning",2:"Stage 2 \u00b7 Identity & Expression",3:"Stage 3 \u00b7 Assets & Activation"};
+  var SC={1:"#5b8cff",2:"#F59E0B",3:"#EC4899"};
+  var CX=400,CY=400,R1=118,R2=298,RL=212,RO=312;
+  function pt(r,deg){var a=(deg-90)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
+  function sector(r1,r2,a0,a1){var p0=pt(r2,a0),p1=pt(r2,a1),p2=pt(r1,a1),p3=pt(r1,a0);var lg=(a1-a0)>180?1:0;return "M"+p0[0].toFixed(1)+" "+p0[1].toFixed(1)+"A"+r2+" "+r2+" 0 "+lg+" 1 "+p1[0].toFixed(1)+" "+p1[1].toFixed(1)+"L"+p2[0].toFixed(1)+" "+p2[1].toFixed(1)+"A"+r1+" "+r1+" 0 "+lg+" 0 "+p3[0].toFixed(1)+" "+p3[1].toFixed(1)+"Z";}
+  function arc(r,a0,a1){var p0=pt(r,a0),p1=pt(r,a1);var lg=(a1-a0)>180?1:0;return "M"+p0[0].toFixed(1)+" "+p0[1].toFixed(1)+"A"+r+" "+r+" 0 "+lg+" 1 "+p1[0].toFixed(1)+" "+p1[1].toFixed(1);}
+  var segs="",labs="";
+  for(var i=0;i<6;i++){var a0=i*60-30,a1=i*60+30,mid=i*60,lp=pt(RL,mid);
+    segs+='<path class="m-seg" data-i="'+i+'" d="'+sector(R1,R2,a0,a1)+'" style="--pc:'+D[i].c+'"></path>';
+    labs+='<text class="m-lab" data-i="'+i+'" x="'+lp[0].toFixed(1)+'" y="'+lp[1].toFixed(1)+'">'+D[i].s+'</text>';}
+  var stArcs=[{st:1,a0:-30,a1:210},{st:2,a0:210,a1:270},{st:3,a0:270,a1:330}];
+  var aHtml=stArcs.map(function(s){return '<path class="m-stage-arc" data-st="'+s.st+'" d="'+arc(RO,s.a0+2.5,s.a1-2.5)+'" style="stroke:'+SC[s.st]+'"></path>';}).join("");
+  var hub='<circle class="m-hub" cx="400" cy="400" r="'+R1+'"></circle><text class="m-hub-t1" x="400" y="388">PIVITT</text><text class="m-hub-t2" x="400" y="436">360</text>';
+  var svg='<svg viewBox="0 0 800 800" class="m360-svg" role="img" aria-label="Pivitt 360 Brand Model framework">'+aHtml+segs+labs+hub+'</svg>';
+  var legend='<div class="m360-legend">'+[1,2,3].map(function(k){return '<span style="--c:'+SC[k]+'">'+ST[k]+'</span>';}).join("")+'</div>';
+  M360.innerHTML='<div class="m360-wheel">'+svg+legend+'</div><div class="m360-panel"><div class="m-stage-chip"></div><h3 class="m-pn"></h3><p class="m-pd"></p><div class="m-cap"></div><ul class="m-items"></ul></div>';
+  var P=M360.querySelector('.m360-panel');
+  function sel(i){
+    var x=D[i];
+    P.style.setProperty('--pc',x.c);
+    P.querySelector('.m-stage-chip').textContent=ST[x.st];
+    P.querySelector('.m-pn').textContent=x.n;
+    P.querySelector('.m-pd').textContent=x.d;
+    P.querySelector('.m-cap').textContent=x.items.length+' components';
+    P.querySelector('.m-items').innerHTML=x.items.map(function(it){return '<li>'+it+'</li>';}).join("");
+    M360.querySelectorAll('.m-seg').forEach(function(s){s.classList.toggle('on',+s.getAttribute('data-i')===i);});
+    M360.querySelectorAll('.m-lab').forEach(function(s){s.classList.toggle('on',+s.getAttribute('data-i')===i);});
+    M360.querySelectorAll('.m-stage-arc').forEach(function(s){s.classList.toggle('on',+s.getAttribute('data-st')===x.st);});
+  }
+  M360.querySelectorAll('.m-seg,.m-lab').forEach(function(el){
+    var i=+el.getAttribute('data-i');
+    el.addEventListener('mouseenter',function(){sel(i);});
+    el.addEventListener('click',function(){sel(i);});
+  });
+  sel(0);
+}
 doc.classList.remove('no-js');
 requestAnimationFrame(loop);
 })();
