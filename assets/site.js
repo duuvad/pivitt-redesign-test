@@ -103,7 +103,7 @@ if(_rows.length&&!_RM){
   })();
 }
 
-/* Pivitt 360 framework wheel v3 */
+/* Pivitt 360 framework wheel v4 */
 var M360=document.getElementById('m360');
 if(M360){
   var D=[
@@ -115,38 +115,50 @@ if(M360){
     {n:"Brand Assets",s:"Assets",st:3,svc:"brand-production-partnership.html",svl:"production partnership",d:"The guidelines and materials that make the system usable at scale.",items:["Logo Usage Rules","Colour Guidelines","Typography Guidelines","Imagery Guidelines","Tone of Voice","Social Media Standards","Approved Photography","Illustrations & Graphics"]}
   ];
   var ST={1:"Stage 1 \u00b7 Strategy & Positioning",2:"Stage 2 \u00b7 Identity & Expression",3:"Stage 3 \u00b7 Assets & Activation"};
-  var RN={1:"I",2:"II",3:"III"};
-  var SS={1:"Strategy & Positioning",2:"Identity & Expression",3:"Assets & Activation"};
-  var CX=400,CY=400,R1=118,R2=298,RL=206,RDOT=284,RO=320,RTICK=348;
+  var RN={1:"I",2:"II",3:"III"};var SS={1:"Strategy & Positioning",2:"Identity & Expression",3:"Assets & Activation"};
+  var CX=400,CY=400,R1=120,R2=298,RL=204,RNUM=232,RDOT=282,RO=320,RTICK=342,RBLOOM=150;
   function pt(r,d){var a=(d-90)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
   function f(n){return n.toFixed(1);}
   function sector(r1,r2,a0,a1){var p0=pt(r2,a0),p1=pt(r2,a1),p2=pt(r1,a1),p3=pt(r1,a0);var lg=(a1-a0)>180?1:0;return "M"+f(p0[0])+" "+f(p0[1])+"A"+r2+" "+r2+" 0 "+lg+" 1 "+f(p1[0])+" "+f(p1[1])+"L"+f(p2[0])+" "+f(p2[1])+"A"+r1+" "+r1+" 0 "+lg+" 0 "+f(p3[0])+" "+f(p3[1])+"Z";}
   function arc(r,a0,a1){var p0=pt(r,a0),p1=pt(r,a1);var lg=(a1-a0)>180?1:0;return "M"+f(p0[0])+" "+f(p0[1])+"A"+r+" "+r+" 0 "+lg+" 1 "+f(p1[0])+" "+f(p1[1]);}
   function line(r1,r2,deg){var p0=pt(r1,deg),p1=pt(r2,deg);return "M"+f(p0[0])+" "+f(p0[1])+"L"+f(p1[0])+" "+f(p1[1]);}
-  var defs='<defs><filter id="m-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
-  var rings='<circle class="m-ring" cx="400" cy="400" r="'+R2+'"/><circle class="m-ring" cx="400" cy="400" r="'+R1+'"/>';
-  var tick='<circle class="m-tick" cx="400" cy="400" r="'+RTICK+'" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="1 15"/>';
+  var defs='<defs>'
+    +'<radialGradient id="m-seg-grad" gradientUnits="userSpaceOnUse" cx="400" cy="400" r="298"><stop offset="42%" stop-color="#ffffff" stop-opacity="0"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/></radialGradient>'
+    +'<radialGradient id="m-seg-active" gradientUnits="userSpaceOnUse" cx="400" cy="400" r="298"><stop offset="28%" stop-color="#3366FF" stop-opacity="0.05"/><stop offset="100%" stop-color="#3366FF" stop-opacity="0.20"/></radialGradient>'
+    +'<radialGradient id="m-core-grad" gradientUnits="userSpaceOnUse" cx="400" cy="372" r="150"><stop offset="0%" stop-color="#16161f"/><stop offset="100%" stop-color="#08080d"/></radialGradient>'
+    +'<radialGradient id="m-bloom-grad"><stop offset="0%" stop-color="#3366FF" stop-opacity="0.55"/><stop offset="100%" stop-color="#3366FF" stop-opacity="0"/></radialGradient>'
+    +'<filter id="m-glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+    +'</defs>';
+  var bloom='<circle class="m-bloom" r="'+RBLOOM+'" fill="url(#m-bloom-grad)" cx="400" cy="400"/>';
+  var rings='<circle class="m-ring" cx="400" cy="400" r="'+R2+'"/><circle class="m-ring2" cx="400" cy="400" r="'+((R1+R2)/2)+'"/><circle class="m-ring" cx="400" cy="400" r="'+R1+'"/>';
+  // fine degree ticks
+  var dt="";for(var t=0;t<360;t+=5){var maj=(t%30===0);var p0=pt(RO+2,t),p1=pt(RO+(maj?9:5),t);dt+='<line class="'+(maj?'m-dtick-maj':'m-dtick')+'" x1="'+f(p0[0])+'" y1="'+f(p0[1])+'" x2="'+f(p1[0])+'" y2="'+f(p1[1])+'"/>';}
+  var tick='<circle class="m-tick" cx="400" cy="400" r="'+RTICK+'" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="1 17"/>';
   var stArcs=[{st:1,a0:-30,a1:210},{st:2,a0:210,a1:270},{st:3,a0:270,a1:330}];
   var sa=stArcs.map(function(s){return '<path class="m-stage-arc" data-st="'+s.st+'" d="'+arc(RO,s.a0+4,s.a1-4)+'"/>';}).join("");
-  var segs="",spokes="",edges="",dots="",labs="";
+  var segs="",spokes="",edges="",dots="",labs="",nums="";
   for(var i=0;i<6;i++){var a0=i*60-30,a1=i*60+30,mid=i*60;
     segs+='<path class="m-seg" data-i="'+i+'" d="'+sector(R1,R2,a0,a1)+'"/>';
     spokes+='<path class="m-spoke" d="'+line(R1,R2,a0)+'"/>';
     edges+='<path class="m-edge" data-i="'+i+'" d="'+arc(R2,a0+1.5,a1-1.5)+'"/>';
-    var n=D[i].items.length,s0=a0+10,s1=a1-10,sp=(s1-s0)/n,dd="";
-    for(var k=0;k<n;k++){var dp=pt(RDOT,s0+(k+0.5)*sp);dd+='<circle cx="'+f(dp[0])+'" cy="'+f(dp[1])+'" r="2.3"/>';}
+    var nC=D[i].items.length,s0=a0+10,s1=a1-10,sp=(s1-s0)/nC,dd="";
+    for(var k=0;k<nC;k++){var dp=pt(RDOT,s0+(k+0.5)*sp);dd+='<circle cx="'+f(dp[0])+'" cy="'+f(dp[1])+'" r="2.3"/>';}
     dots+='<g class="m-dots" data-i="'+i+'">'+dd+'</g>';
     var lp=pt(RL,mid);labs+='<text class="m-lab" data-i="'+i+'" x="'+f(lp[0])+'" y="'+f(lp[1])+'">'+D[i].s+'</text>';
+    var np=pt(RNUM,mid);nums+='<text class="m-num" data-i="'+i+'" x="'+f(np[0])+'" y="'+f(np[1])+'">'+("0"+(i+1)).slice(-2)+'</text>';
   }
-  var core='<circle class="m-core" cx="400" cy="400" r="'+R1+'"/><circle class="m-core-ring" cx="400" cy="400" r="'+(R1-3)+'"/>'
-    +'<text class="m-hub-1" x="400" y="374">PIVITT</text><text class="m-hub-2" x="400" y="423">360</text><text class="m-hub-3" x="400" y="452"></text>';
-  var svg='<svg viewBox="0 0 800 800" class="m360-svg" role="img" aria-label="Pivitt 360 Brand Model framework">'+defs+rings+tick+sa+segs+spokes+edges+dots+labs+core+'</svg>';
+  var pointer='<line class="m-pointer" x1="400" y1="400" x2="400" y2="400" style="opacity:0"/><circle class="m-pointer-node" cx="400" cy="400" r="3" style="opacity:0"/>';
+  var core='<circle class="m-core" cx="400" cy="400" r="'+R1+'"/><circle class="m-core-ring2" cx="400" cy="400" r="'+(R1-8)+'"/><circle class="m-core-ring" cx="400" cy="400" r="'+(R1-3)+'"/>'
+    +'<text class="m-hub-1" x="400" y="374">PIVITT</text><text class="m-hub-2" x="400" y="424">360</text><text class="m-hub-3" x="400" y="453"></text>';
+  var svg='<svg viewBox="0 0 800 800" class="m360-svg" role="img" aria-label="Pivitt 360 Brand Model framework">'+defs+bloom+rings+dt+tick+sa+segs+spokes+edges+dots+nums+labs+pointer+core+'</svg>';
   var legend='<div class="m360-legend">'+[1,2,3].map(function(k){return '<span><b>'+RN[k]+'</b>'+SS[k]+'</span>';}).join("")+'</div>';
   var panel='<div class="m360-panel"><span class="m-index"></span><div class="m-stage-chip"></div><h3 class="m-pn"></h3><span class="m-rule"></span><p class="m-pd"></p><div class="m-cap"></div><ul class="m-items"></ul><a class="m-explore" href=""></a></div>';
-  M360.innerHTML='<div class="m360-wheel"><div class="m360-stage-wrap"><div class="m360-glow"></div>'+svg+'</div>'+legend+'</div>'+panel;
-  var SVG=M360.querySelector('.m360-svg'),P=M360.querySelector('.m360-panel');
+  M360.innerHTML='<div class="m360-wheel"><div class="m360-stage-wrap"><div class="m360-amb"></div>'+svg+'</div>'+legend+'</div>'+panel;
+  var SVG=M360.querySelector('.m360-svg'),P=M360.querySelector('.m360-panel'),BL=M360.querySelector('.m-bloom'),PT=M360.querySelector('.m-pointer'),PN=M360.querySelector('.m-pointer-node');
   function sel(i){
-    var x=D[i];SVG.classList.add('active');
+    var x=D[i],mid=i*60;SVG.classList.add('active');
+    var bp=pt(RBLOOM,mid);BL.setAttribute('cx',f(bp[0]));BL.setAttribute('cy',f(bp[1]));
+    var q0=pt(R1+5,mid),q1=pt(R1+34,mid);PT.setAttribute('x1',f(q0[0]));PT.setAttribute('y1',f(q0[1]));PT.setAttribute('x2',f(q1[0]));PT.setAttribute('y2',f(q1[1]));PT.style.opacity=1;PN.setAttribute('cx',f(q1[0]));PN.setAttribute('cy',f(q1[1]));PN.style.opacity=1;
     P.querySelector('.m-index').textContent=("0"+(i+1)).slice(-2);
     P.querySelector('.m-stage-chip').textContent=ST[x.st];
     P.querySelector('.m-pn').textContent=x.n;
@@ -155,10 +167,10 @@ if(M360){
     P.querySelector('.m-items').innerHTML=x.items.map(function(it){return '<li>'+it+'</li>';}).join("");
     var ex=P.querySelector('.m-explore');ex.href=x.svc;ex.textContent='Explore '+x.svl;
     M360.querySelector('.m-hub-3').textContent=x.s;
-    ['.m-seg','.m-edge','.m-dots','.m-lab'].forEach(function(sl){M360.querySelectorAll(sl).forEach(function(e){e.classList.toggle('on',+e.getAttribute('data-i')===i);});});
+    ['.m-seg','.m-edge','.m-dots','.m-lab','.m-num'].forEach(function(sl){M360.querySelectorAll(sl).forEach(function(e){e.classList.toggle('on',+e.getAttribute('data-i')===i);});});
     M360.querySelectorAll('.m-stage-arc').forEach(function(e){e.classList.toggle('on',+e.getAttribute('data-st')===x.st);});
   }
-  M360.querySelectorAll('.m-seg,.m-edge,.m-dots,.m-lab').forEach(function(el){var i=+el.getAttribute('data-i');el.addEventListener('mouseenter',function(){sel(i);});el.addEventListener('click',function(){sel(i);});});
+  M360.querySelectorAll('.m-seg,.m-edge,.m-dots,.m-lab,.m-num').forEach(function(el){var i=+el.getAttribute('data-i');el.addEventListener('mouseenter',function(){sel(i);});el.addEventListener('click',function(){sel(i);});});
   sel(0);
 }
 doc.classList.remove('no-js');
