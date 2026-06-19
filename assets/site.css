@@ -588,3 +588,47 @@ footer{display:block}
 
 /* proofline: gap above its top border so the line is not flush under preceding content */
 .proofline{margin-top:clamp(64px,8vw,120px)}
+
+/* ===== micro-interactions ===== */
+/* staggered reveal: animate children of grids/lists in sequence */
+.fgrid.reveal,.statband.reveal,.steps.reveal,.rwork.reveal,.svc-list.reveal,.imgband.reveal,.value.reveal{opacity:1;transform:none;transition:none}
+.fgrid.reveal>*,.statband.reveal>.stat,.steps.reveal>*,.rwork.reveal>*,.svc-list.reveal>*,.imgband.reveal>*,.value.reveal>*{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.fgrid.reveal.in>*,.statband.reveal.in>.stat,.steps.reveal.in>*,.rwork.reveal.in>*,.svc-list.reveal.in>*,.imgband.reveal.in>*,.value.reveal.in>*{opacity:1;transform:none}
+.no-js .fgrid>*,.no-js .statband>*,.no-js .steps>*,.no-js .rwork>*,.no-js .svc-list>*,.no-js .imgband>*,.no-js .value>*{opacity:1!important;transform:none!important}
+/* hero entrance (inner pages) */
+.phero .crumb,.phero h1,.phero .lead{animation:heroUp 1s var(--ease2) both}
+.phero .crumb{animation-delay:.06s}
+.phero h1{animation-delay:.14s}
+.phero .lead{animation-delay:.26s}
+@keyframes heroUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+/* card lift + image zoom */
+.fcard,.rtile{transition:transform .45s var(--ease),border-color .45s var(--ease),box-shadow .5s var(--ease)}
+.fcard:hover{transform:translateY(-4px)}
+.rtile:hover{transform:translateY(-5px);box-shadow:0 24px 60px -28px rgba(51,102,255,0.4)}
+.rtile img{transition:transform 1.1s var(--ease2),opacity .5s var(--ease)}
+.rtile:hover img{transform:scale(1.07);opacity:1}
+.fcard h4{transition:color .3s}
+.fcard:hover h4{color:#fff}
+/* statband cell hover */
+.statband .stat{transition:background .4s}
+.statband .stat:hover{background:rgba(51,102,255,0.05)}
+/* footer link underline draw */
+.foot-nav a{position:relative;display:inline-block}
+.foot-nav a::after{display:block!important;content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.foot-nav a:hover::after{transform:scaleX(1)}
+/* crumb link underline */
+.crumb a{position:relative}
+.crumb a::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.crumb a:hover::after{transform:scaleX(1)}
+/* button refinement */
+.btn-primary,.btn-ghost{transition:transform .25s var(--ease),box-shadow .3s var(--ease),background .25s,border-color .25s,color .25s}
+.btn-primary:hover{box-shadow:0 16px 44px rgba(51,102,255,0.45)}
+.btn-primary span.arr,.btn-ghost span.arr{transition:transform .3s var(--ease)}
+.btn-primary:hover span.arr,.btn-ghost:hover span.arr{transform:translateX(5px)}
+/* section heading eyebrow rule draw */
+.sh .eyebrow{position:relative;padding-left:0}
+@media(prefers-reduced-motion:reduce){
+  .phero .crumb,.phero h1,.phero .lead{animation:none}
+  .fgrid.reveal>*,.statband.reveal>.stat,.steps.reveal>*,.rwork.reveal>*,.svc-list.reveal>*,.imgband.reveal>*,.value.reveal>*{opacity:1;transform:none}
+  .fcard:hover,.rtile:hover{transform:none}
+}
