@@ -507,7 +507,7 @@ footer{display:block}
 .phero::before{content:'';position:absolute;top:-40%;right:-12%;width:62%;height:150%;background:radial-gradient(circle,rgba(51,102,255,0.16),transparent 60%);filter:blur(60px);opacity:.7;pointer-events:none;animation:aurora 16s ease-in-out infinite alternate;z-index:0}
 @keyframes aurora{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-7%,5%) scale(1.14)}}
 .phero>*{position:relative;z-index:1}
-.statement-wrap{padding:clamp(44px,6vw,100px) 0;border-top:1px solid var(--bdr)}
+.statement-wrap{border-top:0}
 .statement{font-size:clamp(26px,3.6vw,52px);font-weight:300;line-height:1.16;letter-spacing:-0.03em;max-width:22ch;margin:0;color:var(--t1)}
 .statement .accent{color:var(--blue)}
 .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);margin-top:clamp(28px,3vw,44px)}
@@ -528,7 +528,7 @@ footer{display:block}
 .step h4{font-size:clamp(19px,1.6vw,24px);font-weight:300;letter-spacing:-0.02em;margin-bottom:10px;color:var(--t1)}
 .step p{font-size:14.5px;color:var(--t2);line-height:1.55}
 @media(max-width:760px){.steps{grid-template-columns:1fr;gap:26px}}
-.proofline{padding:clamp(46px,6vw,96px) 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.proofline{padding-top:clamp(46px,6vw,96px);padding-bottom:clamp(46px,6vw,96px);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
 .proofline .pl-lab{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin-bottom:22px;display:block}
 .proofline p{font-size:clamp(22px,2.8vw,38px);font-weight:300;line-height:1.24;letter-spacing:-0.025em;max-width:26ch;margin:0;color:var(--t1)}
 .rwork{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(28px,3vw,44px)}
@@ -545,9 +545,9 @@ footer{display:block}
 /* ===== nav + spacing fixes ===== */
 @media(max-width:900px){.mainnav{display:none}}
 #hdr{z-index:90}
-.statement-wrap{padding:0;border-top:0}
+.statement-wrap{border-top:0}
 .imgband{margin:0}
-.proofline{padding:clamp(36px,4.5vw,64px) 0}
+.proofline{padding-top:clamp(36px,4.5vw,64px);padding-bottom:clamp(36px,4.5vw,64px)}
 .menu-toggle{position:relative;z-index:91}
 /* consistent inner-page section rhythm + tablet tuning */
 @media(max-width:900px){
