@@ -79,6 +79,8 @@ if(fine){
   });
 }else{var d=document.querySelector('.cur-dot'),r=document.querySelector('.cur-ring');if(d)d.style.display='none';if(r)r.style.display='none';}
 
+var mt=document.getElementById('menuToggle'),mm=document.getElementById('mobileMenu');
+if(mt&&mm){mt.addEventListener('click',function(){var o=mm.classList.toggle('open');mt.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';mm.setAttribute('aria-hidden',o?'false':'true');});mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');mt.classList.remove('open');document.body.style.overflow='';});});}
 doc.classList.remove('no-js');
 requestAnimationFrame(loop);
 })();
