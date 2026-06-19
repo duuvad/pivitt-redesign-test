@@ -585,3 +585,6 @@ footer{display:block}
 
 /* ===== sweep fixes ===== */
 @media(max-width:760px){.cs-panel{aspect-ratio:auto;min-height:280px;padding-top:48px;padding-bottom:48px}}
+
+/* proofline: gap above its top border so the line is not flush under preceding content */
+.proofline{margin-top:clamp(64px,8vw,120px)}
