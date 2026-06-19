@@ -660,3 +660,19 @@ footer{display:block}
 main{transition:opacity .42s var(--ease),transform .55s var(--ease2)}
 body.leaving main{opacity:0;transform:scale(0.992) translateY(-6px)}
 @media(prefers-reduced-motion:reduce){#veil{transition:opacity .15s}body.leaving main{transform:none;transition:opacity .15s}.phero h1{opacity:1}.phero h1 .ln-i{transform:none}}
+
+/* ===== ambient electric-blue background field ===== */
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(42% 36% at 24% 16%, rgba(51,102,255,0.09), transparent 68%),
+    radial-gradient(46% 42% at 80% 76%, rgba(51,102,255,0.06), transparent 70%);
+  transform:translate3d(0, calc(var(--sy,0) * -80px), 0);
+  will-change:transform}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(40% 34% at 62% 40%, rgba(51,102,255,0.05), transparent 68%),
+    radial-gradient(30% 26% at 33% 84%, rgba(6,182,212,0.04), transparent 70%);
+  transform:translate3d(0, calc(var(--sy,0) * 50px), 0);
+  animation:bgDrift 30s ease-in-out infinite alternate;will-change:transform}
+@keyframes bgDrift{from{background-position:0 0,0 0}to{background-position:3% -4%,-2% 3%}}
+@media(prefers-reduced-motion:reduce){body::after{animation:none}body::before,body::after{transform:none}}
