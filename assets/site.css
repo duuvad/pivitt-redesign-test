@@ -541,3 +541,21 @@ footer{display:block}
 .rtile .rt-meta span{font-size:12px;color:var(--t3)}
 @media(max-width:760px){.rwork{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.rwork{grid-template-columns:1fr}}
+
+/* ===== nav + spacing fixes ===== */
+@media(max-width:900px){.mainnav{display:none}}
+#hdr{z-index:90}
+.statement-wrap{padding:0;border-top:0}
+.imgband{margin:0}
+.proofline{padding:clamp(36px,4.5vw,64px) 0}
+.menu-toggle{position:relative;z-index:91}
+/* consistent inner-page section rhythm + tablet tuning */
+@media(max-width:900px){
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .fgrid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .rwork{grid-template-columns:1fr}
+  .imgband{grid-template-columns:1fr 1fr}
+}
