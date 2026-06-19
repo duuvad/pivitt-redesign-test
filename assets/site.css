@@ -596,9 +596,8 @@ footer{display:block}
 .fgrid.reveal.in>*,.statband.reveal.in>.stat,.steps.reveal.in>*,.rwork.reveal.in>*,.svc-list.reveal.in>*,.imgband.reveal.in>*,.value.reveal.in>*{opacity:1;transform:none}
 .no-js .fgrid>*,.no-js .statband>*,.no-js .steps>*,.no-js .rwork>*,.no-js .svc-list>*,.no-js .imgband>*,.no-js .value>*{opacity:1!important;transform:none!important}
 /* hero entrance (inner pages) */
-.phero .crumb,.phero h1,.phero .lead{animation:heroUp 1s var(--ease2) both}
+.phero .crumb,.phero .lead{animation:heroUp 1s var(--ease2) both}
 .phero .crumb{animation-delay:.06s}
-.phero h1{animation-delay:.14s}
 .phero .lead{animation-delay:.26s}
 @keyframes heroUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 /* card lift + image zoom */
@@ -632,3 +631,32 @@ footer{display:block}
   .fgrid.reveal>*,.statband.reveal>.stat,.steps.reveal>*,.rwork.reveal>*,.svc-list.reveal>*,.imgband.reveal>*,.value.reveal>*{opacity:1;transform:none}
   .fcard:hover,.rtile:hover{transform:none}
 }
+
+/* ===== card hover: cursor-tracking glowing border ===== */
+.spot::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(180px circle at var(--mx,50%) var(--my,50%),rgba(51,102,255,0.15),transparent 55%);opacity:0;transition:opacity .45s var(--ease);pointer-events:none;z-index:-1}
+.spot::after{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.4px;background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),rgba(96,140,255,1),rgba(51,102,255,0.35) 32%,transparent 58%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;transition:opacity .45s var(--ease);pointer-events:none;z-index:2}
+.spot:hover::before,.spot:hover::after{opacity:1}
+.spot:hover{border-color:rgba(51,102,255,0.18);box-shadow:0 20px 54px -28px rgba(51,102,255,0.45)}
+
+/* ===== line-by-line headline reveal (inner heroes) ===== */
+.phero h1{opacity:0}
+.phero h1.split{opacity:1}
+.no-js .phero h1{opacity:1}
+.phero h1 .ln{display:block;overflow:hidden;padding-bottom:0.03em}
+.phero h1 .ln-i{display:block;transform:translateY(116%);transition:transform 1.05s var(--ease2)}
+.phero h1.split.go .ln-i{transform:none}
+.phero h1 .hw.acc{color:var(--blue)}
+
+/* ===== scroll parallax ===== */
+.imgband .ib{overflow:hidden}
+.imgband .ib img{height:calc(100% + 70px);margin-top:-35px;will-change:transform;transition:opacity .5s var(--ease)}
+.imgband .ib:hover img{opacity:1}
+.cs-hero{overflow:hidden}
+.cs-hero img{height:calc(100% + 70px);margin-top:-35px;will-change:transform}
+
+/* ===== page transition ===== */
+#veil{position:fixed;inset:0;z-index:600;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .42s var(--ease)}
+#veil.on{opacity:1;pointer-events:auto}
+main{transition:opacity .42s var(--ease),transform .55s var(--ease2)}
+body.leaving main{opacity:0;transform:scale(0.992) translateY(-6px)}
+@media(prefers-reduced-motion:reduce){#veil{transition:opacity .15s}body.leaving main{transform:none;transition:opacity .15s}.phero h1{opacity:1}.phero h1 .ln-i{transform:none}}
