@@ -679,11 +679,12 @@ body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 /* ===== ambient background aurora (scroll-reactive) ===== */
 #aura{position:fixed;top:-110px;left:-110px;right:-110px;bottom:-110px;z-index:-1;pointer-events:none;overflow:hidden;will-change:transform}
-#aura .ab{position:absolute;border-radius:50%;filter:blur(95px);will-change:transform,opacity}
-#aura .ab1{width:66vw;height:66vw;left:-12vw;top:-10vw;background:radial-gradient(circle,rgba(51,102,255,0.16),transparent 62%)}
-#aura .ab2{width:58vw;height:58vw;right:-14vw;top:32vh;background:radial-gradient(circle,rgba(48,98,255,0.13),rgba(6,182,212,0.05) 46%,transparent 66%)}
-#aura .ab3{width:52vw;height:52vw;left:20vw;bottom:-16vw;background:radial-gradient(circle,rgba(6,182,212,0.11),transparent 60%);opacity:calc(.4 + var(--sp,0)*.5)}
+#aura .ab{position:absolute;border-radius:50%;filter:blur(80px);will-change:transform,opacity}
+#aura .ab1{width:60vw;height:60vw;left:-10vw;top:-8vw;background:radial-gradient(circle,rgba(51,102,255,0.28),transparent 60%)}
+#aura .ab2{width:54vw;height:54vw;right:-12vw;top:28vh;background:radial-gradient(circle,rgba(48,110,255,0.22),rgba(6,182,212,0.09) 44%,transparent 64%)}
+#aura .ab3{width:50vw;height:50vw;left:18vw;bottom:-14vw;background:radial-gradient(circle,rgba(6,182,212,0.18),transparent 58%);opacity:calc(.5 + var(--sp,0)*.5)}
+#aura .ab4{width:36vw;height:36vw;left:32vw;top:32vh;filter:blur(56px);background:radial-gradient(circle,rgba(78,136,255,0.24),transparent 60%)}
 @keyframes auraA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(3%,4%) scale(1.06)}}
 @keyframes auraB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,-2%) scale(1.09)}}
-@media(max-width:900px){#aura .ab{filter:blur(64px)}#aura .ab1{width:90vw;height:90vw}#aura .ab2{width:85vw;height:85vw}#aura .ab3{width:80vw;height:80vw}}
+@media(max-width:900px){#aura .ab{filter:blur(58px)}#aura .ab1{width:90vw;height:90vw}#aura .ab2{width:85vw;height:85vw}#aura .ab3{width:80vw;height:80vw}#aura .ab4{width:60vw;height:60vw}}
 @media(prefers-reduced-motion:reduce){#aura .ab{animation:none}#aura{transform:none!important}}
