@@ -204,7 +204,7 @@ if(M360){
   var fine=!window.matchMedia||window.matchMedia('(pointer:fine)').matches;
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if(fine&&!rm){
-    document.querySelectorAll('.diff,.pillar,.offer,.insight-card,.value-col,.csec,.feature,.quote,.cs-block,.stage,.tile,.fcard,.rtile').forEach(function(el){
+    document.querySelectorAll('.diff,.pillar,.offer,.insight-card,.value-col,.csec,.feature,.quote,.cs-block,.stage,.fcard,.rtile').forEach(function(el){
       el.classList.add('spot');
       el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});
     });
