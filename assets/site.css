@@ -591,9 +591,9 @@ footer{display:block}
 
 /* ===== micro-interactions ===== */
 /* staggered reveal: animate children of grids/lists in sequence */
-.fgrid.reveal,.statband.reveal,.steps.reveal,.rwork.reveal,.svc-list.reveal,.imgband.reveal,.value.reveal,.tgrid.reveal{opacity:1;transform:none;transition:none}
-.fgrid.reveal>*,.statband.reveal>.stat,.steps.reveal>*,.rwork.reveal>*,.svc-list.reveal>*,.imgband.reveal>*,.value.reveal>*,.tgrid.reveal>*{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.fgrid.reveal.in>*,.statband.reveal.in>.stat,.steps.reveal.in>*,.rwork.reveal.in>*,.svc-list.reveal.in>*,.imgband.reveal.in>*,.value.reveal.in>*,.tgrid.reveal.in>*{opacity:1;transform:none}
+.fgrid.reveal,.statband.reveal,.steps.reveal,.rwork.reveal,.svc-list.reveal,.imgband.reveal,.value.reveal,.tgrid.reveal,.beliefs.reveal{opacity:1;transform:none;transition:none}
+.fgrid.reveal>*,.statband.reveal>.stat,.steps.reveal>*,.rwork.reveal>*,.svc-list.reveal>*,.imgband.reveal>*,.value.reveal>*,.tgrid.reveal>*,.beliefs.reveal>*{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.fgrid.reveal.in>*,.statband.reveal.in>.stat,.steps.reveal.in>*,.rwork.reveal.in>*,.svc-list.reveal.in>*,.imgband.reveal.in>*,.value.reveal.in>*,.tgrid.reveal.in>*,.beliefs.reveal.in>*{opacity:1;transform:none}
 .no-js .fgrid>*,.no-js .statband>*,.no-js .steps>*,.no-js .rwork>*,.no-js .svc-list>*,.no-js .imgband>*,.no-js .value>*{opacity:1!important;transform:none!important}
 /* hero entrance (inner pages) */
 .phero .crumb,.phero .lead{animation:heroUp 1s var(--ease2) both}
@@ -683,10 +683,9 @@ body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
 #aura .ab1{width:60vw;height:60vw;left:-10vw;top:-8vw;background:radial-gradient(circle,rgba(51,102,255,0.28),transparent 60%)}
 #aura .ab2{width:54vw;height:54vw;right:-12vw;top:28vh;background:radial-gradient(circle,rgba(48,110,255,0.22),rgba(6,182,212,0.09) 44%,transparent 64%)}
 #aura .ab3{width:50vw;height:50vw;left:18vw;bottom:-14vw;background:radial-gradient(circle,rgba(6,182,212,0.18),transparent 58%);opacity:calc(.5 + var(--sp,0)*.5)}
-#aura .ab4{width:36vw;height:36vw;left:32vw;top:32vh;filter:blur(56px);background:radial-gradient(circle,rgba(78,136,255,0.24),transparent 60%)}
 @keyframes auraA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(3%,4%) scale(1.06)}}
 @keyframes auraB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,-2%) scale(1.09)}}
-@media(max-width:900px){#aura .ab{filter:blur(58px)}#aura .ab1{width:90vw;height:90vw}#aura .ab2{width:85vw;height:85vw}#aura .ab3{width:80vw;height:80vw}#aura .ab4{width:60vw;height:60vw}}
+@media(max-width:900px){#aura .ab{filter:blur(58px)}#aura .ab1{width:90vw;height:90vw}#aura .ab2{width:85vw;height:85vw}#aura .ab3{width:80vw;height:80vw}}
 @media(prefers-reduced-motion:reduce){#aura .ab{animation:none}#aura{transform:none!important}}
 
 /* ===== testimonials ===== */
@@ -700,3 +699,15 @@ body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
 .tcard .ta b{display:block;font-size:14.5px;font-weight:400;color:var(--t1)}
 .tcard .ta span{display:block;font-size:12.5px;color:var(--t2);margin-top:3px}
 @media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+
+/* ===== beliefs / positions ===== */
+.beliefs{margin-top:clamp(28px,3vw,44px);border-top:1px solid var(--bdr)}
+.belief{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,56px);padding:clamp(24px,2.8vw,38px) 0;border-bottom:1px solid var(--bdr);align-items:baseline}
+.belief .bn{font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.06em}
+.belief h3{font-size:clamp(19px,2vw,28px);font-weight:300;letter-spacing:-0.02em;line-height:1.22;color:var(--t1);margin:0 0 10px}
+.belief p{font-size:15px;color:var(--t2);line-height:1.55;max-width:64ch;margin:0}
+.beliefs-more{display:inline-flex;align-items:center;gap:8px;margin-top:clamp(24px,3vw,40px);font-size:14px;color:var(--t1);text-decoration:none;border-bottom:1px solid var(--bdr);padding-bottom:4px;transition:border-color .3s}
+.beliefs-more:hover{border-color:var(--blue)}
+.beliefs-more .arr{color:var(--blue);transition:transform .3s var(--ease)}
+.beliefs-more:hover .arr{transform:translateX(5px)}
+@media(max-width:640px){.belief{grid-template-columns:1fr;gap:8px}}
