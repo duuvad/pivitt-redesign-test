@@ -112,6 +112,8 @@ nav a:hover{color:var(--t1)}nav a:hover::after{transform:scaleX(1);transform-ori
 .tile .ts{position:relative;overflow:hidden;aspect-ratio:3/2;background:#0d0d14}
 .tile .ts img{transform:scale(1.05);transition:transform 1.3s var(--ease2);will-change:transform}
 .tile:hover .ts img{transform:scale(1.12)}
+.tile .ts .tvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .55s var(--ease2);pointer-events:none;will-change:opacity}
+.tile .ts .tvid.playing{opacity:1}
 .tcap{padding-top:18px;border-top:1px solid var(--bdr);margin-top:18px;display:flex;justify-content:space-between;gap:24px;align-items:baseline}
 .tcap .tt{font-size:clamp(19px,1.7vw,27px);font-weight:300;letter-spacing:-0.02em}
 .tcap .ttags{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--t3);margin-top:8px}

@@ -14,6 +14,31 @@ if(hv){
   document.addEventListener('visibilitychange',function(){if(!document.hidden)playVid();});
 }
 
+/* hover-play looping video on work tiles. Desktop pointer only; touch keeps the poster image.
+   Any .tile containing a video.tvid[data-src] gets this for free. */
+if(!reduced && matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.tile').forEach(function(tile){
+    var v=tile.querySelector('.tvid'); if(!v)return;
+    v.muted=true; v.setAttribute('muted',''); v.loop=true; v.playsInline=true; v.setAttribute('playsinline','');
+    var loaded=false, hovering=false;
+    v.addEventListener('playing',function(){ if(hovering) v.classList.add('playing'); });
+    tile.addEventListener('mouseenter',function(){
+      hovering=true;
+      if(!loaded){
+        var webm=v.getAttribute('data-webm'), mp4=v.getAttribute('data-mp4'), s;
+        if(webm){ s=document.createElement('source'); s.src=webm; s.type='video/webm'; v.appendChild(s); }
+        if(mp4){ s=document.createElement('source'); s.src=mp4; s.type='video/mp4'; v.appendChild(s); }
+        v.load(); loaded=true;
+      }
+      try{ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }catch(e){}
+    });
+    tile.addEventListener('mouseleave',function(){
+      hovering=false; v.classList.remove('playing');
+      try{ v.pause(); v.currentTime=0; }catch(e){}
+    });
+  });
+}
+
 var lc=document.getElementById('lcount');
 if(lc&&!reduced){var s0=performance.now();(function ct(t){var p=Math.min((t-s0)/1400,1);lc.textContent=String(Math.round(p*100)).padStart(2,'0');if(p<1)requestAnimationFrame(ct);})(s0);}
 setTimeout(function(){var l=document.querySelector('.loader');if(l)l.style.display='none';},2700);
