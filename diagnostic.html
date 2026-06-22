@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=25">
+<link rel="stylesheet" href="assets/site.css?v=26">
 </head><body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
@@ -49,6 +49,98 @@
     <h1>Find out what your brand is <em>costing you</em>.</h1>
     <p class="lead">The Brand Alignment Diagnostic is the front door to working with Pivitt. A fixed, senior assessment of your brand against the business, with a scored result and a plan you can act on with or without us.</p>
   </section>
+  <section class="section-pad pt" id="diag" data-spine="Diagnostic">
+    <div class="sh reveal"><span class="eyebrow">Brand Alignment Diagnostic</span><span class="n">Six drivers, five minutes</span></div>
+    <div class="diag-wrap">
+      <p class="diag-intro">Rate each statement for your business. This is a commercial performance read, not a creative review. You will get a Pivitt 360 score out of 100 and the drivers to fix first.</p>
+      <form id="diagForm" class="diag-form"></form>
+      <div class="diag-actions"><button type="button" id="diagSubmit" class="btn-primary mag">Reveal my score</button><span id="diagProgress" class="diag-progress"></span></div>
+      <div id="diagResult" class="diag-result" hidden></div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var PILLARS=[
+      {n:'01',t:'Market Position',m:'Category clarity, relevance, competitive power',q:['We can state, in one sentence, the position we own that competitors cannot claim.','We rarely have to compete on price, because buyers understand why we are the right choice.']},
+      {n:'02',t:'Message Power',m:'Strategic narrative and value clarity',q:['A first-time visitor understands what we do and why it matters within seconds.','Our messaging is consistent across website, sales and marketing, and clearly different from competitors.']},
+      {n:'03',t:'Brand System',m:'Identity performance and usability',q:['Our identity looks current, consistent and credible across every touchpoint.','The team can produce on-brand material quickly, without rebuilding from scratch.']},
+      {n:'04',t:'Proof and Authority',m:'Evidence, case studies, reputation',q:['We have visible, credible proof that reduces buyer risk.','Our brand carries authority in our category, not just familiarity.']},
+      {n:'05',t:'Enablement',m:'Sales and go-to-market alignment',q:['Sales and marketing work from the same narrative, and the message is not rewritten deal by deal.','A new hire can articulate our positioning and value within their first few weeks.']},
+      {n:'06',t:'Growth Activation',m:'Content, execution, conversion',q:['Our website and content actively generate and convert demand, not just inform.','We can connect brand and marketing activity to pipeline and revenue.']}
+    ];
+    var BANDS=[
+      {max:40,name:'Weak',meaning:'Your brand is blocking growth and losing competitive ground.'},
+      {max:60,name:'Misaligned',meaning:'Inconsistent performance. Opportunity is being lost.'},
+      {max:80,name:'Competitive',meaning:'A solid foundation that needs precision and system build.'},
+      {max:90,name:'Strong',meaning:'Your brand is a growth asset and supports expansion.'},
+      {max:100,name:'Scalable',meaning:'Your brand drives market power and category control.'}
+    ];
+    var SCALE=['Strongly disagree','Disagree','Neutral','Agree','Strongly agree'];
+    var form=document.getElementById('diagForm'); if(!form)return;
+    var total=PILLARS.length*2;
+    var html='';
+    PILLARS.forEach(function(p,pi){
+      html+='<div class="diag-pillar"><div class="dp-head"><span class="dp-n">'+p.n+'</span><span class="dp-t">'+p.t+'</span><span class="dp-m">'+p.m+'</span></div>';
+      p.q.forEach(function(q,qi){
+        var name='q'+pi+'_'+qi;
+        html+='<div class="diag-q"><div class="dq-text">'+q+'</div><div class="diag-scale">';
+        for(var v=1;v<=5;v++){html+='<label><input type="radio" name="'+name+'" value="'+v+'"><span class="opt">'+SCALE[v-1]+'</span></label>';}
+        html+='</div></div>';
+      });
+      html+='</div>';
+    });
+    form.innerHTML=html;
+    var prog=document.getElementById('diagProgress');
+    var btn=document.getElementById('diagSubmit');
+    function answered(){return form.querySelectorAll('input:checked').length;}
+    prog.textContent='0 of '+total+' answered';
+    form.addEventListener('change',function(){prog.textContent=answered()+' of '+total+' answered';});
+    btn.addEventListener('click',function(){
+      if(answered()<total){
+        for(var pi=0;pi<PILLARS.length;pi++){for(var qi=0;qi<2;qi++){var n='q'+pi+'_'+qi;if(!form.querySelector('input[name="'+n+'"]:checked')){form.querySelector('input[name="'+n+'"]').closest('.diag-q').scrollIntoView({block:'center'});prog.textContent='Please answer all '+total+'. '+answered()+' done.';return;}}}
+        return;
+      }
+      compute();
+    });
+    function compute(){
+      var ps=PILLARS.map(function(p,pi){var s=0;for(var qi=0;qi<2;qi++){s+=parseInt(form.querySelector('input[name="q'+pi+'_'+qi+'"]:checked').value,10);}return Math.round((s/10)*100);});
+      var tot=Math.round(ps.reduce(function(a,b){return a+b;},0)/PILLARS.length);
+      var band=BANDS.filter(function(b){return tot<=b.max;})[0];
+      render(tot,band,ps);
+    }
+    function render(score,band,ps){
+      var res=document.getElementById('diagResult');
+      var focus=PILLARS.map(function(p,i){return {t:p.t,m:p.m,s:ps[i]};}).sort(function(a,b){return a.s-b.s;}).slice(0,2);
+      var bars=PILLARS.map(function(p,i){return '<div class="dr-bar"><span class="b-lab">'+p.t+'</span><span class="b-track"><span class="b-fill" data-w="'+ps[i]+'"></span></span><span class="b-val">'+ps[i]+'</span></div>';}).join('');
+      var focusHtml=focus.map(function(f){return '<p class="ff">'+f.t+' &middot; '+f.s+'/100. <span>'+f.m+'</span></p>';}).join('');
+      res.innerHTML='<div class="dr-score"><span id="drNum">0</span><span class="u">/100</span></div>'
+        +'<div class="dr-band">'+band.name+'</div>'
+        +'<p class="dr-meaning">'+band.meaning+'</p>'
+        +'<p class="dr-bench">The average scaling company scores 42 to 55. You need 65 or more to compete effectively, 75 or more to accelerate growth, and 85 or more for market leadership.</p>'
+        +'<div class="dr-bars">'+bars+'</div>'
+        +'<div class="dr-focus"><h4>Where to focus first</h4>'+focusHtml+'</div>'
+        +'<div class="dr-cta"><p class="dc-lead">Get the full breakdown and a roadmap you can act on, with or without us.</p>'
+        +'<div class="diag-capture"><input type="email" id="drEmail" placeholder="Your work email" autocomplete="email"><button type="button" class="btn-primary mag" id="drSend">Email me the roadmap</button></div>'
+        +'<p class="diag-note" id="drNote">We will send your Pivitt 360 breakdown. No spam.</p>'
+        +'<a class="btn-ghost mag" href="founder-call.html" style="margin-top:14px;display:inline-block">Book a discovery call</a></div>';
+      res.hidden=false;
+      res.scrollIntoView({behavior:'smooth',block:'start'});
+      var num=document.getElementById('drNum'),st=performance.now(),dur=1400;
+      (function tk(now){var pr=Math.min((now-st)/dur,1),e=1-Math.pow(1-pr,4);num.textContent=Math.round(score*e);if(pr<1)requestAnimationFrame(tk);})(st);
+      setTimeout(function(){var fills=res.querySelectorAll('.b-fill');for(var i=0;i<fills.length;i++){fills[i].style.width=fills[i].getAttribute('data-w')+'%';}},150);
+      var sendBtn=document.getElementById('drSend');
+      sendBtn.addEventListener('click',function(){
+        var email=document.getElementById('drEmail').value.trim(),note=document.getElementById('drNote');
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){note.textContent='Please enter a valid email.';return;}
+        sendBtn.disabled=true;note.textContent='Sending...';
+        fetch('https://formspree.io/f/xaqdyyeg',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:email,score:score+'/100',band:band.name,breakdown:PILLARS.map(function(p,i){return p.t+': '+ps[i];}).join(' | '),source:'Brand Alignment Diagnostic'})})
+        .then(function(r){note.textContent=r.ok?'Sent. Your Pivitt 360 breakdown and roadmap are on the way.':'Could not send just now. Book a call below and we will walk you through it.';})
+        .catch(function(){note.textContent='Could not send just now. Book a call below and we will walk you through it.';})
+        .then(function(){sendBtn.disabled=false;});
+      });
+    }
+  })();
+  </script>
   <section class="section-pad pt">
     <div class="diff-grid reveal">
       <div class="diff"><span class="dn">01</span><h3>Scored against the business</h3><p>We assess the six pillars of the Pivitt 360 Model and return a Growth Readiness Score, so the gaps are measured, not guessed.</p></div>
@@ -79,5 +171,5 @@
   <div class="foot-bot"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></span></div>
 </footer>
 </main>
-<script src="assets/site.js?v=25"></script>
+<script src="assets/site.js?v=26"></script>
 </body></html>
