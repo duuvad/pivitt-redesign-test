@@ -193,7 +193,7 @@ if(M360){
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   var fine=!window.matchMedia||window.matchMedia('(pointer:fine)').matches;
   // stagger delays
-  ['.fgrid','.statband','.steps','.rwork','.svc-list','.imgband','.value'].forEach(function(sel){
+  ['.fgrid','.statband','.steps','.rwork','.svc-list','.imgband','.value','.tgrid'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(c){
       var k=c.children; for(var i=0;i<k.length;i++){k[i].style.transitionDelay=(i*0.075)+'s';}
     });
