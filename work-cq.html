@@ -38,6 +38,19 @@
 @media(max-width:720px){.cq-frame{grid-template-columns:1fr}}
 /* keep full-bleed mockups within their native resolution: cap and centre so they never upscale */
 .cs-bleed{max-width:1080px;margin-left:auto;margin-right:auto}
+/* per-route "view more" expander */
+.cq-more{margin-top:16px;border-top:1px solid var(--bdr)}
+.cq-more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:11px;padding:15px 0;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);transition:color .3s;-webkit-tap-highlight-color:transparent}
+.cq-more>summary::-webkit-details-marker{display:none}
+.cq-more>summary::marker{content:""}
+.cq-more>summary:hover{color:var(--t1)}
+.cq-more>summary .pl{display:inline-flex;width:19px;height:19px;border:1px solid var(--bdr);border-radius:50%;align-items:center;justify-content:center;color:var(--cqr);font-weight:400;transition:transform .35s var(--ease),border-color .3s}
+.cq-more>summary:hover .pl{border-color:var(--cqr)}
+.cq-more[open]>summary .pl{transform:rotate(45deg)}
+.cq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);padding:6px 0 6px}
+.cq-grid .shot img{aspect-ratio:16/9;object-fit:cover}
+@media(max-width:820px){.cq-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cq-grid{grid-template-columns:1fr}}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -221,10 +234,19 @@
     <div class="ch-intro reveal"><p>We did not pick a direction on taste. We developed three complete systems and took each far enough to live: the mark, the type, the colour logic, the imagery language and real application. Then we chose on evidence, not preference.</p></div>
     <div class="dir-head reveal"><span class="n">DIRECTION 01</span><h4>Dark green. A foundation of trust.</h4><span class="dot" style="background:#aacb3f"></span></div>
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d1-logo.jpg" alt="C-Quest d1-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-type.jpg" alt="C-Quest d1-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-colour.jpg" alt="C-Quest d1-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-3d.jpg" alt="C-Quest d1-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-cover.jpg" alt="C-Quest d1-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-web.jpg" alt="C-Quest d1-web"/></div><div class="lbl">Website</div></div></div>
+    <details class="cq cq-more"><summary><span class="pl">+</span>View more from this route</summary>
+    <div class="cq-grid"><div class="shot"><img loading="lazy" src="images/cquest/concepts/r1-01.jpg" alt="C-Quest green route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r1-02.jpg" alt="C-Quest green route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r1-03.jpg" alt="C-Quest green route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r1-04.jpg" alt="C-Quest green route concept"/></div></div>
+    <div class="cs-cap">Early concept boards from the green route, explored before the final system.</div></details>
     <div class="dir-head reveal"><span class="n">DIRECTION 02</span><h4>Coral red. Decisive impact.</h4><span class="dot" style="background:#f64c32"></span></div>
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d2-logo.jpg" alt="C-Quest d2-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-type.jpg" alt="C-Quest d2-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-colour.jpg" alt="C-Quest d2-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-3d.jpg" alt="C-Quest d2-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-cover.jpg" alt="C-Quest d2-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-web.jpg" alt="C-Quest d2-web"/></div><div class="lbl">Website</div></div></div>
+    <details class="cq cq-more"><summary><span class="pl">+</span>View more from this route</summary>
+    <div class="cq-grid"><div class="shot"><img loading="lazy" src="images/cquest/concepts/r2-01.jpg" alt="C-Quest coral route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r2-02.jpg" alt="C-Quest coral route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r2-03.jpg" alt="C-Quest coral route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r2-04.jpg" alt="C-Quest coral route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r2-05.jpg" alt="C-Quest coral route concept"/></div></div>
+    <div class="cs-cap">Early concept boards from the coral route, the direction that carried into the final system.</div></details>
     <div class="dir-head reveal"><span class="n">DIRECTION 03</span><h4>Red and deep teal. Refined resilience.</h4><span class="dot" style="background:#1f8a7e"></span></div>
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d3-logo.jpg" alt="C-Quest d3-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-type.jpg" alt="C-Quest d3-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-colour.jpg" alt="C-Quest d3-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-3d.jpg" alt="C-Quest d3-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-cover.jpg" alt="C-Quest d3-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-web.jpg" alt="C-Quest d3-web"/></div><div class="lbl">Website</div></div></div>
+    <details class="cq cq-more"><summary><span class="pl">+</span>View more from this route</summary>
+    <div class="cq-grid"><div class="shot"><img loading="lazy" src="images/cquest/concepts/r3-01.jpg" alt="C-Quest teal route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r3-02.jpg" alt="C-Quest teal route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r3-03.jpg" alt="C-Quest teal route concept"/></div><div class="shot"><img loading="lazy" src="images/cquest/concepts/r3-04.jpg" alt="C-Quest teal route concept"/></div></div>
+    <div class="cs-cap">Early concept boards from the teal route, explored before the final system.</div></details>
     <div class="ch-intro reveal" style="margin-top:clamp(40px,5vw,80px)"><p>Three resolved systems, not three sketches. We pressure-tested each against the position, the market and everyday use. The red direction carried the most conviction and the clearest read at every size. We refined it into the final system, then proved the call with testing.</p></div>
   </section>
   <section class="section-pad cs-chapter">
@@ -245,10 +267,11 @@
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>Out In The World</h3><h4>Brand at the scale of the work.</h4></div>
-    <div class="ch-intro reveal"><p>C-Quest works on developments you can see from space. The brand had to read at that size, on hoardings, signage and environments, without losing the precision that defines it.</p></div>
-    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/env-2.jpg" alt="C-Quest env 2"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/env-3.jpg" alt="C-Quest env 3"/></div></div></div>
-    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/env-4.jpg" alt="C-Quest env 4"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/env-5.jpg" alt="C-Quest env 5"/></div></div></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/wide-1.jpg" alt="C-Quest wide 1"/><div class="cs-cap">From a business card to a building. One system, every scale.</div></div>
+    <div class="ch-intro reveal"><p>C-Quest works on developments you can see from space. The brand had to read at that size, on hoardings, transit and shop fronts, without losing the precision that defines it.</p></div>
+    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/env-billboard.jpg" alt="C-Quest billboard, out of home"/><div class="cs-cap">Out of home, at full scale.</div></div>
+    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/env-transit-day.jpg" alt="C-Quest transit poster"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/env-window.jpg" alt="C-Quest posters in a shop front"/></div></div></div>
+    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/env-poster-wood.jpg" alt="C-Quest framed poster"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/env-transit-night.jpg" alt="C-Quest transit lockup at dusk"/></div></div></div>
+    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/env-kiosk-photo.jpg" alt="C-Quest street kiosk, project imagery"/><div class="cs-cap">From a business card to a building. One system, every scale.</div></div>
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>Social And Activation</h3><h4>Consistent down to a single post.</h4></div>
