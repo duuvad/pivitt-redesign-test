@@ -4,7 +4,40 @@
 <title>C-Quest &middot; Pivitt</title><meta name="robots" content="noindex"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=36"></head><body>
+<link rel="stylesheet" href="assets/site.css?v=36">
+<style>
+/* C-Quest crosshair feature, scoped to this page */
+.cq{--cqr:#CF0A2C}
+.cq-figure{position:relative;margin-top:clamp(28px,3.6vw,60px);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:radial-gradient(120% 130% at 50% -10%,#0d0d17,#070710)}
+.cq-figure svg{display:block;width:100%;height:auto}
+.cq-figure .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.15s var(--ease)}
+.reveal.in .cq-figure .ln{stroke-dashoffset:0}
+.cq-figure .ln.d2{transition-delay:.16s}
+.cq-figure .ln.d3{transition-delay:.32s}
+.cq-figure .ln.d4{transition-delay:.5s}
+.cq-figure .fade{opacity:0;transition:opacity .8s var(--ease) .5s}
+.reveal.in .cq-figure .fade{opacity:1}
+.cq-figure .fade.d2{transition-delay:.85s}
+.cq-figure .lab{opacity:0;transition:opacity .7s var(--ease) 1s}
+.reveal.in .cq-figure .lab{opacity:1}
+@media(prefers-reduced-motion:reduce){.cq-figure .ln{transition:none;stroke-dashoffset:0}.cq-figure .fade,.cq-figure .lab{transition:none;opacity:1}}
+/* four meanings */
+.cq-quad{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;margin-top:clamp(26px,3vw,46px)}
+.cq-quad .cell{background:var(--bg);padding:clamp(22px,2.3vw,36px)}
+.cq-quad .cell .n{font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--cqr)}
+.cq-quad .gly{width:clamp(46px,3.6vw,58px);height:auto;display:block;margin:20px 0 22px}
+.cq-quad h5{font-size:clamp(15px,1.35vw,19px);font-weight:400;letter-spacing:-0.02em;color:var(--t1);margin:0 0 .55em;line-height:1.2}
+.cq-quad p{font-size:13px;color:var(--t2);line-height:1.62;margin:0}
+@media(max-width:820px){.cq-quad{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.cq-quad{grid-template-columns:1fr}}
+/* frames demo */
+.cq-frame{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,26px);margin-top:clamp(26px,3vw,46px)}
+.cq-frame figure{margin:0;border:1px solid var(--bdr);border-radius:11px;overflow:hidden;background:#0a0a12}
+.cq-frame svg{display:block;width:100%;height:auto}
+.cq-frame figcaption{font-size:12.5px;color:var(--t3);line-height:1.5;padding:13px 16px;border-top:1px solid var(--bdr)}
+@media(max-width:720px){.cq-frame{grid-template-columns:1fr}}
+</style>
+</head><body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
 <aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">C-Quest</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
@@ -63,11 +96,126 @@
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>The Strategic Move</h3><h4>Make precision the brand, because precision is the product.</h4></div>
-    <div class="ch-intro reveal"><p>C-Quest sells one thing above all: financial certainty on projects where a rounding error runs to millions. So we built the brand on precision itself. The identity is drawn from the survey reticle, the instrument of measured accuracy, turned into a system that frames information rather than decorating it. Position, voice and visual language all point at the same idea, carried in one line the whole firm could stand behind. Strategic Cost Solutions.</p></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/system-overview.jpg" alt="C-Quest system overview"/><div class="cs-cap">One system, six categories, governed together.</div></div>
+    <div class="ch-intro reveal"><p>C-Quest sells financial certainty on projects where a rounding error runs to millions. The whole firm turns on accuracy, so we built the brand on accuracy itself. Rather than reach for the usual language of trust, we took the instrument that defines the work, the surveyor&rsquo;s crosshair, and made it the centre of the identity. Position, voice and visual system all resolve to one idea the firm could stand behind in any room. Strategic Cost Solutions.</p></div>
   </section>
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal" style="margin-top:0"><h3>Finding The Direction</h3><h4>Three concepts. One answer.</h4></div>
+    <div class="cs-sec reveal" style="margin-top:0"><h3>The Idea</h3><h4>One mark, drawn from the instrument of measured accuracy.</h4></div>
+    <div class="ch-intro reveal"><p>The crosshair is read the same way wherever it appears. In surveying, construction and cost consultancy it means accuracy, balance and technical control, the act of taking a precise reading before anything is committed. We took that mark, the reticle at the centre of every measuring instrument, and built the C-Quest identity from it. Repeated across a measured grid, one symbol becomes a whole brand pattern. It does not decorate the brand. It is the brand.</p></div>
+
+<div class="cq cq-figure reveal">
+<svg viewBox="0 0 1120 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The C-Quest reticle, rebuilt as a brand pattern that frames a clear central space">
+<defs>
+<pattern id="cqtile" width="80" height="80" patternUnits="userSpaceOnUse">
+<g stroke="#CF0A2C" fill="none" stroke-width="1">
+<line x1="40" y1="22" x2="40" y2="33"/><line x1="40" y1="47" x2="40" y2="58"/>
+<line x1="22" y1="40" x2="33" y2="40"/><line x1="47" y1="40" x2="58" y2="40"/>
+</g>
+<circle cx="40" cy="40" r="1.3" fill="#CF0A2C"/>
+<circle cx="0" cy="0" r="1" fill="#CF0A2C"/><circle cx="80" cy="0" r="1" fill="#CF0A2C"/>
+<circle cx="0" cy="80" r="1" fill="#CF0A2C"/><circle cx="80" cy="80" r="1" fill="#CF0A2C"/>
+</pattern>
+<radialGradient id="cqsafe" cx="50%" cy="50%" r="60%">
+<stop offset="0%" stop-color="#080810" stop-opacity="1"/>
+<stop offset="44%" stop-color="#080810" stop-opacity="0.94"/>
+<stop offset="100%" stop-color="#080810" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<!-- brand pattern field, faded toward the centre to hold a safe space -->
+<rect class="fade" width="1120" height="540" fill="url(#cqtile)" opacity="0.55"/>
+<rect class="fade" width="1120" height="540" fill="url(#cqsafe)"/>
+<!-- inner frame brackets, white hairline -->
+<g stroke="rgba(255,255,255,0.30)" fill="none" stroke-width="1">
+<path class="ln d3" pathLength="1" d="M372 120 H406 M372 120 V154"/>
+<path class="ln d3" pathLength="1" d="M748 120 H714 M748 120 V154"/>
+<path class="ln d3" pathLength="1" d="M372 420 H406 M372 420 V386"/>
+<path class="ln d3" pathLength="1" d="M748 420 H714 M748 420 V386"/>
+</g>
+<!-- the reticle, CQ red, open centre -->
+<g stroke="#CF0A2C" fill="none" stroke-width="2.2" stroke-linecap="round">
+<path class="ln" pathLength="1" d="M560 100 V238"/>
+<path class="ln" pathLength="1" d="M560 302 V440"/>
+<path class="ln" pathLength="1" d="M388 270 H530"/>
+<path class="ln" pathLength="1" d="M590 270 H732"/>
+<circle class="ln d2" pathLength="1" cx="560" cy="270" r="30"/>
+</g>
+<!-- registration ticks: measurement along the axes -->
+<g stroke="#CF0A2C" stroke-width="1.4" class="ln d2" pathLength="1">
+<path d="M549 140 H571 M553 192 H567 M549 400 H571 M553 348 H567" fill="none"/>
+<path d="M440 259 V281 M492 263 V277 M680 259 V281 M628 263 V277" fill="none"/>
+</g>
+<!-- centre point -->
+<circle class="fade d2" cx="560" cy="270" r="2.6" fill="#CF0A2C"/>
+<!-- a measured baseline -->
+<g stroke="rgba(255,255,255,0.26)" stroke-width="1" class="ln d4" pathLength="1">
+<path d="M388 486 H732 M388 480 V492 M732 480 V492 M474 482 V490 M560 482 V490 M646 482 V490" fill="none"/>
+</g>
+</svg>
+</div>
+
+    <div class="cs-cap reveal">The reticle, rebuilt as a brand pattern. One mark holds the meaning. Repeated, it becomes the system that frames everything C-Quest puts its name to, while the centre stays clear for the work.</div>
+  </section>
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal" style="margin-top:0"><h3>The Meaning</h3><h4>Four readings, held in a single mark.</h4></div>
+    <div class="ch-intro reveal"><p>A symbol only works when everyone reads it the same way. The crosshair carries four meanings at once, each one true to how C-Quest works. They became the foundation the rest of the system was built on.</p></div>
+
+<div class="cq cq-quad reveal">
+<div class="cell"><span class="n">01</span><svg class="gly" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g stroke="#CF0A2C" stroke-width="1.7" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="25"/><line x1="32" y1="39" x2="32" y2="58"/><line x1="6" y1="32" x2="25" y2="32"/><line x1="39" y1="32" x2="58" y2="32"/></g>
+<g stroke="rgba(255,255,255,0.45)" stroke-width="1"><line x1="27" y1="13" x2="37" y2="13"/><line x1="28.5" y1="19" x2="35.5" y2="19"/><line x1="27" y1="51" x2="37" y2="51"/><line x1="28.5" y1="45" x2="35.5" y2="45"/></g>
+<circle cx="32" cy="32" r="2" fill="#CF0A2C"/></svg><h5>Precision &amp; measurement</h5><p>Every figure checked, every reading exact. The starting point of cost certainty.</p></div>
+<div class="cell"><span class="n">02</span><svg class="gly" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g stroke="#CF0A2C" stroke-width="1.7" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="18"/><line x1="32" y1="46" x2="32" y2="58"/><line x1="6" y1="32" x2="18" y2="32"/><line x1="46" y1="32" x2="58" y2="32"/></g>
+<circle cx="32" cy="32" r="13" stroke="rgba(255,255,255,0.42)" stroke-width="1"/>
+<circle cx="32" cy="32" r="3" fill="#CF0A2C"/></svg><h5>Focus &amp; orientation</h5><p>A fixed point inside complex projects, showing where attention belongs.</p></div>
+<div class="cell"><span class="n">03</span><svg class="gly" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="11" y="11" width="42" height="42" rx="2" stroke="rgba(255,255,255,0.42)" stroke-width="1"/>
+<g stroke="#CF0A2C" stroke-width="1.7" stroke-linecap="round"><line x1="32" y1="20" x2="32" y2="44"/><line x1="20" y1="32" x2="44" y2="32"/></g>
+<circle cx="32" cy="32" r="2" fill="#CF0A2C"/></svg><h5>Balance &amp; structure</h5><p>Order held under pressure. The discipline that keeps a budget intact.</p></div>
+<div class="cell"><span class="n">04</span><svg class="gly" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g stroke="#CF0A2C" stroke-width="1.3"><line x1="32" y1="32" x2="12" y2="14"/><line x1="32" y1="32" x2="52" y2="14"/><line x1="32" y1="32" x2="12" y2="50"/><line x1="32" y1="32" x2="52" y2="50"/></g>
+<g fill="#080810" stroke="#CF0A2C" stroke-width="1.5"><circle cx="12" cy="14" r="3.4"/><circle cx="52" cy="14" r="3.4"/><circle cx="12" cy="50" r="3.4"/><circle cx="52" cy="50" r="3.4"/></g>
+<circle cx="32" cy="32" r="3.4" fill="#CF0A2C"/></svg><h5>Connection &amp; mapping</h5><p>The relationships across a project, from first estimate to final account.</p></div>
+</div>
+
+  </section>
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal" style="margin-top:0"><h3>The Rule</h3><h4>The pattern frames the work. It never competes with it.</h4></div>
+    <div class="ch-intro reveal"><p>A pattern this strong can take over a page. We set one rule to stop that. The crosshair belongs at the edges, guiding the eye inward and holding a calm, clear space for the content. A shallow gradient softens it where it meets the message, so it adds authority instead of noise.</p></div>
+
+<div class="cq cq-frame reveal">
+<figure>
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pattern at full strength competing with the content">
+<defs><pattern id="cqd1" width="52" height="52" patternUnits="userSpaceOnUse">
+<g stroke="#CF0A2C" stroke-width="1" fill="none"><line x1="26" y1="15" x2="26" y2="22"/><line x1="26" y1="30" x2="26" y2="37"/><line x1="15" y1="26" x2="22" y2="26"/><line x1="30" y1="26" x2="37" y2="26"/></g>
+<circle cx="26" cy="26" r="1.1" fill="#CF0A2C"/><circle cx="0" cy="0" r="1" fill="#CF0A2C"/><circle cx="52" cy="0" r="1" fill="#CF0A2C"/><circle cx="0" cy="52" r="1" fill="#CF0A2C"/><circle cx="52" cy="52" r="1" fill="#CF0A2C"/></pattern></defs>
+<rect width="520" height="320" fill="#0a0a12"/>
+<rect width="520" height="320" fill="url(#cqd1)" opacity="0.85"/>
+<g opacity="0.30"><rect x="40" y="66" width="220" height="15" rx="2" fill="rgba(255,255,255,0.85)"/><rect x="40" y="100" width="300" height="6" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="40" y="116" width="300" height="6" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="40" y="132" width="170" height="6" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="312" y="150" width="168" height="120" rx="6" fill="rgba(255,255,255,0.16)"/></g>
+</svg>
+<figcaption>Full strength, the pattern fights the message.</figcaption>
+</figure>
+<figure>
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pattern pulled to the frame, leaving the content clear">
+<defs><pattern id="cqd2" width="52" height="52" patternUnits="userSpaceOnUse">
+<g stroke="#CF0A2C" stroke-width="1" fill="none"><line x1="26" y1="15" x2="26" y2="22"/><line x1="26" y1="30" x2="26" y2="37"/><line x1="15" y1="26" x2="22" y2="26"/><line x1="30" y1="26" x2="37" y2="26"/></g>
+<circle cx="26" cy="26" r="1.1" fill="#CF0A2C"/><circle cx="0" cy="0" r="1" fill="#CF0A2C"/><circle cx="52" cy="0" r="1" fill="#CF0A2C"/><circle cx="0" cy="52" r="1" fill="#CF0A2C"/><circle cx="52" cy="52" r="1" fill="#CF0A2C"/></pattern></defs>
+<rect width="520" height="320" fill="#0a0a12"/>
+<rect width="520" height="320" fill="url(#cqd2)" opacity="0.8"/>
+<rect x="40" y="40" width="440" height="240" rx="10" fill="#0a0a12"/>
+<g stroke="#CF0A2C" stroke-width="1.6" fill="none"><path d="M40 58 V40 H58 M462 40 H480 V58 M480 262 V280 H462 M58 280 H40 V262"/></g>
+<rect x="66" y="84" width="200" height="15" rx="2" fill="rgba(255,255,255,0.92)"/>
+<rect x="66" y="120" width="280" height="6" rx="3" fill="rgba(255,255,255,0.55)"/><rect x="66" y="136" width="280" height="6" rx="3" fill="rgba(255,255,255,0.55)"/><rect x="66" y="152" width="150" height="6" rx="3" fill="rgba(255,255,255,0.55)"/>
+<rect x="318" y="92" width="150" height="128" rx="6" fill="rgba(255,255,255,0.16)"/>
+</svg>
+<figcaption>Pulled to the frame, the eye goes straight to the work.</figcaption>
+</figure>
+</div>
+
+    <div class="ch-intro reveal" style="margin-top:clamp(34px,4vw,64px)"><p>On the live platform the rule does its work. The pattern frames the headline and the project imagery, then steps back so the message carries.</p></div>
+    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/system-overview.jpg" alt="C-Quest website, the pattern framing the content"/><div class="cs-cap">The website. The pattern frames the content and points the eye at it.</div></div>
+  </section>
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal" style="margin-top:0"><h3>Finding The Direction</h3><h4>Three concepts, taken far enough to choose on evidence.</h4></div>
     <div class="ch-intro reveal"><p>We did not pick a direction on taste. We developed three complete systems and took each far enough to live: the mark, the type, the colour logic, the imagery language and real application. Then we chose on evidence, not preference.</p></div>
     <div class="dir-head reveal"><span class="n">DIRECTION 01</span><h4>Dark green. A foundation of trust.</h4><span class="dot" style="background:#aacb3f"></span></div>
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d1-logo.jpg" alt="C-Quest d1-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-type.jpg" alt="C-Quest d1-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-colour.jpg" alt="C-Quest d1-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-3d.jpg" alt="C-Quest d1-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-cover.jpg" alt="C-Quest d1-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d1-web.jpg" alt="C-Quest d1-web"/></div><div class="lbl">Website</div></div></div>
@@ -75,16 +223,16 @@
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d2-logo.jpg" alt="C-Quest d2-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-type.jpg" alt="C-Quest d2-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-colour.jpg" alt="C-Quest d2-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-3d.jpg" alt="C-Quest d2-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-cover.jpg" alt="C-Quest d2-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d2-web.jpg" alt="C-Quest d2-web"/></div><div class="lbl">Website</div></div></div>
     <div class="dir-head reveal"><span class="n">DIRECTION 03</span><h4>Red and deep teal. Refined resilience.</h4><span class="dot" style="background:#1f8a7e"></span></div>
     <div class="dir-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/d3-logo.jpg" alt="C-Quest d3-logo"/></div><div class="lbl">Logo</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-type.jpg" alt="C-Quest d3-type"/></div><div class="lbl">Typography</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-colour.jpg" alt="C-Quest d3-colour"/></div><div class="lbl">Colour</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-3d.jpg" alt="C-Quest d3-3d"/></div><div class="lbl">Imagery</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-cover.jpg" alt="C-Quest d3-cover"/></div><div class="lbl">Application</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/d3-web.jpg" alt="C-Quest d3-web"/></div><div class="lbl">Website</div></div></div>
-    <div class="ch-intro reveal" style="margin-top:clamp(40px,5vw,80px)"><p>Three fully-resolved systems, not three sketches. We pressure-tested each against the position, the market and everyday use. The red direction carried the most conviction and the clearest read at every size. We refined it into the final system, then proved the call with testing.</p></div>
+    <div class="ch-intro reveal" style="margin-top:clamp(40px,5vw,80px)"><p>Three resolved systems, not three sketches. We pressure-tested each against the position, the market and everyday use. The red direction carried the most conviction and the clearest read at every size. We refined it into the final system, then proved the call with testing.</p></div>
   </section>
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal" style="margin-top:0"><h3>Precision, Proven</h3><h4>We measured the identity instead of defending it.</h4></div>
-    <div class="ch-intro reveal"><p>A brand built on precision cannot ship on opinion. We ran the core pattern through heatmap and contrast-grid testing at two strengths. At full strength it competed with the content and clarity scored 56. Pulled back to a quarter, the hierarchy held and clarity rose to 63, with reader focus unchanged at 78. The pattern ships at the level the data supported, not the one that looked busiest.</p></div>
+    <div class="cs-sec reveal" style="margin-top:0"><h3>Precision, Proven</h3><h4>We measured the pattern instead of defending it.</h4></div>
+    <div class="ch-intro reveal"><p>A brand built on precision could not ship the framing rule on opinion. We ran the core pattern through heatmap and contrast-grid testing at two strengths. At full strength it competed with the content and clarity scored 56. Pulled back to a quarter, the hierarchy held and clarity rose to 63, with reader focus unchanged at 78. The pattern ships at the level the data supported, not the one that looked busiest.</p></div>
     <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/heat-100a.jpg" alt="C-Quest heat 100a"/></div><div class="cs-cap">Full strength. The pattern competes with the message. Clarity 56.</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/heat-25a.jpg" alt="C-Quest heat 25a"/></div><div class="cs-cap">A quarter strength. The message wins. Clarity 63. The version that shipped.</div></div></div>
     <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/heat-100b.jpg" alt="C-Quest heat 100b"/></div><div class="cs-cap">Contrast-grid read at full strength.</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/heat-25b.jpg" alt="C-Quest heat 25b"/></div><div class="cs-cap">Contrast-grid read at a quarter. Focus held at 78 in both.</div></div></div>
   </section>
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal" style="margin-top:0"><h3>The Identity, In Hand</h3><h4>Built to be used, not admired.</h4></div>
+    <div class="cs-sec reveal" style="margin-top:0"><h3>The Identity, In Hand</h3><h4>Built to be used in the field.</h4></div>
     <div class="ch-intro reveal"><p>A brand earns its keep the moment it leaves the screen, a card handed across a table on a project worth billions. The pattern is debossed, quiet and precise, so the firm reads as serious before a word is spoken.</p></div>
     <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/cards.jpg" alt="C-Quest cards"/><div class="cs-cap">Business cards. Precision you can hold.</div></div>
   </section>
@@ -108,7 +256,7 @@
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>The Visual Language</h3><h4>Real scale, real people.</h4></div>
-    <div class="ch-intro reveal"><p>Two image rules carry the brand. Projects are framed for form, geometry and light. People are shot natural and unposed. Serious and human inside one system.</p></div>
+    <div class="ch-intro reveal"><p>Two image rules carry the brand. Projects are framed for form, geometry and light. People are shot natural and unposed, the human side of a precise business.</p></div>
     <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/render-1.jpg" alt="C-Quest render 1"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/render-2.jpg" alt="C-Quest render 2"/></div></div></div>
     <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/render-3.jpg" alt="C-Quest render 3"/></div></div><div><div class="shot"><img loading="lazy" src="images/cquest/render-4.jpg" alt="C-Quest render 4"/></div></div></div>
     <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/portraits.jpg" alt="C-Quest portraits"/><div class="cs-cap">People, shot with shallow depth and no pose. The human side of precision.</div></div>
