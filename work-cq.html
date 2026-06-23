@@ -36,6 +36,8 @@
 .cq-frame svg{display:block;width:100%;height:auto}
 .cq-frame figcaption{font-size:12.5px;color:var(--t3);line-height:1.5;padding:13px 16px;border-top:1px solid var(--bdr)}
 @media(max-width:720px){.cq-frame{grid-template-columns:1fr}}
+/* keep full-bleed mockups within their native resolution: cap and centre so they never upscale */
+.cs-bleed{max-width:1080px;margin-left:auto;margin-right:auto}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -239,8 +241,7 @@
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>The Brand, Online</h3><h4>The platform, in the room.</h4></div>
     <div class="ch-intro reveal"><p>The new website turns the system into a clean, modular platform. It states the position plainly, then scales into project and sector pages as the portfolio grows.</p></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/env-1.jpg" alt="C-Quest env 1"/><div class="cs-cap">The website, in context.</div></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/cquest/env-6.jpg" alt="C-Quest env 6"/><div class="cs-cap">Homepage and project showcase, built to extend.</div></div>
+    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/env-1.jpg" alt="C-Quest website in context"/></div><div class="cs-cap">The website, in context.</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/env-6.jpg" alt="C-Quest homepage and project showcase"/></div><div class="cs-cap">Homepage and project showcase, built to extend.</div></div></div>
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>Out In The World</h3><h4>Brand at the scale of the work.</h4></div>
