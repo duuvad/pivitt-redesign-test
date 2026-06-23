@@ -11,16 +11,17 @@
 .cq-figure{position:relative;margin-top:clamp(28px,3.6vw,60px);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:radial-gradient(120% 130% at 50% -10%,#0d0d17,#070710)}
 .cq-figure svg{display:block;width:100%;height:auto}
 .cq-figure .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.15s var(--ease)}
-.reveal.in .cq-figure .ln{stroke-dashoffset:0}
+.cq-figure.reveal.in .ln{stroke-dashoffset:0}
 .cq-figure .ln.d2{transition-delay:.16s}
 .cq-figure .ln.d3{transition-delay:.32s}
 .cq-figure .ln.d4{transition-delay:.5s}
 .cq-figure .fade{opacity:0;transition:opacity .8s var(--ease) .5s}
-.reveal.in .cq-figure .fade{opacity:1}
+.cq-figure.reveal.in .fade{opacity:1}
 .cq-figure .fade.d2{transition-delay:.85s}
 .cq-figure .lab{opacity:0;transition:opacity .7s var(--ease) 1s}
-.reveal.in .cq-figure .lab{opacity:1}
+.cq-figure.reveal.in .lab{opacity:1}
 @media(prefers-reduced-motion:reduce){.cq-figure .ln{transition:none;stroke-dashoffset:0}.cq-figure .fade,.cq-figure .lab{transition:none;opacity:1}}
+.no-js .cq-figure .ln{stroke-dashoffset:0}.no-js .cq-figure .fade,.no-js .cq-figure .lab{opacity:1}.no-js .cq-gauges .arc{stroke-dashoffset:var(--v)}
 /* four meanings */
 .cq-quad{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;margin-top:clamp(26px,3vw,46px)}
 .cq-quad .cell{background:var(--bg);padding:clamp(22px,2.3vw,36px)}
@@ -69,7 +70,7 @@
 .cq-gauges .ring svg{display:block;width:100%;height:auto;transform:rotate(-90deg)}
 .cq-gauges .trk{fill:none;stroke:rgba(255,255,255,0.08);stroke-width:6}
 .cq-gauges .arc{fill:none;stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s var(--ease)}
-.reveal.in .cq-gauges .arc{stroke-dashoffset:var(--v)}
+.cq-gauges.reveal.in .arc{stroke-dashoffset:var(--v)}
 .cq-gauges .val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(30px,3.2vw,44px);font-weight:200;letter-spacing:-0.03em;color:var(--t1)}
 .cq-gauges .glab{display:block;margin-top:16px;font-size:12.5px;line-height:1.55;color:var(--t3)}
 .cq-gauges .glab b{display:inline-block;margin-bottom:3px;color:var(--t1);font-weight:500;letter-spacing:.04em}
@@ -87,6 +88,20 @@
 .cq-spine .node b{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--t1)}
 .cq-spine .node span{display:block;font-size:12px;color:var(--t3);margin-top:5px;line-height:1.45;max-width:18ch;margin-left:auto;margin-right:auto}
 @media(max-width:680px){.cq-spine{flex-direction:column;gap:24px}.cq-spine .node{display:flex;align-items:center;gap:18px;text-align:left;padding:0}.cq-spine .node svg{margin:0;flex:none;background:none}.cq-spine .node span{margin:5px 0 0;max-width:none}.cq-spine .node:not(:last-child)::after{display:none}}
+
+/* testing showcase: heatmap + contrast grid */
+.cq-test{margin-top:clamp(30px,3.6vw,56px);display:flex;flex-direction:column;gap:clamp(34px,4.2vw,66px)}
+.cq-test .ghead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding-bottom:13px;border-bottom:1px solid var(--bdr);margin-bottom:clamp(16px,2vw,26px)}
+.cq-test .gt{font-size:clamp(16px,1.5vw,22px);font-weight:300;letter-spacing:-0.02em;color:var(--t1)}
+.cq-test .gs{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);display:inline-flex;align-items:center;gap:9px}
+.cq-test .gs i{width:9px;height:9px;border-radius:50%;flex:none}
+.cq-test .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
+.cq-test figure{margin:0}
+.cq-test .fr{position:relative;border:1px solid var(--bdr);border-radius:10px;overflow:hidden;background:#0a0a12}
+.cq-test .fr img{display:block;width:100%;height:auto}
+.cq-test .badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t1);background:rgba(7,7,11,0.66);border:1px solid var(--bdr);border-radius:6px;padding:5px 11px;backdrop-filter:blur(6px)}
+.cq-test figcaption{font-size:12.5px;color:var(--t3);line-height:1.55;margin-top:11px}
+@media(max-width:680px){.cq-test .pair{grid-template-columns:1fr}}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -276,10 +291,9 @@
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>Precision, Proven</h3><h4>We measured the pattern instead of defending it.</h4></div>
-    <div class="ch-intro reveal"><p>A brand built on precision could not ship the framing rule on opinion. We ran the core pattern through heatmap and contrast-grid testing at two strengths. At full strength it competed with the content and clarity scored 56. Pulled back to a quarter, the hierarchy held and clarity rose to 63, with reader focus unchanged at 78. The pattern ships at the level the data supported, not the one that looked busiest.</p></div>
+    <div class="ch-intro reveal"><p>A brand built on precision could not ship the framing rule on opinion, so we measured it. We ran the design through two AI tools, an attention heatmap and a contrast grid, at two pattern strengths. The heatmap shows where the eye actually goes. The grid scores every cell for how hard it competes for attention. At full strength the pattern pulled focus and clarity scored 56. Pulled back to a quarter, the hierarchy held, clarity rose to 63, and reader focus stayed at 78.</p></div>
     <div class="cq cq-gauges reveal"><div class="g"><div class="ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42" pathLength="1" style="--v:.44;stroke:#F59E0B"/></svg><span class="val">56</span></div><span class="glab"><b>Clarity</b>Pattern at full strength<br>Moderate</span></div><div class="g"><div class="ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42" pathLength="1" style="--v:.37;stroke:#10B981"/></svg><span class="val">63</span></div><span class="glab"><b>Clarity</b>Pattern at a quarter<br>Optimal, the version that shipped</span></div><div class="g"><div class="ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42" pathLength="1" style="--v:.22;stroke:#06B6D4"/></svg><span class="val">78</span></div><span class="glab"><b>Focus</b>Reader attention<br>Held steady across both</span></div></div>
-    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/heat-100a.jpg" alt="C-Quest heat 100a"/></div><div class="cs-cap">Full strength. The pattern competes with the message. Clarity 56.</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/heat-25a.jpg" alt="C-Quest heat 25a"/></div><div class="cs-cap">A quarter strength. The message wins. Clarity 63. The version that shipped.</div></div></div>
-    <div class="cs-shots reveal"><div><div class="shot"><img loading="lazy" src="images/cquest/heat-100b.jpg" alt="C-Quest heat 100b"/></div><div class="cs-cap">Contrast-grid read at full strength.</div></div><div><div class="shot"><img loading="lazy" src="images/cquest/heat-25b.jpg" alt="C-Quest heat 25b"/></div><div class="cs-cap">Contrast-grid read at a quarter. Focus held at 78 in both.</div></div></div>
+    <div class="cq cq-test reveal"><div class="grp"><div class="ghead"><span class="gt">Pattern at full strength</span><span class="gs"><i style="background:#F59E0B"></i>Clarity 56 &middot; moderate</span></div><div class="pair"><figure><div class="fr"><span class="badge">Heatmap</span><img loading="lazy" src="images/cquest/heat-100a.jpg" alt="C-Quest heatmap"/></div><figcaption>Attention scatters off the message and onto the pattern and the frame.</figcaption></figure><figure><div class="fr"><span class="badge">Contrast grid</span><img loading="lazy" src="images/cquest/heat-100b.jpg" alt="C-Quest contrast grid"/></div><figcaption>The AI reads the pattern cells as objects that compete with the content.</figcaption></figure></div></div><div class="grp"><div class="ghead"><span class="gt">Pattern at a quarter</span><span class="gs"><i style="background:#10B981"></i>Clarity 63 &middot; optimal, the version that shipped</span></div><div class="pair"><figure><div class="fr"><span class="badge">Heatmap</span><img loading="lazy" src="images/cquest/heat-25a.jpg" alt="C-Quest heatmap"/></div><figcaption>Attention holds where it should, on the headline and the image.</figcaption></figure><figure><div class="fr"><span class="badge">Contrast grid</span><img loading="lazy" src="images/cquest/heat-25b.jpg" alt="C-Quest contrast grid"/></div><figcaption>The grid recedes into the background and the hierarchy stays intact.</figcaption></figure></div></div></div>
   </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>The Identity, In Hand</h3><h4>Built to be used in the field.</h4></div>
