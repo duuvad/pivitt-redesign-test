@@ -29,6 +29,46 @@
 .mg-story{flex:0 0 auto;width:clamp(158px,38vw,208px);scroll-snap-align:start}
 .mg-story img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
 .mg-hint{font-size:12px;color:var(--t3);margin-top:8px;letter-spacing:0.02em}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px)}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px)}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+.hz-feature{max-width:480px;margin:clamp(26px,3vw,44px) auto 0;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#000}
+.hz-feature img{display:block;width:100%;height:auto}
+.hz-three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(26px,3vw,44px);max-width:760px}
+.hz-three img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -65,7 +105,11 @@
 <div class="mm-col"><span class="mm-h">Method</span><a href="method.html">The method</a><a href="360-model.html">The 360 Model</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">System vs pieces</a></div>
 <div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
 </div></div><main class="page">
-  <section class="cs-hero"><img src="images/mini/horizon/hero.jpg" alt="Change is on the Horizon, a road climbing toward first light"/><div class="scr"></div></section>
+  <section class="hz-hero">
+    <video data-reel autoplay muted loop playsinline preload="metadata" poster="videos/mini/horizon-hero.jpg"><source src="videos/mini/horizon-hero.mp4" type="video/mp4"></video>
+    <div class="scr"></div>
+    <div class="hz-cap"><span class="eyebrow">MINI &middot; Launch campaign</span><h2>Change is on the horizon.</h2></div>
+  </section>
   <section class="section-pad">
     <div class="crumb" style="padding-top:28px"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / MINI</div>
     <div class="cs-title"><h1>MINI</h1><div><div class="ctags">Change is on the Horizon &middot; Launch campaign</div><p class="cres">Launching a contactless way to buy a car, in eight simple steps.</p></div></div>
@@ -93,15 +137,41 @@
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The eight steps</h3><h4>The whole process, drawn as one road.</h4></div>
-    <div class="ch-intro reveal"><p>The heart of the campaign was a social carousel that laid the new process out as a single road, eight numbered stops from finding your MINI to taking the keys. Find your MINI, a virtual appointment, an optional test drive, pre-order with ease, compliant paperwork, a pre-handover video pack, contactless handover, and a place in the Park Lane community after. Clear enough to follow on a phone, in one sitting.</p></div>
-    <div class="mg-grid reveal" style="--min:300px"><figure style="margin:0"><img loading="lazy" src="images/mini/horizon/carousel-01.jpg" alt="MINI Change is on the Horizon carousel, frame 1"/><figcaption class="cs-cap">Change is on the horizon, the campaign image.</figcaption></figure><figure style="margin:0"><img loading="lazy" src="images/mini/horizon/carousel-02.jpg" alt="MINI Change is on the Horizon carousel, frame 2"/><figcaption class="cs-cap">Steps one to four, drawn along the road.</figcaption></figure><figure style="margin:0"><img loading="lazy" src="images/mini/horizon/carousel-03.jpg" alt="MINI Change is on the Horizon carousel, frame 3"/><figcaption class="cs-cap">Steps five to eight, through to contactless handover.</figcaption></figure><figure style="margin:0"><img loading="lazy" src="images/mini/horizon/carousel-04.jpg" alt="MINI Change is on the Horizon carousel, frame 4"/><figcaption class="cs-cap">The new service, explained in plain terms.</figcaption></figure></div>
+    <div class="ch-intro reveal"><p>The heart of the campaign was a social carousel that laid the new process out as a single road, eight numbered stops from finding your MINI to taking the keys. Find your MINI, a virtual appointment, an optional test drive, pre-order with ease, compliant paperwork, a pre-handover video pack, contactless handover, and a place in the Park Lane community after.</p></div>
+    <div class="hz-four reveal"><figure><img loading="lazy" src="images/mini/horizon/carousel-01.jpg" alt="Change is on the Horizon carousel frame 1"/><figcaption class="cs-cap">Change is on the horizon, the campaign image.</figcaption></figure><figure><img loading="lazy" src="images/mini/horizon/carousel-02.jpg" alt="Change is on the Horizon carousel frame 2"/><figcaption class="cs-cap">Steps one to four, drawn along the road.</figcaption></figure><figure><img loading="lazy" src="images/mini/horizon/carousel-03.jpg" alt="Change is on the Horizon carousel frame 3"/><figcaption class="cs-cap">Steps five to eight, through to contactless handover.</figcaption></figure><figure><img loading="lazy" src="images/mini/horizon/carousel-04.jpg" alt="Change is on the Horizon carousel frame 4"/><figcaption class="cs-cap">The new service, explained in plain terms.</figcaption></figure></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>In stories</h3><h4>The same road, one step at a time.</h4></div>
-    <div class="ch-intro reveal"><p>The eight steps ran as Instagram stories too, each step its own frame with a clear icon and a line of plain explanation, produced as a set so the series held together across the feed.</p></div>
-    <div class="mg-strip reveal"><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-01.jpg" alt="MINI eight-step process, step 1"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-02.jpg" alt="MINI eight-step process, step 2"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-03.jpg" alt="MINI eight-step process, step 3"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-04.jpg" alt="MINI eight-step process, step 4"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-05.jpg" alt="MINI eight-step process, step 5"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-06.jpg" alt="MINI eight-step process, step 6"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-07.jpg" alt="MINI eight-step process, step 7"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-08.jpg" alt="MINI eight-step process, step 8"/></div></div>
+    <div class="cs-sec reveal"><h3>The system</h3><h4>A set of icons, a run of stories.</h4></div>
+    <div class="ch-intro reveal"><p>Each step had its own icon and its own story frame, a small system that let the process scale from one carousel to a full run of stories without losing its shape.</p></div>
+    <div class="hz-icons reveal"><img loading="lazy" src="images/mini/horizon/icons/ic-1.png" alt="MINI process icon 1"/><img loading="lazy" src="images/mini/horizon/icons/ic-2.png" alt="MINI process icon 2"/><img loading="lazy" src="images/mini/horizon/icons/ic-3.png" alt="MINI process icon 3"/><img loading="lazy" src="images/mini/horizon/icons/ic-4.png" alt="MINI process icon 4"/><img loading="lazy" src="images/mini/horizon/icons/ic-5.png" alt="MINI process icon 5"/><img loading="lazy" src="images/mini/horizon/icons/ic-6.png" alt="MINI process icon 6"/><img loading="lazy" src="images/mini/horizon/icons/ic-7.png" alt="MINI process icon 7"/><img loading="lazy" src="images/mini/horizon/icons/ic-8.png" alt="MINI process icon 8"/></div>
+    <div class="mg-strip reveal" style="margin-top:clamp(24px,3vw,40px)"><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-01.jpg" alt="Eight-step process, step 1"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-02.jpg" alt="Eight-step process, step 2"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-03.jpg" alt="Eight-step process, step 3"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-04.jpg" alt="Eight-step process, step 4"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-05.jpg" alt="Eight-step process, step 5"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-06.jpg" alt="Eight-step process, step 6"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-07.jpg" alt="Eight-step process, step 7"/></div><div class="mg-story"><img loading="lazy" src="images/mini/horizon/step-08.jpg" alt="Eight-step process, step 8"/></div></div>
     <div class="mg-hint">Scroll to read all eight steps.</div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The road map</h3><h4>The eight steps as one continuous road.</h4></div>
+    <div class="ch-intro reveal"><p>Pulled together, the eight steps became a single road map that a customer could read top to bottom, the whole new way to buy in one frame.</p></div>
+    <div class="hz-feature reveal"><img loading="lazy" src="images/mini/horizon/roadmap.jpg" alt="The eight-step road map in full"/></div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>Three colourways</h3><h4>The same frames, produced three ways.</h4></div>
+    <div class="ch-intro reveal"><p>Every step was built in three colourways, so the series could run across a busy feed and still hold together as one campaign.</p></div>
+    <div class="hz-three reveal">
+      <img loading="lazy" src="images/mini/horizon/cw-white.jpg" alt="Step in the light colourway"/>
+      <img loading="lazy" src="images/mini/horizon/cw-gold.jpg" alt="Step in the gold colourway"/>
+      <img loading="lazy" src="images/mini/horizon/cw-black.jpg" alt="Step in the dark colourway"/>
+    </div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>In email and on the web</h3><h4>The line, carried across every header.</h4></div>
+    <div class="ch-intro reveal"><p>The same image and line ran as email and website headers, a calm, consistent frame for the message wherever a customer met it.</p></div>
+    <div class="hz-band reveal"><img loading="lazy" src="images/mini/horizon/header-lockup.jpg" alt="Change is on the Horizon, website and email header lockup"/></div>
+    <div class="cs-cap">The campaign lockup, used as website and email headers.</div>
+    <div class="hz-band reveal"><img loading="lazy" src="images/mini/horizon/header-email.jpg" alt="Header variant without wording"/></div>
+    <div class="cs-cap">A header variant without wording, for flexible placement.</div>
   </section>
 
   <section class="section-pad cs-chapter">
