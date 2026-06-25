@@ -4,7 +4,33 @@
 <title>MINI, Why Go Electric &middot; Pivitt</title><meta name="robots" content="noindex"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=34"></head><body>
+<link rel="stylesheet" href="assets/site.css?v=34"><style>
+/* MINI Why Go Electric, scoped gallery system */
+.mg-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,80px);align-items:center;padding-top:clamp(24px,3vw,46px)}
+.mg-hero h1{font-size:clamp(40px,7vw,96px);font-weight:300;letter-spacing:-0.045em;line-height:0.96;margin:18px 0 22px}
+.mg-hero .lead{font-size:clamp(16px,1.4vw,21px);color:var(--t1);line-height:1.55;font-weight:300;max-width:46ch}
+.mg-phone{width:clamp(230px,30vw,310px);margin:0 auto;border:1px solid var(--bdr);border-radius:18px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.mg-phone video{display:block;width:100%;height:auto}
+@media(max-width:880px){.mg-hero{grid-template-columns:1fr;gap:30px}.mg-phone{margin:0}}
+/* reel row, fixed height, widths follow native ratio */
+.mg-reels{display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,26px);align-items:flex-start;margin-top:clamp(26px,3vw,44px)}
+.mg-reel{flex:0 0 auto}
+.mg-reel .fr{height:clamp(360px,46vw,520px);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;background:#000}
+.mg-reel video{height:100%;width:auto;display:block}
+.mg-reel .cs-cap{margin-top:12px;max-width:30ch}
+@media(max-width:620px){.mg-reels{gap:16px}.mg-reel .fr{height:62vw}}
+/* square grids, tiles never exceed native 1080 */
+.mg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--min,280px)),1fr));gap:clamp(12px,1.5vw,20px);margin-top:clamp(26px,3vw,44px)}
+.mg-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+/* horizontal stories strip */
+.mg-strip{display:flex;gap:clamp(12px,1.4vw,18px);overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 18px;margin-top:clamp(22px,2.6vw,38px);-webkit-overflow-scrolling:touch}
+.mg-strip::-webkit-scrollbar{height:6px}
+.mg-strip::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
+.mg-story{flex:0 0 auto;width:clamp(158px,38vw,208px);scroll-snap-align:start}
+.mg-story img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.mg-hint{font-size:12px;color:var(--t3);margin-top:8px;letter-spacing:0.02em}
+</style>
+</head><body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
 <aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">MINI</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
@@ -39,57 +65,70 @@
 <div class="mm-col"><span class="mm-h">Method</span><a href="method.html">The method</a><a href="360-model.html">The 360 Model</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">System vs pieces</a></div>
 <div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
 </div></div><main class="page">
-  <section class="cs-hero"><img src="images/mini/mini-card-included.jpg" alt="MINI Electric charging on a city street"/><div class="scr"></div></section>
-  <section class="section-pad">
-    <div class="crumb" style="padding-top:28px"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / MINI</div>
-    <div class="cs-title"><h1>MINI</h1><div><div class="ctags">Why Go Electric &middot; Integrated campaign</div><p class="cres">A multi-touchpoint campaign that answered the real reasons people hesitate on electric.</p></div></div>
-    <div class="cs-narr">
-<p class="lead" style="max-width:64ch">MINI had a strong electric and plug-in hybrid range and an audience that liked the idea of it. What slowed the decision was doubt, the practical questions people ask themselves before they switch. What it costs to run. Where you would charge it. Whether it fits a real life. Pivitt built a multi-touchpoint campaign that met those questions head on and answered them one at a time, from the first piece of awareness to the moment someone asked to find out more.</p>
+  <section class="section-pad" style="padding-top:clamp(96px,12vh,150px)">
+    <div class="crumb"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / MINI</div>
+    <div class="mg-hero">
+      <div>
+        <span class="eyebrow">Why Go Electric &middot; Integrated campaign</span>
+        <h1>MINI</h1>
+        <p class="lead">A multi-touchpoint campaign that answered the real reasons people hesitate on electric. One idea, carried across film, social, the MINI app and the showroom, each piece resolving a doubt and pointing to the next step.</p>
+      </div>
+      <div>
+        <div class="mg-phone"><video data-reel muted loop playsinline preload="metadata" poster="videos/mini/reel-why-go-electric.jpg"><source src="videos/mini/reel-why-go-electric.mp4" type="video/mp4"></video></div>
+        <div class="cs-cap" style="text-align:center;margin-top:14px">Why Go Electric, the campaign film.</div>
+      </div>
     </div>
   </section>
 
   <section class="section-pad"><div class="statband reveal">
-    <div class="stat"><div class="num">3</div><div class="lab">Doubts the campaign set out to answer: cost, charging and range.</div></div>
-    <div class="stat"><div class="num">1</div><div class="lab">Account for public charging, by card or through the MINI app.</div></div>
-    <div class="stat"><div class="num">&pound;0</div><div class="lab">The MINI Charge Card itself, included with every eligible electric and plug-in hybrid.</div></div>
-    <div class="stat"><div class="num">4</div><div class="lab">Touchpoints in one campaign: photography, social, in-car and direct response.</div></div>
+    <div class="stat"><div class="num">11,000+</div><div class="lab">UK charge points opened up through one account, across providers.</div></div>
+    <div class="stat"><div class="num">&pound;0</div><div class="lab">The MINI Charge Card, included with every eligible electric and plug-in hybrid.</div></div>
+    <div class="stat"><div class="num">1 yr</div><div class="lab">BP Pulse charging subscription included, normally &pound;7.85 a month.</div></div>
+    <div class="stat"><div class="num">15</div><div class="lab">FAQ stories answering the real questions, from charging to sourcing.</div></div>
   </div></section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal" style="margin-top:0"><h3>The brief</h3><h4>Grow demand for electric, against quiet hesitation.</h4></div>
-    <div class="ch-intro reveal"><p>The barrier was rarely desire. People liked the cars. They hesitated on the practical reality of living with one, and that hesitation was quiet, made up of small unanswered questions rather than a single objection. The campaign had one job: turn that doubt into confidence, in every place a MINI buyer might meet the brand.</p></div>
+    <div class="ch-intro reveal"><p>The barrier was rarely desire. People liked the cars. They hesitated on the practical reality of living with one, the cost of running it, where they would charge it, whether it fit a real life. The campaign had one job: turn that doubt into confidence, in every place a MINI buyer might meet the brand.</p></div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The idea</h3><h4>Answer the doubt, one reason at a time.</h4></div>
-    <div class="ch-intro reveal"><p>Rather than argue that electric is better, the campaign answered the specific worries that hold people back. Each touchpoint took one concern and resolved it in MINI&rsquo;s own voice, warm, plain and a little playful. Cost, addressed. Charging, addressed. Everyday life, shown rather than claimed. &ldquo;Why go electric&rdquo; stopped being a pitch and became a set of answers a person could act on.</p></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/mini/mini-campaign-board.jpg" alt="The Why Go Electric campaign across formats"/><div class="cs-cap">The campaign at a glance, the reasons to go electric carried across photography, social and the cars themselves.</div></div>
+    <div class="ch-intro reveal"><p>Rather than argue that electric is better, the campaign answered the specific worries that hold people back, each in MINI&rsquo;s own voice, warm, plain and a little playful. Cost, addressed. Charging, addressed. Everyday life, shown rather than claimed. The work ran across film, an Instagram carousel, a full series of FAQ stories, the MINI app and a dealer sales aid, so the same answers reached people wherever they were looking.</p></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The centrepiece</h3><h4>The MINI Charge Card, the largest worry answered first.</h4></div>
-    <div class="ch-intro reveal"><p>The biggest question about electric is charging, so the campaign led with the answer. The MINI Charge Card opens up public charging across networks through a single account, by card or through the MINI app, and it comes included with every eligible electric and plug-in hybrid from April 2021. We gave the Charge Card its own run of creative, from the first plain explanation to the practical detail, so the single largest objection was handled in full before it could stall a decision.</p></div>
-    <div class="cs-shots reveal">
-      <div><div class="shot"><img loading="lazy" src="images/mini/mini-charge-card.jpg" alt="Learn about the MINI Charge Card"/></div><div class="cs-cap">The way in to public charging, explained simply.</div></div>
-      <div><div class="shot"><img loading="lazy" src="images/mini/mini-complete-access.jpg" alt="One account by card or MINI app"/></div><div class="cs-cap">One account, by card or through the MINI app, in the car or out of it.</div></div>
+    <div class="cs-sec reveal"><h3>Film</h3><h4>Motion built for the feed.</h4></div>
+    <div class="ch-intro reveal"><p>Short, vertical films carried the campaign where most people now meet a brand, in the scroll. Each one took a single idea and made it move.</p></div>
+    <div class="mg-reels">
+      <div class="mg-reel reveal"><div class="fr"><video data-reel muted loop playsinline preload="metadata" poster="videos/mini/reel-wake-up.jpg"><source src="videos/mini/reel-wake-up.mp4" type="video/mp4"></video></div><div class="cs-cap">Ways to charge your MINI Electric.</div></div>
+      <div class="mg-reel reveal"><div class="fr"><video data-reel muted loop playsinline preload="metadata" poster="videos/mini/reel-design-your-way.jpg"><source src="videos/mini/reel-design-your-way.mp4" type="video/mp4"></video></div><div class="cs-cap">Design it your way, choosing your MINI Electric.</div></div>
+      <div class="mg-reel reveal"><div class="fr"><video data-reel muted loop playsinline preload="metadata" poster="videos/mini/reel-mini-app.jpg"><source src="videos/mini/reel-mini-app.mp4" type="video/mp4"></video></div><div class="cs-cap">Meet the MINI app, charging and more in one place.</div></div>
     </div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>Proof</h3><h4>Shown in real streets, included as standard.</h4></div>
-    <div class="ch-intro reveal"><p>Electric had to look like an ordinary part of a real day, so the photography put MINI Electric where people actually live, charging on a city street between one thing and the next. And the line that removed the last hesitation was simple. The Charge Card is included with the car, not an extra to weigh up. The proof did the persuading.</p></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/mini/mini-card-included.jpg" alt="MINI Electric charging, Charge Card included as standard"/><div class="cs-cap">MINI Electric in everyday life. The Charge Card included with every eligible model from April 2021.</div></div>
+    <div class="cs-sec reveal"><h3>The carousel</h3><h4>The MINI Charge Card, the largest worry answered in seven frames.</h4></div>
+    <div class="ch-intro reveal"><p>Charging is the biggest question about electric, so the campaign led with the answer. The MINI Charge Card opens up more than eleven thousand public charge points through a single account, by card or through the app, and it comes included with the car. The carousel walked through it slide by slide, from the first plain explanation to the offer that removed the last excuse.</p></div>
+    <div class="mg-grid reveal" style="--min:280px"><img loading="lazy" src="images/mini/carousel/cc-01.jpg" alt="MINI Charge Card carousel, slide 1"/><img loading="lazy" src="images/mini/carousel/cc-02.jpg" alt="MINI Charge Card carousel, slide 2"/><img loading="lazy" src="images/mini/carousel/cc-03.jpg" alt="MINI Charge Card carousel, slide 3"/><img loading="lazy" src="images/mini/carousel/cc-04.jpg" alt="MINI Charge Card carousel, slide 4"/><img loading="lazy" src="images/mini/carousel/cc-05.jpg" alt="MINI Charge Card carousel, slide 5"/><img loading="lazy" src="images/mini/carousel/cc-06.jpg" alt="MINI Charge Card carousel, slide 6"/><img loading="lazy" src="images/mini/carousel/cc-07.jpg" alt="MINI Charge Card carousel, slide 7"/></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>From interest to conversation</h3><h4>A clear way to take the next step.</h4></div>
-    <div class="ch-intro reveal"><p>Awareness only matters if it leads somewhere. Each strand of the campaign ended with an open door, an invitation to ask, built to turn a moment of interest into a direct conversation with the dealership. The same care given to the idea was given to the line that asked for the response.</p></div>
-    <div class="cs-bleed reveal"><img loading="lazy" src="images/mini/mini-find-out-more.jpg" alt="Want to find out more, DM us for details"/><div class="cs-cap">Every touchpoint closed with a clear, low-friction way to find out more.</div></div>
+    <div class="cs-sec reveal"><h3>The questions, answered</h3><h4>Fifteen stories, fifteen honest answers.</h4></div>
+    <div class="ch-intro reveal"><p>The doubts people actually have are specific. How do I pay. Where does the lithium come from. At what point is an electric MINI greener than a petrol one. The campaign answered them directly in a series of FAQ stories, in plain language, holding nothing back.</p></div>
+    <div class="mg-strip reveal"><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-01.jpg" alt="MINI Electric FAQ story 1"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-02.jpg" alt="MINI Electric FAQ story 2"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-03.jpg" alt="MINI Electric FAQ story 3"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-04.jpg" alt="MINI Electric FAQ story 4"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-05.jpg" alt="MINI Electric FAQ story 5"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-06.jpg" alt="MINI Electric FAQ story 6"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-07.jpg" alt="MINI Electric FAQ story 7"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-08.jpg" alt="MINI Electric FAQ story 8"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-09.jpg" alt="MINI Electric FAQ story 9"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-10.jpg" alt="MINI Electric FAQ story 10"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-11.jpg" alt="MINI Electric FAQ story 11"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-12.jpg" alt="MINI Electric FAQ story 12"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-13.jpg" alt="MINI Electric FAQ story 13"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-14.jpg" alt="MINI Electric FAQ story 14"/></div><div class="mg-story"><img loading="lazy" src="images/mini/faq/faq-15.jpg" alt="MINI Electric FAQ story 15"/></div></div>
+    <div class="mg-hint">Scroll to read across the full series.</div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>At the point of sale</h3><h4>The same answers, ready for the showroom.</h4></div>
+    <div class="ch-intro reveal"><p>The campaign did not stop at awareness. A dealer sales aid carried the story into the showroom, helping a customer choose their MINI Electric and see the monthly cost in plain figures, so the conversation that began in the feed could be finished in person.</p></div>
+    <div class="mg-grid reveal" style="--min:210px"><img loading="lazy" src="images/mini/sales/sales-01.jpg" alt="MINI Electric sales aid, slide 1"/><img loading="lazy" src="images/mini/sales/sales-02.jpg" alt="MINI Electric sales aid, slide 2"/><img loading="lazy" src="images/mini/sales/sales-03.jpg" alt="MINI Electric sales aid, slide 3"/><img loading="lazy" src="images/mini/sales/sales-04.jpg" alt="MINI Electric sales aid, slide 4"/><img loading="lazy" src="images/mini/sales/sales-05.jpg" alt="MINI Electric sales aid, slide 5"/></div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The outcome</h3><h4>Hesitation met with answers, across every touchpoint.</h4></div>
-    <div class="ch-intro reveal"><p>The campaign gave MINI a single, coherent answer to the question every electric buyer was already asking. One idea, carried across photography, social, the in-car experience and direct response, each piece resolving a real doubt and pointing to the next step. The work made the case for electric in the brand&rsquo;s own voice, and made the practical reasons to switch difficult to miss.</p></div>
+    <div class="ch-intro reveal"><p>The campaign gave MINI a single, coherent answer to the question every electric buyer was already asking, carried across film, social, the app and the showroom. Each piece resolved a real doubt and pointed to the next step, and made the practical reasons to switch difficult to miss.</p></div>
   </section>
 
   <section class="section-pad pt"><div class="cs-next"><span class="eyebrow" style="color:var(--t3)">Next</span><a href="work-bmw.html" data-cursor="View">BMW Group <span>&rarr;</span></a></div></section>
@@ -106,4 +145,9 @@
   </div>
   <div class="foot-bot"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></span></div>
 </footer></main>
-<script src="assets/site.js?v=34"></script></body></html>
+<script src="assets/site.js?v=34"></script><script>
+(function(){var vs=[].slice.call(document.querySelectorAll('video[data-reel]'));if(!vs.length)return;
+vs.forEach(function(v){v.muted=true;});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:0.4});vs.forEach(function(v){io.observe(v);});}
+else{vs.forEach(function(v){var p=v.play();if(p&&p.catch)p.catch(function(){});});}})();
+</script></body></html>
