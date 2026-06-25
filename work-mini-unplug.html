@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>MINI, Unplug Your Adventure &middot; Pivitt</title><meta name="robots" content="noindex"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=34"><style>
+/* MINI Why Go Electric, scoped gallery system */
+.mg-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,80px);align-items:center;padding-top:clamp(24px,3vw,46px)}
+.mg-hero h1{font-size:clamp(40px,7vw,96px);font-weight:300;letter-spacing:-0.045em;line-height:0.96;margin:18px 0 22px}
+.mg-hero .lead{font-size:clamp(16px,1.4vw,21px);color:var(--t1);line-height:1.55;font-weight:300;max-width:46ch}
+.mg-phone{width:clamp(230px,30vw,310px);margin:0 auto;border:1px solid var(--bdr);border-radius:18px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.mg-phone video{display:block;width:100%;height:auto}
+@media(max-width:880px){.mg-hero{grid-template-columns:1fr;gap:30px}.mg-phone{margin:0}}
+/* reel row, fixed height, widths follow native ratio */
+.mg-reels{display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,26px);align-items:flex-start;margin-top:clamp(26px,3vw,44px)}
+.mg-reel{flex:0 0 auto}
+.mg-reel .fr{height:clamp(360px,46vw,520px);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;background:#000}
+.mg-reel video{height:100%;width:auto;display:block}
+.mg-reel .cs-cap{margin-top:12px;max-width:30ch}
+@media(max-width:620px){.mg-reels{gap:16px}.mg-reel .fr{height:62vw}}
+/* square grids, tiles never exceed native 1080 */
+.mg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--min,280px)),1fr));gap:clamp(12px,1.5vw,20px);margin-top:clamp(26px,3vw,44px)}
+.mg-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+/* horizontal stories strip */
+.mg-strip{display:flex;gap:clamp(12px,1.4vw,18px);overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 18px;margin-top:clamp(22px,2.6vw,38px);-webkit-overflow-scrolling:touch}
+.mg-strip::-webkit-scrollbar{height:6px}
+.mg-strip::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
+.mg-story{flex:0 0 auto;width:clamp(158px,38vw,208px);scroll-snap-align:start}
+.mg-story img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.mg-hint{font-size:12px;color:var(--t3);margin-top:8px;letter-spacing:0.02em}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px)}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px)}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+.hz-feature{max-width:480px;margin:clamp(26px,3vw,44px) auto 0;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#000}
+.hz-feature img{display:block;width:100%;height:auto}
+.hz-three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(26px,3vw,44px);max-width:760px}
+.hz-three img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:hzKB 28s ease-in-out infinite alternate;will-change:transform;transform-origin:50% 60%}
+@keyframes hzKB{from{transform:scale(1.001)}to{transform:scale(1.085)}}
+@media(prefers-reduced-motion:reduce){.hz-hero-img{animation:none}}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px);align-items:start}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+.hz-feature{max-width:480px;margin:clamp(26px,3vw,44px) auto 0;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#000}
+.hz-feature img{display:block;width:100%;height:auto}
+.hz-three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(26px,3vw,44px);max-width:760px}
+.hz-three img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+
+.up-strip{display:flex;gap:clamp(10px,1.2vw,16px);overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 18px;margin-top:clamp(26px,3vw,44px);-webkit-overflow-scrolling:touch}
+.up-strip::-webkit-scrollbar{height:6px}.up-strip::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
+.up-panel{flex:0 0 auto;width:clamp(168px,25vw,224px);scroll-snap-align:start}
+.up-panel img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#000}
+.up-feature{max-width:420px;margin:clamp(26px,3vw,44px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#000}
+.up-feature img{display:block;width:100%;height:auto}
+.up-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px);max-width:1060px}
+.up-context figure{margin:0;max-width:490px;justify-self:center;width:100%}
+.up-context img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#000}
+.up-concepts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,148px),1fr));gap:clamp(10px,1.4vw,18px);margin-top:clamp(26px,3vw,44px)}
+.up-concepts img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:8px;background:#000}
+</style>
+</head><body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
+<aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">MINI</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
+<header id="hdr"><div class="brand"><a href="index.html"><img src="Pivitt_white_logo.png" alt="Pivitt"/></a></div>
+<nav class="mainnav">
+<div class="nav-item"><a href="work.html">Work</a></div>
+<div class="nav-item has-dd"><a href="services.html">Services</a><div class="dd"><div class="dd-in">
+<a href="brand-strategy-positioning.html"><b>Strategy &amp; positioning</b><span>The position only you can own</span></a>
+<a href="brand-identity-design.html"><b>Identity &amp; design</b><span>The visual and verbal system</span></a>
+<a href="brand-communication-content.html"><b>Communication &amp; content</b><span>Turn the brand into demand</span></a>
+<a href="digital-brand-experience.html"><b>Digital experience</b><span>The brand, online</span></a>
+<a href="brand-production-partnership.html"><b>Production partnership</b><span>Your embedded brand team</span></a>
+</div></div></div>
+<div class="nav-item has-dd"><a href="method.html">Method</a><div class="dd"><div class="dd-in">
+<a href="method.html"><b>The method</b><span>Diagnose, Transform, Sustain</span></a>
+<a href="360-model.html"><b>The 360 Model</b><span>Six pillars, three stages</span></a>
+<a href="process.html"><b>Process</b><span>Nine steps end to end</span></a>
+<a href="whats-included.html"><b>What&rsquo;s included</b><span>Deliverables by stage</span></a>
+<a href="compare.html"><b>System vs pieces</b><span>Why an integrated brand wins</span></a>
+</div></div></div>
+<div class="nav-item has-dd dd-r"><a href="about.html">About</a><div class="dd"><div class="dd-in">
+<a href="about.html"><b>About Pivitt</b><span>Who we are</span></a>
+<a href="results.html"><b>Results</b><span>Outcomes and proof</span></a>
+<a href="founder-call.html"><b>A call with the founder</b><span>One hour, one to one</span></a>
+<a href="contact.html"><b>Contact</b><span>Start a conversation</span></a>
+</div></div></div>
+<div class="nav-item"><a href="insights.html">Insights</a></div>
+</nav><a class="hcta" href="diagnostic.html">Diagnostic</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span></button></header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mm-inner">
+<div class="mm-col"><span class="mm-h">Explore</span><a href="index.html">Home</a><a href="work.html">Work</a><a href="insights.html">Insights</a><a href="about.html">About</a></div>
+<div class="mm-col"><span class="mm-h">Services</span><a href="brand-strategy-positioning.html">Strategy &amp; positioning</a><a href="brand-identity-design.html">Identity &amp; design</a><a href="brand-communication-content.html">Communication &amp; content</a><a href="digital-brand-experience.html">Digital experience</a><a href="brand-production-partnership.html">Production partnership</a></div>
+<div class="mm-col"><span class="mm-h">Method</span><a href="method.html">The method</a><a href="360-model.html">The 360 Model</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">System vs pieces</a></div>
+<div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
+</div></div><main class="page">
+  <section class="cs-hero"><img src="images/mini/unplug/frontage.jpg" alt="Unplug Your Adventure window display across the BMW Park Lane frontage"/><div class="scr"></div></section>
+  <section class="section-pad">
+    <div class="crumb" style="padding-top:28px"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / MINI</div>
+    <div class="cs-title"><h1>MINI</h1><div><div class="ctags">Unplug Your Adventure &middot; Window display &amp; livery</div><p class="cres">A showroom turned into the reason to go electric.</p></div></div>
+    <div class="cs-narr">
+<p class="lead" style="max-width:64ch">A window display and livery for MINI Electric at the Park Lane showroom. The charging cable became the idea, drawn as a winding road across the glass, carrying the case for going electric to everyone who walked or drove past.</p>
+    </div>
+  </section>
+
+  <section class="section-pad"><div class="statband reveal">
+    <div class="stat"><div class="num">26</div><div class="lab">Miles of electric range, the headline reason to switch.</div></div>
+    <div class="stat"><div class="num">48</div><div class="lab">Hour test drive, offered right there on the glass.</div></div>
+    <div class="stat"><div class="num">&pound;0</div><div class="lab">Congestion charge, the plug-in range runs exempt.</div></div>
+    <div class="stat"><div class="num">1</div><div class="lab">A single charging-cable line, winding the length of the frontage.</div></div>
+  </div></section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal" style="margin-top:0"><h3>The brief</h3><h4>Make the showroom windows sell electric.</h4></div>
+    <div class="ch-intro reveal"><p>The Park Lane windows are prime space, seen by heavy passing trade on foot and in traffic. The job was to use that glass to make a clear, confident case for MINI Electric, eye-catching from across the road and still legible to someone standing right in front of it.</p></div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The idea</h3><h4>Unplug your adventure.</h4></div>
+    <div class="ch-intro reveal"><p>Going electric means unplugging and heading off, so the charging cable became the hero of the display. Drawn as a bright winding line, part cable and part open road, it threaded across the windows and led the eye to a glowing plug. The reasons to switch, the range, the test drive, the congestion charge, sat along the route like signs on the way out of town.</p></div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The livery</h3><h4>One cable, drawn across the whole frontage.</h4></div>
+    <div class="ch-intro reveal"><p>The panels alternated between the message and the line, connected by the cable so the run read as one continuous idea rather than a set of separate posters. Message, then headline, then message again, all the way along the windows.</p></div>
+    <div class="up-strip reveal"><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-1.jpg" alt="Unplug Your Adventure window panel 1"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-2.jpg" alt="Unplug Your Adventure window panel 2"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-3.jpg" alt="Unplug Your Adventure window panel 3"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-4.jpg" alt="Unplug Your Adventure window panel 4"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-5.jpg" alt="Unplug Your Adventure window panel 5"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-6.jpg" alt="Unplug Your Adventure window panel 6"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-7.jpg" alt="Unplug Your Adventure window panel 7"/></div><div class="up-panel"><img loading="lazy" src="images/mini/unplug/panels/panel-8.jpg" alt="Unplug Your Adventure window panel 8"/></div></div>
+    <div class="mg-hint">Scroll across the frontage.</div>
+    <div class="up-feature reveal"><img loading="lazy" src="images/mini/unplug/feature.jpg" alt="Unplug Your Adventure, the charging plug lit at the centre of the display"/></div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>On the glass</h3><h4>The display, window by window.</h4></div>
+    <div class="ch-intro reveal"><p>Each window carried a panel, with the cable continuing across the gaps so the whole frontage worked as one piece, applied as printed film over the glass.</p></div>
+    <div class="hz-band reveal"><img loading="lazy" src="images/mini/unplug/frontage.jpg" alt="The full Unplug Your Adventure frontage at BMW Park Lane"/></div>
+    <div class="cs-cap">The full run across the Park Lane frontage.</div>
+    <div class="up-context reveal">
+      <figure><img loading="lazy" src="images/mini/unplug/window-1.jpg" alt="Window display in context, charging plug panel"/></figure>
+      <figure><img loading="lazy" src="images/mini/unplug/window-2.jpg" alt="Window display in context, headline panel"/></figure>
+    </div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>Finding the route</h3><h4>Adventure, electric, and the line that won.</h4></div>
+    <div class="ch-intro reveal"><p>The exploration ran down two tracks, open country and mountains for the adventure side, and the charging cable for the electric side. The cable won because it carried both at once, a road and a plug in a single mark.</p></div>
+    <div class="up-concepts reveal"><img loading="lazy" src="images/mini/unplug/concepts/con-1.jpg" alt="Window graphics exploration 1"/><img loading="lazy" src="images/mini/unplug/concepts/con-2.jpg" alt="Window graphics exploration 2"/><img loading="lazy" src="images/mini/unplug/concepts/con-3.jpg" alt="Window graphics exploration 3"/><img loading="lazy" src="images/mini/unplug/concepts/con-4.jpg" alt="Window graphics exploration 4"/><img loading="lazy" src="images/mini/unplug/concepts/con-5.jpg" alt="Window graphics exploration 5"/><img loading="lazy" src="images/mini/unplug/concepts/con-6.jpg" alt="Window graphics exploration 6"/><img loading="lazy" src="images/mini/unplug/concepts/con-7.jpg" alt="Window graphics exploration 7"/><img loading="lazy" src="images/mini/unplug/concepts/con-8.jpg" alt="Window graphics exploration 8"/></div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The outcome</h3><h4>A window that did the job of a campaign.</h4></div>
+    <div class="ch-intro reveal"><p>The frontage gave MINI Electric a confident, single-minded presence at one of London&rsquo;s busiest showrooms. One idea, one line and one continuous cable turned passing glances into the three reasons to go electric, and the glass into the start of the pitch.</p></div>
+  </section>
+
+  <section class="section-pad pt"><div class="cs-next"><span class="eyebrow" style="color:var(--t3)">Next</span><a href="work-mini-horizon.html" data-cursor="View">MINI, Change is on the Horizon <span>&rarr;</span></a></div></section>
+  <section class="cta section-pad" data-spine="Start"><span class="eyebrow reveal">Where it starts</span><h2 class="reveal">Where does your brand sit against the business?</h2>
+    <div class="cta-row reveal"><p>Every engagement starts with the Brand Alignment Diagnostic, a fixed first step that scores your brand against the business and shows what to fix first.</p>
+    <div class="cta-btns"><a class="btn-primary mag" href="diagnostic.html" data-cursor="Book">Brand Alignment Diagnostic, &pound;1,500</a><a class="btn-ghost mag" href="work.html" data-cursor="View">More work</a></div></div></section><footer>
+  <div class="foot-top">
+    <div class="foot-brand"><img src="Pivitt_white_logo.png" alt="Pivitt"/><p>Brand transformation for businesses that have outgrown their brand. Strategy and execution under one partner.</p></div>
+    <div class="foot-nav">
+      <div><span>Explore</span><a href="work.html">Work</a><a href="services.html">Services</a><a href="method.html">Method</a><a href="about.html">About</a><a href="insights.html">Insights</a></div>
+      <div><span>Services</span><a href="brand-strategy-positioning.html">Strategy &amp; positioning</a><a href="brand-identity-design.html">Identity &amp; design</a><a href="brand-communication-content.html">Communication &amp; content</a><a href="digital-brand-experience.html">Digital experience</a><a href="brand-production-partnership.html">Production partnership</a></div>
+      <div><span>More</span><a href="diagnostic.html">Diagnostic</a><a href="results.html">Results</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">Compare</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+  <div class="foot-bot"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></span></div>
+</footer></main>
+<script src="assets/site.js?v=34"></script><script>
+(function(){var vs=[].slice.call(document.querySelectorAll('video[data-reel]'));if(!vs.length)return;
+vs.forEach(function(v){v.muted=true;});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:0.4});vs.forEach(function(v){io.observe(v);});}
+else{vs.forEach(function(v){var p=v.play();if(p&&p.catch)p.catch(function(){});});}})();
+</script></body></html>
