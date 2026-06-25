@@ -69,6 +69,30 @@
 .hz-feature img{display:block;width:100%;height:auto}
 .hz-three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(26px,3vw,44px);max-width:760px}
 .hz-three img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+
+.hz-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px}
+.hz-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:hzKB 28s ease-in-out infinite alternate;will-change:transform;transform-origin:50% 60%}
+@keyframes hzKB{from{transform:scale(1.001)}to{transform:scale(1.085)}}
+@media(prefers-reduced-motion:reduce){.hz-hero-img{animation:none}}
+.hz-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.12) 38%,rgba(7,7,11,.92))}
+.hz-cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(26px,4vw,60px);z-index:2}
+.hz-cap .eyebrow{display:block;margin-bottom:14px}
+.hz-cap h2{font-size:clamp(36px,6.6vw,92px);font-weight:300;letter-spacing:-0.04em;line-height:0.96;max-width:16ch}
+.hz-four{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(26px,3vw,44px);align-items:start}
+.hz-four figure{margin:0}
+.hz-four img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+@media(max-width:760px){.hz-four{grid-template-columns:1fr 1fr}}
+.hz-icons{display:grid;grid-template-columns:repeat(8,1fr);gap:clamp(10px,1.6vw,26px);margin-top:clamp(24px,3vw,40px);align-items:center}
+.hz-icons img{width:100%;height:auto;display:block}
+@media(max-width:640px){.hz-icons{grid-template-columns:repeat(4,1fr);gap:18px}}
+.hz-colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(26px,3vw,44px)}
+.hz-colour img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
+.hz-band{margin-top:clamp(20px,2.4vw,36px);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+.hz-band img{display:block;width:100%;height:auto}
+.hz-feature{max-width:480px;margin:clamp(26px,3vw,44px) auto 0;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#000}
+.hz-feature img{display:block;width:100%;height:auto}
+.hz-three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(26px,3vw,44px);max-width:760px}
+.hz-three img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:12px;background:#000}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -106,7 +130,7 @@
 <div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
 </div></div><main class="page">
   <section class="hz-hero">
-    <video data-reel autoplay muted loop playsinline preload="metadata" poster="videos/mini/horizon-hero.jpg"><source src="videos/mini/horizon-hero.mp4" type="video/mp4"></video>
+    <img class="hz-hero-img" src="images/mini/horizon/hero-road.jpg" alt="A road climbing toward first light"/>
     <div class="scr"></div>
     <div class="hz-cap"><span class="eyebrow">MINI &middot; Launch campaign</span><h2>Change is on the horizon.</h2></div>
   </section>
