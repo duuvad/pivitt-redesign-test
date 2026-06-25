@@ -9,17 +9,26 @@
 .mb-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px;background:#05060a}
 .mb-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .mb-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.42),rgba(7,7,11,.10) 40%,rgba(7,7,11,.9))}
-.mb-film{max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
-.mb-film .fr{aspect-ratio:16/9;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#000}
+.mb-film{max-width:1100px;margin:clamp(24px,3vw,42px) auto 0}
+.mb-film .fr{aspect-ratio:16/9;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#000}
 .mb-film .fr video{width:100%;height:100%;object-fit:cover}
-.mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px);max-width:1080px;margin:clamp(24px,3vw,42px) auto 0}
+.mb-big{max-width:1040px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#0b0b12}
+.mb-big img{width:100%;height:auto;display:block}
+.mb-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
+.mb-pair figure{margin:0}
+.mb-pair img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12}
+.mb-stills{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px);max-width:1080px;margin:clamp(24px,3vw,42px) auto 0}
+.mb-stills img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12}
+.mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px);max-width:1080px;margin:clamp(20px,2.4vw,32px) auto 0}
 .mb-grid img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12}
-.mb-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 16px;margin:clamp(24px,3vw,42px) 0 0;-webkit-overflow-scrolling:touch}
+.mb-sub{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin:clamp(34px,3.4vw,52px) auto 0;max-width:1080px}
+.mb-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 16px;margin:14px 0 0;-webkit-overflow-scrolling:touch}
 .mb-carousel::-webkit-scrollbar{height:6px}.mb-carousel::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
 .mb-carousel.sig img{flex:0 0 auto;width:clamp(320px,40vw,480px);aspect-ratio:1600/400;object-fit:cover;border:1px solid var(--bdr);border-radius:8px;background:#0b0b12;scroll-snap-align:start}
 .mb-carousel.ban img{flex:0 0 auto;width:clamp(340px,42vw,540px);aspect-ratio:700/100;object-fit:cover;border:1px solid var(--bdr);border-radius:6px;background:#0b0b12;scroll-snap-align:start}
-.mb-cap{color:var(--t3);font-size:13px;text-align:center;margin:14px auto 0;max-width:820px}
-@media(max-width:560px){.mb-grid{grid-template-columns:1fr}}
+.mb-cap{color:var(--t3);font-size:13px;text-align:center;margin:14px auto 0;max-width:840px}
+@media(max-width:680px){.mb-stills{grid-template-columns:1fr 1fr}.mb-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.mb-pair{grid-template-columns:1fr}.mb-stills{grid-template-columns:1fr}}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -62,60 +71,75 @@
   </section>
   <section class="section-pad" data-spine="My BMW App">
     <div class="crumb" style="padding-top:28px"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / My BMW App</div>
-    <div class="cs-title"><h1>My BMW App</h1><div><div class="ctags">Awareness campaign &middot; Automotive</div><p class="cres">A cross-channel campaign to put the My BMW App in front of owners, led by a film and carried through email, web banners and in-dealer cards.</p></div></div>
+    <div class="cs-title"><h1>My BMW App</h1><div><div class="ctags">Film and campaign &middot; Automotive</div><p class="cres">A film-led campaign to drive awareness of the My BMW App, built around a film that brings the app to life, then rolled out across email, web and print.</p></div></div>
   </section>
 
   <section class="statband reveal" data-spine="At a glance">
-    <div class="stat"><div class="num">1</div><div class="lab">Lead film</div></div>
-    <div class="stat"><div class="num">8</div><div class="lab">Email signatures</div></div>
-    <div class="stat"><div class="num">12</div><div class="lab">Web banners</div></div>
-    <div class="stat"><div class="num">3</div><div class="lab">App cards</div></div>
+    <div class="stat"><div class="num">90s</div><div class="lab">Lead film</div></div>
+    <div class="stat"><div class="num">8</div><div class="lab">App features filmed</div></div>
+    <div class="stat"><div class="num">3D</div><div class="lab">Rendered set</div></div>
+    <div class="stat"><div class="num">4</div><div class="lab">Channels</div></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The brief</h3><h4>Put the app in front of owners.</h4></div>
-    <div class="ch-intro reveal"><p>The My BMW App is where ownership lives now: navigation, vehicle health, charging and live status, all in one place. The job was to drive awareness and downloads across the channels owners and prospects actually see, from the inbox to the dealership.</p></div>
+    <div class="cs-sec reveal"><h3>The brief</h3><h4>Make people want the app.</h4></div>
+    <div class="ch-intro reveal"><p>The My BMW App is where ownership lives now: navigation, vehicle health, charging and live status in one place. The job was to drive awareness and downloads, and the lead was a film that shows the app doing the work rather than talking about it.</p></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The film</h3><h4>The app, in ninety seconds.</h4></div>
-    <div class="ch-intro reveal"><p>The campaign led with a film. It opens on the drive and moves through the app, navigation, vehicle health and staying connected, so the value is clear before anyone reaches a download button.</p></div>
+    <div class="cs-sec reveal"><h3>The film</h3><h4>The film does the selling.</h4></div>
+    <div class="ch-intro reveal"><p>We built the campaign around a film. The app is rendered on device and moves through its real jobs, navigation, vehicle health, charging and remote control, set inside a faceted BMW-blue environment that keeps it unmistakably BMW.</p></div>
     <div class="mb-film reveal"><div class="fr"><video data-reel controls muted loop playsinline preload="metadata" poster="images/mybmw/film2-poster.jpg"><source src="videos/mybmw/film2.mp4" type="video/mp4"></video></div></div>
-    <div class="mb-cap">The campaign film, with captions.</div>
+    <div class="mb-cap">The campaign film.</div>
+    <div class="mb-big reveal"><img loading="lazy" src="images/mybmw/film/car.jpg" alt="Cinematic BMW driving across a causeway, from the film"/></div>
+    <div class="mb-cap">Cut through with real road footage.</div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>In the inbox</h3><h4>Straight to the inbox.</h4></div>
-    <div class="ch-intro reveal"><p>Email signatures turned every message from BMW and MINI into a prompt to download, with a clear call to action and a look that still felt like the marque.</p></div>
-    <div class="mb-carousel sig reveal">
-      <img loading="lazy" src="images/mybmw/sig/s-1.jpg" alt="My BMW App email signature 1"/><img loading="lazy" src="images/mybmw/sig/s-2.jpg" alt="My BMW App email signature 2"/><img loading="lazy" src="images/mybmw/sig/s-3.jpg" alt="My BMW App email signature 3"/><img loading="lazy" src="images/mybmw/sig/s-4.jpg" alt="My BMW App email signature 4"/><img loading="lazy" src="images/mybmw/sig/s-5.jpg" alt="My BMW App email signature 5"/><img loading="lazy" src="images/mybmw/sig/s-6.jpg" alt="My BMW App email signature 6"/><img loading="lazy" src="images/mybmw/sig/s-7.jpg" alt="My BMW App email signature 7"/><img loading="lazy" src="images/mybmw/sig/s-8.jpg" alt="My BMW App email signature 8"/>
+    <div class="cs-sec reveal"><h3>The craft</h3><h4>Down to the weave.</h4></div>
+    <div class="ch-intro reveal"><p>The look was built, not borrowed. The device and every screen were rendered in 3D and lit inside a BMW-blue set. Behind the interface sits a carbon-fibre weave washed with the BMW gradient, the kind of detail you feel before you notice it.</p></div>
+    <div class="mb-pair reveal">
+      <figure><img loading="lazy" src="images/mybmw/app-hero.jpg" alt="The My BMW App rendered on device in the BMW environment"/></figure>
+      <figure><img loading="lazy" src="images/mybmw/carbon-detail.jpg" alt="Carbon-fibre weave and BMW gradient on the set behind the interface"/></figure>
     </div>
+    <div class="mb-cap">The app on device, and the carbon-fibre and BMW gradient set behind it.</div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>On screen</h3><h4>Every feature, in turn.</h4></div>
+    <div class="ch-intro reveal"><p>The film carries the whole app, one screen at a time, so the value reads before anyone reaches a download button.</p></div>
+    <div class="mb-stills reveal">
+      <img loading="lazy" src="images/mybmw/film/status.jpg" alt="Fuel and battery status at a glance"/>
+      <img loading="lazy" src="images/mybmw/film/nav.jpg" alt="Navigate with ease"/>
+      <img loading="lazy" src="images/mybmw/film/charge.jpg" alt="Find your next charging or refueling spot"/>
+      <img loading="lazy" src="images/mybmw/film/allgood.jpg" alt="Vehicle status, all good"/>
+      <img loading="lazy" src="images/mybmw/film/lock.jpg" alt="Remote locking for peace of mind"/>
+      <img loading="lazy" src="images/mybmw/film/service.jpg" alt="Easy service scheduling"/>
+    </div>
+    <div class="mb-cap">Status, navigation, charging, vehicle health, remote control and service, all from the film.</div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The rollout</h3><h4>Then, everywhere owners look.</h4></div>
+    <div class="ch-intro reveal"><p>From the film, the same campaign carried into the channels owners and prospects see every day, all pointing to the one place: the app.</p></div>
+    <div class="mb-sub reveal">In the inbox</div>
+    <div class="mb-carousel sig reveal"><img loading="lazy" src="images/mybmw/sig/s-1.jpg" alt="My BMW App email signature 1"/><img loading="lazy" src="images/mybmw/sig/s-2.jpg" alt="My BMW App email signature 2"/><img loading="lazy" src="images/mybmw/sig/s-3.jpg" alt="My BMW App email signature 3"/><img loading="lazy" src="images/mybmw/sig/s-4.jpg" alt="My BMW App email signature 4"/><img loading="lazy" src="images/mybmw/sig/s-5.jpg" alt="My BMW App email signature 5"/><img loading="lazy" src="images/mybmw/sig/s-6.jpg" alt="My BMW App email signature 6"/><img loading="lazy" src="images/mybmw/sig/s-7.jpg" alt="My BMW App email signature 7"/><img loading="lazy" src="images/mybmw/sig/s-8.jpg" alt="My BMW App email signature 8"/></div>
     <div class="mb-cap">Email signatures for BMW and MINI.</div>
-  </section>
-
-  <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>Across the web</h3><h4>Banners that travel.</h4></div>
-    <div class="ch-intro reveal"><p>A set of web banners carried the same message at every size, in a dark treatment and a lighter alternative, so the campaign held wherever it ran.</p></div>
-    <div class="mb-carousel ban reveal">
-      <img loading="lazy" src="images/mybmw/ban/b-1.jpg" alt="My BMW App web banner 1"/><img loading="lazy" src="images/mybmw/ban/b-2.jpg" alt="My BMW App web banner 2"/><img loading="lazy" src="images/mybmw/ban/b-3.jpg" alt="My BMW App web banner 3"/><img loading="lazy" src="images/mybmw/ban/b-4.jpg" alt="My BMW App web banner 4"/><img loading="lazy" src="images/mybmw/ban/b-5.jpg" alt="My BMW App web banner 5"/><img loading="lazy" src="images/mybmw/ban/b-6.jpg" alt="My BMW App web banner 6"/><img loading="lazy" src="images/mybmw/ban/b-7.jpg" alt="My BMW App web banner 7"/><img loading="lazy" src="images/mybmw/ban/b-8.jpg" alt="My BMW App web banner 8"/><img loading="lazy" src="images/mybmw/ban/b-9.jpg" alt="My BMW App web banner 9"/><img loading="lazy" src="images/mybmw/ban/b-10.jpg" alt="My BMW App web banner 10"/><img loading="lazy" src="images/mybmw/ban/b-11.jpg" alt="My BMW App web banner 11"/><img loading="lazy" src="images/mybmw/ban/b-12.jpg" alt="My BMW App web banner 12"/>
-    </div>
+    <div class="mb-sub reveal">Across the web</div>
+    <div class="mb-carousel ban reveal"><img loading="lazy" src="images/mybmw/ban/b-1.jpg" alt="My BMW App web banner 1"/><img loading="lazy" src="images/mybmw/ban/b-2.jpg" alt="My BMW App web banner 2"/><img loading="lazy" src="images/mybmw/ban/b-3.jpg" alt="My BMW App web banner 3"/><img loading="lazy" src="images/mybmw/ban/b-4.jpg" alt="My BMW App web banner 4"/><img loading="lazy" src="images/mybmw/ban/b-5.jpg" alt="My BMW App web banner 5"/><img loading="lazy" src="images/mybmw/ban/b-6.jpg" alt="My BMW App web banner 6"/><img loading="lazy" src="images/mybmw/ban/b-7.jpg" alt="My BMW App web banner 7"/><img loading="lazy" src="images/mybmw/ban/b-8.jpg" alt="My BMW App web banner 8"/><img loading="lazy" src="images/mybmw/ban/b-9.jpg" alt="My BMW App web banner 9"/><img loading="lazy" src="images/mybmw/ban/b-10.jpg" alt="My BMW App web banner 10"/><img loading="lazy" src="images/mybmw/ban/b-11.jpg" alt="My BMW App web banner 11"/><img loading="lazy" src="images/mybmw/ban/b-12.jpg" alt="My BMW App web banner 12"/></div>
     <div class="mb-cap">Web banners, dark and light, across sizes.</div>
-  </section>
-
-  <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>In hand</h3><h4>A code worth scanning.</h4></div>
-    <div class="ch-intro reveal"><p>In-dealer and print cards put a QR code in reach, turning a moment on the forecourt into an install.</p></div>
+    <div class="mb-sub reveal">In hand</div>
     <div class="mb-grid reveal">
       <img loading="lazy" src="images/mybmw/card/c-1.jpg" alt="My BMW App card with QR code"/>
       <img loading="lazy" src="images/mybmw/card/c-2.jpg" alt="My BMW App card, download today"/>
       <img loading="lazy" src="images/mybmw/card/c-3.jpg" alt="My BMW App card, stay connected"/>
     </div>
-    <div class="mb-cap">App cards with a scannable code.</div>
+    <div class="mb-cap">In-dealer and print cards with a scannable code.</div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The outcome</h3><h4>One app, every touchpoint.</h4></div>
-    <div class="ch-intro reveal"><p>The My BMW App campaign gave BMW and MINI a single, consistent push across film, email, web and print, all pointing to the same place: the app.</p></div>
+    <div class="cs-sec reveal"><h3>The outcome</h3><h4>One app, one consistent push.</h4></div>
+    <div class="ch-intro reveal"><p>A film strong enough to lead, and a rollout disciplined enough to follow it: BMW and MINI got a single, consistent push for the My BMW App across film, email, web and print.</p></div>
   </section>
 
   <section class="section-pad pt"><div class="cs-next"><span class="eyebrow" style="color:var(--t3)">Next</span><a href="work-bmw.html" data-cursor="View">BMW Group <span>&rarr;</span></a></div></section>
