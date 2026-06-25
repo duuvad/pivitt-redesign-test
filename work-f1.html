@@ -100,7 +100,13 @@
 .f1grid2 figure{margin:0}
 .f1grid2 img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12}
 @media(max-width:760px){.f1grid2{grid-template-columns:1fr}}
-.f1cap{max-width:820px;margin:9px auto 0;color:var(--t3);font-size:13px;line-height:1.4}
+.f1cap{max-width:1040px;margin:9px auto 0;color:var(--t3);font-size:13px;line-height:1.4}
+.f1wide{max-width:1040px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#0b0b12}
+.f1wide img{width:100%;height:auto;display:block}
+.f1pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
+.f1pair figure{margin:0}
+.f1pair img{width:100%;height:auto;display:block;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12}
+@media(max-width:760px){.f1pair{grid-template-columns:1fr}}
 .f1-eyebrow{display:block;margin:12px 0 16px}
 /* naming framework */
 .f1nm{max-width:900px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:14px;padding:clamp(22px,3vw,38px);background:linear-gradient(180deg,#0b0b12,#08080e)}
@@ -182,8 +188,7 @@
     <p class="lead">A charity karting Grand Prix for the music industry at F1 Drive London, bringing together Tottenham Hotspur and Live Nation in support of Nordoff and Robbins. We created the naming system and the visual identity, from the event name to the campaign that ran across the city.</p>
   </section>
 
-  <section class="section-pad"><div class="f1band reveal"><img loading="lazy" src="images/f1/page/board.jpg" alt="F1 Drive Music Therapy Grand Prix on a digital billboard"/></div>
-    <div class="f1cap">The campaign live at scale.</div></section>
+  <section class="section-pad"><div class="f1wide reveal"><img loading="lazy" src="images/f1/page/poster-helmet.jpg" alt="The inaugural F1 Drive Music Therapy Grand Prix poster"/></div><div class="f1cap">The campaign key art.</div></section>
 
   <section class="section-pad"><div class="statband reveal">
     <div class="stat"><div class="num">12</div><div class="lab">Powerhouse teams from the music industry on the grid.</div></div>
@@ -239,19 +244,20 @@
 
     <div class="cs-sec reveal"><h4 style="margin-top:0">The refined direction.</h4></div>
     <div class="ch-intro reveal"><p>The campaign that ran led with the driver, the helmet and the neon of the grid, carried into a flexible set of colourways for every placement.</p></div>
-    <div class="f1grid2 reveal">
-      <figure><img loading="lazy" src="images/f1/page/poster-helmet.jpg" alt="The inaugural F1 Drive Music Therapy Grand Prix poster"/></figure>
-      <figure><img loading="lazy" src="images/f1/page/invite.jpg" alt="F1 Drive Music Therapy Grand Prix invite"/></figure>
-    </div>
-    <div class="f1band reveal"><img loading="lazy" src="images/f1/page/colourways.jpg" alt="Four colourways of the invite"/></div>
-    <div class="f1cap">Four colourways for the invite.</div>
+    <div class="f1wide reveal"><img loading="lazy" src="images/f1/page/invite.jpg" alt="F1 Drive Music Therapy Grand Prix invite"/></div>
+    <div class="f1cap">The invite.</div>
+    <div class="f1wide reveal"><img loading="lazy" src="images/f1/page/colourways.jpg" alt="Four colourways of the invite"/></div>
+    <div class="f1cap">Four colourways for every placement.</div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>In the world</h3><h4>Across the city, on the day.</h4></div>
     <div class="ch-intro reveal"><p>The identity rolled out across outdoor sites in the run-up to race day, from digital billboards to bus-stop posters.</p></div>
-    <div class="f1band reveal"><img loading="lazy" src="images/f1/page/busstop.jpg" alt="Bus-stop poster mockup"/></div>
-    <div class="f1cap">Bus-stop poster, JCDecaux.</div>
+    <div class="f1pair reveal">
+      <figure><img loading="lazy" src="images/f1/page/board.jpg" alt="F1 Drive Music Therapy Grand Prix on a digital billboard"/></figure>
+      <figure><img loading="lazy" src="images/f1/page/busstop.jpg" alt="Bus-stop poster mockup"/></figure>
+    </div>
+    <div class="f1cap">Digital billboard and bus-stop posters, across the city.</div>
   </section>
 
   <section class="section-pad cs-chapter">
