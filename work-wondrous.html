@@ -10,26 +10,22 @@
 .wo-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;min-height:340px;background:#06060c}
 .wo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .wo-hero .scr{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.45),rgba(7,7,11,.12) 42%,rgba(7,7,11,.92))}
-.wo-big{max-width:1040px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#0b0b12}
-.wo-big img{width:100%;height:auto;display:block}
-.wo-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
-.wo-pair figure{margin:0}
 .wo-card{border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#fff}
-.wo-card img{width:100%;height:auto;display:block}
-.wo-card.lockup{display:flex;align-items:center;justify-content:center;padding:clamp(26px,4vw,52px)}
-.wo-card.lockup img{max-width:78%}
+.wo-card.lockup{display:flex;align-items:center;justify-content:center;padding:clamp(26px,4vw,52px);max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
+.wo-card.lockup img{max-width:78%;height:auto;display:block;width:auto}
 .wo-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:1040px;margin:clamp(24px,3vw,42px) auto 0}
 .wo-sw{border:1px solid var(--bdr);border-radius:10px;overflow:hidden;background:#0b0b12}
 .wo-sw .chip{aspect-ratio:1/1}
 .wo-sw .meta{padding:10px 12px}
 .wo-sw .nm{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--t1)}
 .wo-sw .hx{font-size:11px;letter-spacing:.08em;color:var(--t3);margin-top:3px;text-transform:uppercase}
+.wo-art{max-width:740px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#0b0b12}
+.wo-art img{width:100%;height:auto;display:block}
 .wo-car{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 16px;margin:clamp(20px,2.4vw,30px) 0 0;-webkit-overflow-scrolling:touch}
 .wo-car::-webkit-scrollbar{height:6px}.wo-car::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
 .wo-car img{flex:0 0 auto;height:clamp(360px,46vw,560px);width:auto;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12;scroll-snap-align:start}
 .wo-info{max-width:760px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:#0b0b12}
 .wo-info img{width:100%;height:auto;display:block}
-/* browser frame with scroll */
 .wo-browser{max-width:1100px;margin:clamp(24px,3vw,42px) auto 0;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;background:#0b0b12}
 .wo-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--bdr);background:#0e0e16}
 .wo-bar i{width:10px;height:10px;border-radius:50%;background:var(--dim);display:block}
@@ -40,7 +36,24 @@
 .wo-sub{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin:clamp(34px,3.4vw,52px) auto 0;max-width:1040px}
 .wo-cap{color:var(--t3);font-size:13px;text-align:center;margin:14px auto 0;max-width:840px;line-height:1.55}
 @media(max-width:680px){.wo-swatches{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.wo-pair{grid-template-columns:1fr}.wo-swatches{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wo-swatches{grid-template-columns:1fr 1fr}}
+
+.wo-lattice{position:relative;max-width:1100px;margin:clamp(28px,3.4vw,48px) auto 0;border:1px solid var(--bdr);border-radius:16px;overflow:hidden;background:#052127;aspect-ratio:1600/600}
+.wo-lattice .wo-lat-svg{position:absolute;inset:0;width:100%;height:100%}
+.wo-lattice .ll{fill:none;stroke:#f7a711;stroke-width:1.1;opacity:.34;
+  stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.wo-lattice .cell{opacity:0;fill:var(--f)}
+.wo-lattice.in .ll{animation:woDraw 1.1s var(--d) cubic-bezier(0.22,1,0.36,1) forwards}
+.wo-lattice.in .cell{animation:woCell var(--dur) var(--d) ease-in-out infinite}
+.wo-lattice .lat-cap{position:absolute;left:clamp(16px,2.4vw,30px);bottom:clamp(14px,2vw,24px);z-index:3;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+@keyframes woDraw{to{stroke-dashoffset:0}}
+@keyframes woCell{0%{opacity:0}18%{opacity:var(--o)}70%{opacity:var(--o)}100%{opacity:calc(var(--o)*.34)}}
+@media(prefers-reduced-motion:reduce){
+  .wo-lattice .ll{stroke-dashoffset:0}
+  .wo-lattice.in .ll{animation:none}
+  .wo-lattice.in .cell{animation:none;opacity:var(--o)}
+}
 
 </style>
 </head><body>
@@ -85,17 +98,80 @@
   </section>
   <section class="section-pad" data-spine="Wondrous">
     <div class="crumb" style="padding-top:28px"><a href="index.html">Pivitt</a> / <a href="work.html">Work</a> / Wondrous</div>
-    <div class="cs-title"><h1>Wondrous</h1><div><div class="ctags">Brand identity and website &middot; People consultancy</div><p class="cres">A people consultancy with real pedigree, and a brand that had fallen behind the work. We rebuilt the identity from the name down, set the colour from a clear idea, then designed and built the website to carry it.</p></div></div>
+    <div class="cs-title"><h1>Wondrous</h1><div><div class="ctags">Brand identity and website &middot; People consultancy</div><p class="cres">A people consultancy with real pedigree and a brand that had fallen behind the work. We found the structure inside how they think, the Wondrous lattice, and built the whole identity and website from it.</p></div></div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The brief</h3><h4>Serious work, an identity that had aged.</h4></div>
-    <div class="ch-intro reveal"><p>Wondrous works with organisations on culture, leadership and inclusion, the human side of how a business performs. The thinking sat ahead of the market. The brand did not. It read as generic where the work was distinctive, and there was no website strong enough to stand behind a first conversation. The task was an identity with the warmth and confidence of the work, and a site to match.</p></div>
+    <div class="ch-intro reveal"><p>Wondrous works with organisations on culture, leadership and inclusion, the human side of how a business performs. The thinking sat ahead of the market. The brand did not. It read as generic where the work was distinctive, and there was no website strong enough to stand behind a first conversation. The task was an identity with the structure and warmth of the work, and a site to match.</p></div>
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The mark</h3><h4>A monogram built to rise.</h4></div>
-    <div class="ch-intro reveal"><p>The W is made from angled facets that lean upward, two rising forms that meet in the middle. It reads as people side by side, and as a quiet tick of progress. Drawn at a single weight, it works as a solid mark and breaks apart into a graphic device that can frame a photograph or hold a line of type.</p></div>
+    <div class="cs-sec reveal"><h3>The lattice</h3><h4>A framework you can see.</h4></div>
+    <div class="ch-intro reveal"><p>At the centre of the brand is the Wondrous lattice: the firm&rsquo;s own framework for working with clients, drawn as a structure rather than written as a list. It holds many positions at once, each a place a piece of work can sit, and links them into a single connected system. That same lattice became the treatment for the whole identity, so the way Wondrous thinks and the way Wondrous looks are now one thing.</p></div>
+    <div class="wo-lattice reveal"><span class="lat-cap">The Wondrous lattice</span><svg class="wo-lat-svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g class="fills">
+<polygon class="cell" points="453.6,200.0 569.1,200.0 511.3,300.0" style="--f:#f7a711;--o:0.92;--d:0.95s;--dur:4.2s"/>
+<polygon class="cell" points="511.3,300.0 626.8,300.0 569.1,400.0" style="--f:#e9cba7;--o:0.8;--d:1.10s;--dur:4.2s"/>
+<polygon class="cell" points="626.8,300.0 742.3,300.0 684.5,400.0" style="--f:#f7a711;--o:0.92;--d:1.25s;--dur:4.2s"/>
+<polygon class="cell" points="684.5,200.0 800.0,200.0 742.3,300.0" style="--f:#885631;--o:0.62;--d:1.40s;--dur:4.2s"/>
+<polygon class="cell" points="742.3,300.0 857.7,300.0 800.0,400.0" style="--f:#e9cba7;--o:0.8;--d:1.55s;--dur:4.2s"/>
+<polygon class="cell" points="800.0,200.0 915.5,200.0 857.7,300.0" style="--f:#f7a711;--o:0.92;--d:1.70s;--dur:4.2s"/>
+<polygon class="cell" points="222.6,100.0 338.1,100.0 280.4,200.0" style="--f:#f7a711;--o:0.25;--d:1.20s;--dur:5.0s"/>
+<polygon class="cell" points="915.5,500.0 1030.9,500.0 973.2,400.0" style="--f:#f7a711;--o:0.22;--d:1.40s;--dur:5.0s"/>
+<polygon class="cell" points="569.1,400.0 684.5,400.0 626.8,500.0" style="--f:#e9cba7;--o:0.3;--d:1.60s;--dur:5.0s"/>
+<polygon class="cell" points="338.1,400.0 453.6,400.0 395.9,300.0" style="--f:#885631;--o:0.25;--d:1.80s;--dur:5.0s"/>
+<polygon class="cell" points="857.7,100.0 973.2,100.0 915.5,200.0" style="--f:#f7a711;--o:0.2;--d:1.50s;--dur:5.0s"/>
+</g>
+<g class="lines">
+<line class="ll" x1="0.0" y1="0.0" x2="0.0" y2="0.0" style="--len:0;--d:0.12s"/>
+<line class="ll" x1="115.5" y1="0.0" x2="0.0" y2="200.0" style="--len:231;--d:0.16s"/>
+<line class="ll" x1="230.9" y1="0.0" x2="0.0" y2="400.0" style="--len:462;--d:0.20s"/>
+<line class="ll" x1="346.4" y1="0.0" x2="0.0" y2="600.0" style="--len:693;--d:0.23s"/>
+<line class="ll" x1="0.0" y1="0.0" x2="346.4" y2="600.0" style="--len:693;--d:0.27s"/>
+<line class="ll" x1="0.0" y1="200.0" x2="230.9" y2="600.0" style="--len:462;--d:0.31s"/>
+<line class="ll" x1="0.0" y1="400.0" x2="115.5" y2="600.0" style="--len:231;--d:0.34s"/>
+<line class="ll" x1="461.9" y1="0.0" x2="115.5" y2="600.0" style="--len:693;--d:0.38s"/>
+<line class="ll" x1="115.5" y1="0.0" x2="461.9" y2="600.0" style="--len:693;--d:0.42s"/>
+<line class="ll" x1="577.4" y1="0.0" x2="230.9" y2="600.0" style="--len:693;--d:0.46s"/>
+<line class="ll" x1="230.9" y1="0.0" x2="577.4" y2="600.0" style="--len:693;--d:0.49s"/>
+<line class="ll" x1="346.4" y1="0.0" x2="692.8" y2="600.0" style="--len:693;--d:0.53s"/>
+<line class="ll" x1="692.8" y1="0.0" x2="346.4" y2="600.0" style="--len:693;--d:0.57s"/>
+<line class="ll" x1="0.0" y1="0.0" x2="1600.0" y2="0.0" style="--len:1600;--d:0.61s"/>
+<line class="ll" x1="808.3" y1="0.0" x2="461.9" y2="600.0" style="--len:693;--d:0.64s"/>
+<line class="ll" x1="461.9" y1="0.0" x2="808.3" y2="600.0" style="--len:693;--d:0.68s"/>
+<line class="ll" x1="0.0" y1="100.0" x2="1600.0" y2="100.0" style="--len:1600;--d:0.72s"/>
+<line class="ll" x1="0.0" y1="200.0" x2="1600.0" y2="200.0" style="--len:1600;--d:0.76s"/>
+<line class="ll" x1="577.4" y1="0.0" x2="923.8" y2="600.0" style="--len:693;--d:0.80s"/>
+<line class="ll" x1="923.8" y1="0.0" x2="577.4" y2="600.0" style="--len:693;--d:0.83s"/>
+<line class="ll" x1="0.0" y1="300.0" x2="1600.0" y2="300.0" style="--len:1600;--d:0.87s"/>
+<line class="ll" x1="0.0" y1="400.0" x2="1600.0" y2="400.0" style="--len:1600;--d:0.91s"/>
+<line class="ll" x1="1039.2" y1="0.0" x2="692.8" y2="600.0" style="--len:693;--d:0.95s"/>
+<line class="ll" x1="692.8" y1="0.0" x2="1039.2" y2="600.0" style="--len:693;--d:0.98s"/>
+<line class="ll" x1="0.0" y1="500.0" x2="1600.0" y2="500.0" style="--len:1600;--d:1.02s"/>
+<line class="ll" x1="0.0" y1="600.0" x2="1600.0" y2="600.0" style="--len:1600;--d:1.06s"/>
+<line class="ll" x1="808.3" y1="0.0" x2="1154.7" y2="600.0" style="--len:693;--d:1.10s"/>
+<line class="ll" x1="1154.7" y1="0.0" x2="808.3" y2="600.0" style="--len:693;--d:1.13s"/>
+<line class="ll" x1="923.8" y1="0.0" x2="1270.2" y2="600.0" style="--len:693;--d:1.17s"/>
+<line class="ll" x1="1270.2" y1="0.0" x2="923.8" y2="600.0" style="--len:693;--d:1.21s"/>
+<line class="ll" x1="1039.2" y1="0.0" x2="1385.6" y2="600.0" style="--len:693;--d:1.25s"/>
+<line class="ll" x1="1385.6" y1="0.0" x2="1039.2" y2="600.0" style="--len:693;--d:1.28s"/>
+<line class="ll" x1="1154.7" y1="0.0" x2="1501.1" y2="600.0" style="--len:693;--d:1.32s"/>
+<line class="ll" x1="1501.1" y1="0.0" x2="1154.7" y2="600.0" style="--len:693;--d:1.36s"/>
+<line class="ll" x1="1501.1" y1="0.0" x2="1600.0" y2="171.3" style="--len:198;--d:1.40s"/>
+<line class="ll" x1="1385.6" y1="0.0" x2="1600.0" y2="371.3" style="--len:429;--d:1.43s"/>
+<line class="ll" x1="1270.2" y1="0.0" x2="1600.0" y2="571.3" style="--len:660;--d:1.47s"/>
+<line class="ll" x1="1600.0" y1="28.7" x2="1270.2" y2="600.0" style="--len:660;--d:1.51s"/>
+<line class="ll" x1="1600.0" y1="228.7" x2="1385.6" y2="600.0" style="--len:429;--d:1.54s"/>
+<line class="ll" x1="1600.0" y1="428.7" x2="1501.1" y2="600.0" style="--len:198;--d:1.58s"/>
+</g>
+</svg></div>
+    <div class="wo-cap">The lattice draws itself in: many positions, one connected system.</div>
+  </section>
+
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The mark</h3><h4>One reading of the lattice.</h4></div>
+    <div class="ch-intro reveal"><p>The W is the lattice resolved to a single mark. Two rising forms meet in the middle, cut from the same triangular cells the framework is built from, drawn at one weight so it holds as a logo and breaks back into the pattern when it needs to.</p></div>
     <div class="wo-card lockup reveal"><img loading="lazy" src="images/wondrous/lockup.jpg" alt="The Wondrous horizontal logo lockup"/></div>
     <div class="wo-cap">The primary lockup. The mark also stands alone above the name for tighter spaces.</div>
   </section>
@@ -115,35 +191,35 @@
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The system</h3><h4>One device, used with discipline.</h4></div>
-    <div class="ch-intro reveal"><p>The facets of the W become a flexible graphic device. It cuts across a layout to frame a portrait, holds the two brand lines, and sets a rhythm that reads instantly as Wondrous across a poster, a social post or a wall. The exploration kept the device tight so it could carry photography without fighting it.</p></div>
+    <div class="cs-sec reveal"><h3>The treatment</h3><h4>The pattern, put to work.</h4></div>
+    <div class="ch-intro reveal"><p>Laid over photography the lattice does something quiet and useful: it holds very different people inside one structure without flattening any of them. Filled, outlined or cropped to an edge, it carries the brand across a poster, a slide or a wall and always reads as Wondrous.</p></div>
+    <div class="wo-art reveal"><img loading="lazy" src="images/wondrous/lattice-people.jpg" alt="The Wondrous lattice laid over a group of different people"/></div>
+    <div class="wo-cap">The lattice as a treatment, one structure across many people.</div>
     <div class="wo-car reveal">
-      <img loading="lazy" src="images/wondrous/e1.jpg" alt="Wondrous identity exploration, portrait poster"/>
-      <img loading="lazy" src="images/wondrous/e2.jpg" alt="Wondrous identity exploration, graphic device"/>
-      <img loading="lazy" src="images/wondrous/e3.jpg" alt="Wondrous identity exploration, brand line layout"/>
-      <img loading="lazy" src="images/wondrous/e4.jpg" alt="Wondrous identity exploration, portrait poster"/>
-      <img loading="lazy" src="images/wondrous/e5.jpg" alt="Wondrous identity exploration, amber field"/>
-      <img loading="lazy" src="images/wondrous/e6.jpg" alt="Wondrous identity exploration, line and device"/>
-      <img loading="lazy" src="images/wondrous/e7.jpg" alt="Wondrous identity exploration, layout study"/>
-      <img loading="lazy" src="images/wondrous/e8.jpg" alt="Wondrous identity exploration, mark study"/>
-      <img loading="lazy" src="images/wondrous/e9.jpg" alt="Wondrous identity exploration, layout study"/>
-      <img loading="lazy" src="images/wondrous/e10.jpg" alt="Wondrous identity exploration, triangular device"/>
-      <img loading="lazy" src="images/wondrous/e11.jpg" alt="Wondrous identity exploration, portrait application"/>
-      <img loading="lazy" src="images/wondrous/e12.jpg" alt="Wondrous identity exploration, portrait application"/>
+      <img loading="lazy" src="images/wondrous/e3.jpg" alt="Wondrous lattice, outlined over the brand colour"/>
+      <img loading="lazy" src="images/wondrous/e2.jpg" alt="Wondrous lattice, line network forming the mark"/>
+      <img loading="lazy" src="images/wondrous/e10.jpg" alt="Wondrous lattice, filled cells over photography"/>
+      <img loading="lazy" src="images/wondrous/e1.jpg" alt="Wondrous identity, portrait poster"/>
+      <img loading="lazy" src="images/wondrous/e4.jpg" alt="Wondrous identity, portrait poster"/>
+      <img loading="lazy" src="images/wondrous/e5.jpg" alt="Wondrous identity, amber field"/>
+      <img loading="lazy" src="images/wondrous/e6.jpg" alt="Wondrous lattice, line and device"/>
+      <img loading="lazy" src="images/wondrous/e8.jpg" alt="Wondrous identity, mark study"/>
+      <img loading="lazy" src="images/wondrous/e11.jpg" alt="Wondrous identity, portrait application"/>
+      <img loading="lazy" src="images/wondrous/e12.jpg" alt="Wondrous identity, portrait application"/>
     </div>
-    <div class="wo-cap">Twelve studies, working the mark, the device and the two lines across formats. Swipe to move through.</div>
+    <div class="wo-cap">The treatment across the identity: outlined, filled and cropped. Swipe to move through.</div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>A tool from the brand</h3><h4>The thinking, made usable.</h4></div>
-    <div class="ch-intro reveal"><p>The identity had to do more than look right. We turned one of the consultancy&rsquo;s leadership models into a single working sheet, a guide to inclusive leadership that a client can read in a sitting and act on. The graphic device, the palette and the voice all carry through, so the tool feels like part of the brand rather than a leaflet bolted on.</p></div>
+    <div class="ch-intro reveal"><p>The identity had to do more than look right. We turned one of the consultancy&rsquo;s leadership models into a single working sheet, a guide to inclusive leadership that a client can read in a sitting and act on. The lattice, the palette and the voice all carry through, so the tool feels like part of the brand rather than a leaflet bolted on.</p></div>
     <div class="wo-info reveal"><img loading="lazy" src="images/wondrous/infographic.jpg" alt="Wondrous inclusive leadership single-sheet guide"/></div>
     <div class="wo-cap">A one-sheet guide to inclusive leadership, set in the new system.</div>
   </section>
 
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The website</h3><h4>A site built to carry it.</h4></div>
-    <div class="ch-intro reveal"><p>We designed and built the website around one idea: when people flourish, business thrives. Rounded cards soften the structure for a calmer read, the amber leads the eye to the points that matter, and the portraits do the work the brand is about. The homepage runs from the headline through the offer, the proof and the solutions to a single clear contact.</p></div>
+    <div class="ch-intro reveal"><p>We designed and built the website around one idea: when people flourish, business thrives. Rounded cards soften the structure for a calmer read, the amber leads the eye to the points that matter, and the lattice frames the photography the brand is about. The homepage runs from the headline through the offer, the proof and the solutions to a single clear contact.</p></div>
     <div class="wo-browser reveal">
       <div class="wo-bar"><i></i><i></i><i></i><span class="url">wondrouspeople.com</span></div>
       <div class="wo-win"><img loading="lazy" src="images/wondrous/site-home.jpg" alt="The Wondrous homepage, full design"/></div>
@@ -160,8 +236,8 @@
   </section>
 
   <section class="section-pad cs-chapter">
-    <div class="cs-sec reveal"><h3>The outcome</h3><h4>A brand that finally matches the work.</h4></div>
-    <div class="ch-intro reveal"><p>Wondrous came out of it with a complete identity, a name made into a mark, a palette with a reason behind it, a graphic device that travels, and a website built to put it all to work. The brand now reads with the same warmth and confidence as the consultancy itself.</p></div>
+    <div class="cs-sec reveal"><h3>The outcome</h3><h4>A brand built from how they think.</h4></div>
+    <div class="ch-intro reveal"><p>Wondrous came out of it with one idea running through everything: the lattice as framework, as mark, as pattern and as the structure of the site. A name made into a system, a palette with a reason behind it, and a website built to put it all to work. The brand now reads with the same structure and warmth as the consultancy itself.</p></div>
   </section>
 
   <section class="section-pad pt"><div class="cs-next"><span class="eyebrow" style="color:var(--t3)">Next</span><a href="work-motorrad.html" data-cursor="View">BMW Motorrad <span>&rarr;</span></a></div></section>
