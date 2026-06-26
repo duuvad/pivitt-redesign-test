@@ -27,6 +27,11 @@
 .ox-dirs .chosen figcaption{color:var(--t1)}
 .ox-dirs .chosen img{border-color:rgba(255,255,255,.28)}
 @media(max-width:620px){.ox-dirs{grid-template-columns:1fr}}
+.ox-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 18px;margin:clamp(24px,3vw,42px) 0 0;-webkit-overflow-scrolling:touch}
+.ox-carousel::-webkit-scrollbar{height:6px}
+.ox-carousel::-webkit-scrollbar-track{background:transparent}
+.ox-carousel::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:6px}
+.ox-carousel img{flex:0 0 auto;height:clamp(250px,32vw,400px);width:auto;display:block;object-fit:cover;border:1px solid var(--bdr);border-radius:10px;background:#0b0b12;scroll-snap-align:start}
 </style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
@@ -92,6 +97,22 @@
     <div class="ox-cap">Three routes for the same idea. We shipped the isometric.</div>
   </section>
 
+  <section class="section-pad cs-chapter">
+    <div class="cs-sec reveal"><h3>The exploration</h3><h4>Behind the routes.</h4></div>
+    <div class="ch-intro reveal"><p>The three routes sat on top of a wider exploration: moodboards and composites, a purple colour system, generative-AI experiments and illustration studies, before the green isometric won out.</p></div>
+    <div class="ox-carousel reveal">
+      <img loading="lazy" src="images/oxbow/concept/c1.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c2.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c3.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c4.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c5.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c6.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c7.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c8.jpg" alt="OxBow concept and development work"/>
+      <img loading="lazy" src="images/oxbow/concept/c9.jpg" alt="OxBow concept and development work"/>
+    </div>
+    <div class="ox-cap">Concept and development work, from moodboards to the routes not taken.</div>
+  </section>
   <section class="section-pad cs-chapter">
     <div class="cs-sec reveal"><h3>The illustration</h3><h4>An isometric world for green projects.</h4></div>
     <div class="ch-intro reveal"><p>The chosen route built a custom isometric world: green projects shown across their full lifecycle, from conception and financing through construction, operation and repurposing, so a reader sees the idea before reading a word of it.</p></div>
