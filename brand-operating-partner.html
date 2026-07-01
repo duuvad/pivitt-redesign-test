@@ -15,7 +15,7 @@
 .bop-orb.o2{width:38vw;height:38vw;right:-10vw;top:22vh;background:radial-gradient(circle,#06B6D4 0%,transparent 70%);animation:bopDrift2 32s ease-in-out infinite alternate}
 @keyframes bopDrift1{from{transform:translate(0,0)}to{transform:translate(6vw,8vh)}}
 @keyframes bopDrift2{from{transform:translate(0,0)}to{transform:translate(-7vw,-6vh)}}
-.bop-hero .crumb,.bop-hero h1,.bop-hero .lead,.bop-hero .bop-hero-cta{position:relative;z-index:1}
+.bop-hero .inner{position:relative;z-index:2}
 .bop-tick{position:relative;z-index:1;margin-top:clamp(22px,3vw,40px);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);display:flex;align-items:center;gap:14px}
 .bop-tick .dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(90deg,#3366FF,#06B6D4);flex:none;animation:bopPulse 2.4s ease-in-out infinite}
 @keyframes bopPulse{0%,100%{opacity:.5}50%{opacity:1}}
@@ -101,6 +101,43 @@
   .bop-tier:hover{transform:none}
 }
 </style>
+<style>
+/* Immersive service page layer */
+.sv-hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(48px,7vh,96px)}
+.sv-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.sv-hero .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,7,11,.62) 0%,rgba(7,7,11,.18) 42%,rgba(7,7,11,.88) 100%)}
+.sv-hero .inner{position:relative;z-index:2}
+.sv-hero .crumb{margin-bottom:18px}
+.sv-hero h1{max-width:14ch}
+.sv-hero .lead{max-width:52ch}
+.sv-credit{margin-top:clamp(18px,2vw,28px);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+.sv-credit b{font-weight:600;color:var(--t2)}
+
+.sv-parallax{position:relative;height:clamp(320px,64vh,640px);overflow:hidden;margin:clamp(40px,5vw,80px) 0}
+.sv-parallax img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
+.sv-parallax .cap{position:absolute;left:var(--pad);bottom:clamp(18px,2.4vw,34px);z-index:2;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);background:rgba(7,7,11,.45);backdrop-filter:blur(6px);padding:9px 14px;border-radius:100px}
+.sv-parallax::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.28),transparent 30%,transparent 72%,rgba(7,7,11,.5))}
+
+.sv-cluster{display:grid;grid-template-columns:1.35fr 1fr;grid-auto-rows:clamp(160px,24vw,340px);gap:clamp(12px,1.2vw,20px)}
+.sv-cluster figure{position:relative;margin:0;overflow:hidden;border-radius:16px;border:1px solid var(--bdr)}
+.sv-cluster figure.tall{grid-row:span 2}
+.sv-cluster img,.sv-cluster video{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);will-change:transform}
+.sv-cluster figure:hover img,.sv-cluster figure:hover video{transform:scale(1.045)}
+.sv-cluster figcaption{position:absolute;left:16px;bottom:14px;z-index:2;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(7,7,11,.5);backdrop-filter:blur(6px);padding:8px 12px;border-radius:100px}
+.sv-cluster figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,7,11,.55))}
+@media(max-width:760px){.sv-cluster{grid-template-columns:1fr}.sv-cluster figure.tall{grid-row:auto}}
+
+.sv-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.2vw,20px)}
+.sv-reel{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bdr);aspect-ratio:9/12}
+.sv-reel video{width:100%;height:100%;object-fit:cover}
+.sv-reel span{position:absolute;left:14px;bottom:12px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(7,7,11,.5);backdrop-filter:blur(6px);padding:8px 12px;border-radius:100px}
+@media(max-width:760px){.sv-reels{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){
+  .sv-parallax img{top:0;height:100%}
+  .sv-cluster figure:hover img,.sv-cluster figure:hover video{transform:none}
+}
+</style>
 </head><body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
@@ -137,13 +174,17 @@
 <div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
 </div></div><main class="page">
 
-  <section class="phero section-pad bop-hero" data-spine="Brand Operating Partner">
-    <div class="bop-orbs" aria-hidden="true"><div class="bop-orb o1"></div><div class="bop-orb o2"></div></div>
+  <section class="phero sv-hero bop-hero" data-spine="Brand Operating Partner">
+    <video autoplay muted loop playsinline preload="metadata" poster="images/bmwhz/header.jpg" data-io><source src="videos/bmwhz/hero.mp4" type="video/mp4"/></video>
+    <div class="veil" aria-hidden="true"></div>
+    <div class="inner section-pad" style="padding-top:0;padding-bottom:0">
     <div class="crumb"><a href="index.html">Pivitt</a> / Brand Operating Partner</div>
     <h1>Every system needs an operator.</h1>
     <p class="lead">The retainer at the centre of how we work. We stay on after the build to run, protect and improve the brand system as the business scales. Three tiers, one standard, and the model behind our eight-year BMW Group partnership.</p>
     <div class="bop-tick" aria-hidden="true"><span class="dot"></span><span>Now shipping</span><span class="tw" id="bopTicker">Campaign toolkits</span></div>
     <div class="bop-hero-cta"><a class="btn-primary mag" href="#tiers" data-cursor="View">See the tiers</a><a class="btn-ghost mag" href="founder-call.html" data-cursor="Book">Talk to the founder</a></div>
+    <div class="sv-credit">From the work &middot; <b>BMW, The Change of Horizon</b></div>
+    </div>
   </section>
 
   <section class="section-pad pt statement-wrap"><p class="statement reveal">Most brand systems start to decay the day the project ends. Ours come with an <span class="accent">operator</span>.</p></section>
@@ -237,6 +278,26 @@
     </div>
   </section>
 
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">In the field</span><span class="n">Retainer output, installed</span></div>
+    <div class="sv-cluster reveal">
+      <figure class="tall"><img src="images/showroom/event-wide.jpg" alt="BMW Park Lane event environment" loading="lazy"/><figcaption>BMW Park Lane &middot; Event environment</figcaption></figure>
+      <figure><img src="images/showroom/pillar-red.jpg" alt="Showroom pillar graphics" loading="lazy"/><figcaption>BMW Park Lane &middot; Pillar graphics</figcaption></figure>
+      <figure><img src="images/showroom/mini-taxi.jpg" alt="MINI vehicle graphics" loading="lazy"/><figcaption>MINI &middot; Vehicle graphics</figcaption></figure>
+      <figure><img src="images/showroom/event-roundel.jpg" alt="Event roundel display" loading="lazy"/><figcaption>BMW Park Lane &middot; Event display</figcaption></figure>
+      <figure><img src="images/showroom/hero.jpg" alt="Showroom environment" loading="lazy"/><figcaption>BMW Park Lane &middot; Showroom</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">Always on</span><span class="n">The weekly drumbeat</span></div>
+    <div class="sv-reels reveal">
+      <div class="sv-reel"><video autoplay muted loop playsinline preload="metadata" data-io><source src="videos/mini/reel-wake-up.mp4" type="video/mp4"/></video><span>MINI &middot; Social film</span></div>
+      <div class="sv-reel"><video autoplay muted loop playsinline preload="metadata" data-io><source src="videos/mini/reel-mini-app.mp4" type="video/mp4"/></video><span>MINI &middot; App film</span></div>
+      <div class="sv-reel"><video autoplay muted loop playsinline preload="metadata" data-io><source src="videos/mini/reel-design-your-way.mp4" type="video/mp4"/></video><span>MINI &middot; Campaign cutdown</span></div>
+    </div>
+  </section>
+
   <section class="section-pad pt proofline reveal"><span class="pl-lab">In their words</span><p></p>
     <figure class="bop-quote">
       <blockquote>&ldquo;The team at Pivitt offer so much more than creative support and production. The ability to offer guidance and advice on bigger strategic objectives is exceptional.&rdquo;</blockquote>
@@ -281,6 +342,15 @@
   var items=['Campaign toolkits','Window graphics','Launch films','Print and POS','Digital invitations','Social systems','Event collateral','Showroom displays'];
   var tk=document.getElementById('bopTicker'), ti=0;
   if(tk && !rm){ setInterval(function(){ ti=(ti+1)%items.length; tk.style.opacity=0; setTimeout(function(){ tk.textContent=items[ti]; tk.style.opacity=1; },260); }, 2600); tk.style.transition='opacity .26s'; }
+
+
+  /* Play videos only in view */
+  if('IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+      var v=e.target; if(e.isIntersecting){v.play&&v.play().catch(function(){});}else{v.pause&&v.pause();}
+    });},{threshold:.2});
+    document.querySelectorAll('video[data-io]').forEach(function(v){vio.observe(v);});
+  }
 
   /* Count-up stats */
   function fmt(n){ return n.toLocaleString('en-GB'); }

@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-GB" class="no-js"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Brand Strategy & Positioning London &middot; Pivitt</title><meta name="robots" content="noindex"/>
+<title>Brand Strategy &amp; Positioning London &middot; Pivitt</title><meta name="robots" content="noindex"/>
+<meta name="description" content="Strategic brand positioning for established UK businesses. Market analysis, competitive positioning, messaging architecture, audience strategy."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=34"></head><body>
+<link rel="stylesheet" href="assets/site.css?v=34">
+<style>
+/* Immersive service page layer */
+.sv-hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(48px,7vh,96px)}
+.sv-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.sv-hero .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,7,11,.62) 0%,rgba(7,7,11,.18) 42%,rgba(7,7,11,.88) 100%)}
+.sv-hero .inner{position:relative;z-index:2}
+.sv-hero .crumb{margin-bottom:18px}
+.sv-hero h1{max-width:14ch}
+.sv-hero .lead{max-width:52ch}
+.sv-credit{margin-top:clamp(18px,2vw,28px);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+.sv-credit b{font-weight:600;color:var(--t2)}
+
+.sv-parallax{position:relative;height:clamp(320px,64vh,640px);overflow:hidden;margin:clamp(40px,5vw,80px) 0}
+.sv-parallax img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
+.sv-parallax .cap{position:absolute;left:var(--pad);bottom:clamp(18px,2.4vw,34px);z-index:2;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);background:rgba(7,7,11,.45);backdrop-filter:blur(6px);padding:9px 14px;border-radius:100px}
+.sv-parallax::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.28),transparent 30%,transparent 72%,rgba(7,7,11,.5))}
+
+.sv-cluster{display:grid;grid-template-columns:1.35fr 1fr;grid-auto-rows:clamp(160px,24vw,340px);gap:clamp(12px,1.2vw,20px)}
+.sv-cluster figure{position:relative;margin:0;overflow:hidden;border-radius:16px;border:1px solid var(--bdr)}
+.sv-cluster figure.tall{grid-row:span 2}
+.sv-cluster img,.sv-cluster video{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);will-change:transform}
+.sv-cluster figure:hover img,.sv-cluster figure:hover video{transform:scale(1.045)}
+.sv-cluster figcaption{position:absolute;left:16px;bottom:14px;z-index:2;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(7,7,11,.5);backdrop-filter:blur(6px);padding:8px 12px;border-radius:100px}
+.sv-cluster figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,7,11,.55))}
+@media(max-width:760px){.sv-cluster{grid-template-columns:1fr}.sv-cluster figure.tall{grid-row:auto}}
+
+.sv-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.2vw,20px)}
+.sv-reel{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bdr);aspect-ratio:9/12}
+.sv-reel video{width:100%;height:100%;object-fit:cover}
+.sv-reel span{position:absolute;left:14px;bottom:12px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(7,7,11,.5);backdrop-filter:blur(6px);padding:8px 12px;border-radius:100px}
+@media(max-width:760px){.sv-reels{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){
+  .sv-parallax img{top:0;height:100%}
+  .sv-cluster figure:hover img,.sv-cluster figure:hover video{transform:none}
+}
+</style>
+</head><body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
-<aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">Brand strategy & positioning</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
+<aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">Brand Operating Partner</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
 <header id="hdr"><div class="brand"><a href="index.html"><img src="Pivitt_white_logo.png" alt="Pivitt"/></a></div>
 <nav class="mainnav">
 <div class="nav-item"><a href="work.html">Work</a></div>
@@ -38,20 +77,39 @@
 <div class="mm-col"><span class="mm-h">Services</span><a href="brand-strategy-positioning.html">Strategy &amp; positioning</a><a href="brand-identity-design.html">Identity &amp; design</a><a href="brand-communication-content.html">Communication &amp; content</a><a href="digital-brand-experience.html">Digital experience</a><a href="brand-operating-partner.html">Brand Operating Partner</a></div>
 <div class="mm-col"><span class="mm-h">Method</span><a href="method.html">The method</a><a href="360-model.html">The 360 Model</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">System vs pieces</a></div>
 <div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
-</div></div><main class="page">    <section class="phero section-pad" data-spine="Brand strategy & positioning">
-    <div class="crumb"><a href="index.html">Pivitt</a> / Brand strategy & positioning</div>
-    <h1>Find the position only you can own.</h1>
-    <p class="lead">Strategic brand positioning for established UK businesses. Market analysis, competitive positioning, messaging architecture, audience strategy.</p>
+</div></div><main class="page">
+
+  <section class="phero sv-hero" data-spine="Brand strategy &amp; positioning">
+    <video  autoplay muted loop playsinline preload="metadata" poster="images/fpc/tile.jpg" data-io ><source src="videos/fpc/hero.mp4" type="video/mp4"/></video>
+    <div class="veil" aria-hidden="true"></div>
+    <div class="inner section-pad" style="padding-top:0;padding-bottom:0">
+      <div class="crumb"><a href="index.html">Pivitt</a> / Brand strategy &amp; positioning</div>
+      <h1>Find the position only you can own.</h1>
+      <p class="lead">Most positioning is a compromise between what you do and what the market already believes. We find the claim you can prove and competitors cannot follow, then build the argument that carries it.</p>
+      <div class="sv-credit">From the work &middot; <b>Future Planet Capital</b></div>
+    </div>
   </section>
+
   <section class="section-pad pt statement-wrap"><p class="statement reveal">Most brands compete on noise. The few that win own a position the market hands to <span class="accent">no one else</span>.</p></section>
+
   <section class="section-pad pt"><div class="sh reveal"><span class="eyebrow">What it covers</span><span class="n">The scope</span></div><div class="fgrid reveal"><div class="fcard"><span class="fn">01</span><h4>Market and category mapping</h4><p>Where demand actually sits, and where competitors cluster.</p></div><div class="fcard"><span class="fn">02</span><h4>Competitive positioning</h4><p>The space you can own, and the reason it holds.</p></div><div class="fcard"><span class="fn">03</span><h4>Value proposition</h4><p>The argument for why you win, sharpened to a line.</p></div><div class="fcard"><span class="fn">04</span><h4>Messaging architecture</h4><p>One story, told the right way for each audience.</p></div><div class="fcard"><span class="fn">05</span><h4>Audience strategy</h4><p>Who you are for, and how they really decide.</p></div><div class="fcard"><span class="fn">06</span><h4>Positioning statement</h4><p>The promise every other decision answers to.</p></div></div></section>
-  <section class="section-pad pt"><div class="imgband reveal"><div class="ib"><img src="images/branding-agency/cq-01-2a34b1ac.jpg" alt="" loading="lazy"/></div><div class="ib"><img src="images/branding-agency/pan-01-10626d78.jpg" alt="" loading="lazy"/></div><div class="ib"><img src="images/branding-agency/mel-01-50eb26b0.jpg" alt="" loading="lazy"/></div></div></section>
+
+  <div class="sv-parallax reveal"><img src="images/oxbow/hero.jpg" alt="OxBow &middot; Positioning made physical"/><span class="cap">OxBow &middot; Positioning made physical</span></div>
+
+  <section class="section-pad pt"><div class="sh reveal"><span class="eyebrow">The artefacts</span><span class="n">Strategy you can hold</span></div><div class="sv-cluster reveal"><figure class="tall"><img src="images/cquest/d1-cover.jpg" alt="C-Quest &middot; Direction one" loading="lazy"/><figcaption>C-Quest &middot; Direction one</figcaption></figure><figure><img src="images/cquest/d2-cover.jpg" alt="C-Quest &middot; Direction two" loading="lazy"/><figcaption>C-Quest &middot; Direction two</figcaption></figure><figure><img src="images/oxbow/sys-table.jpg" alt="OxBow &middot; The system, mapped" loading="lazy"/><figcaption>OxBow &middot; The system, mapped</figcaption></figure><figure><img src="images/oxbow/dir-blue.jpg" alt="OxBow &middot; Route explored" loading="lazy"/><figcaption>OxBow &middot; Route explored</figcaption></figure><figure><img src="images/oxbow/dir-green.jpg" alt="OxBow &middot; Route explored" loading="lazy"/><figcaption>OxBow &middot; Route explored</figcaption></figure></div></section>
+
+  
+
   <section class="section-pad pt"><div class="sh reveal"><span class="eyebrow">How it works</span><span class="n">The approach</span></div><div class="steps reveal"><div class="step"><span class="sn">01</span><h4>Diagnose</h4><p>We score the brand against the business and find where the two have drifted apart.</p></div><div class="step"><span class="sn">02</span><h4>Define</h4><p>We set the position, the proposition and the criteria every decision answers to.</p></div><div class="step"><span class="sn">03</span><h4>Align</h4><p>We hand every team the same story, so the market reads you the way you intend.</p></div></div></section>
-  <section class="section-pad pt proofline reveal"><span class="pl-lab">Proof</span><p>Positioning work that helped reposition a startup to over £40M in revenue inside eighteen months.</p></section>
-  <section class="section-pad pt"><div class="sh reveal"><span class="eyebrow">Selected work</span><span class="n">See it applied</span></div><div class="rwork reveal"><a class="rtile" href="work-cq.html"><div class="rt-img"><img src="images/branding-agency/cq-01-2a34b1ac.jpg" alt="C-Quest" loading="lazy"/></div><div class="rt-meta"><b>C-Quest</b><span>Case study</span></div></a><a class="rtile" href="work-pansports.html"><div class="rt-img"><img src="images/branding-agency/pan-01-10626d78.jpg" alt="Pansports" loading="lazy"/></div><div class="rt-meta"><b>Pansports</b><span>Case study</span></div></a><a class="rtile" href="work-taya.html"><div class="rt-img"><img src="images/branding-agency/taya-01-a0ccb76d.jpg" alt="Taya" loading="lazy"/></div><div class="rt-meta"><b>Taya</b><span>Case study</span></div></a></div></section>
+
+  <section class="section-pad pt proofline reveal"><span class="pl-lab">Proof</span><p>Positioning work behind a startup investment scaled to over &pound;40M in revenue.</p></section>
+
+  <section class="section-pad pt"><div class="sh reveal"><span class="eyebrow">Selected work</span><span class="n">See it applied</span></div><div class="rwork reveal"><a class="rtile" href="work-fpc.html"><div class="rt-img"><img src="images/fpc/tile.jpg" alt="Future Planet Capital" loading="lazy"/></div><div class="rt-meta"><b>Future Planet Capital</b><span>Case study</span></div></a><a class="rtile" href="work-oxbow.html"><div class="rt-img"><img src="images/oxbow/tile.jpg" alt="OxBow" loading="lazy"/></div><div class="rt-meta"><b>OxBow</b><span>Case study</span></div></a><a class="rtile" href="work-cq.html"><div class="rt-img"><img src="c-quest.jpg" alt="C-Quest" loading="lazy"/></div><div class="rt-meta"><b>C-Quest</b><span>Case study</span></div></a></div></section>
+
 <section class="cta section-pad" data-spine="Start"><span class="eyebrow reveal">Where it starts</span><h2 class="reveal">Find out what your brand is costing you.</h2>
     <div class="cta-row reveal"><p>Every engagement starts with the Brand Alignment Diagnostic, a fixed first step that scores your brand against the business and shows what to fix first.</p>
     <div class="cta-btns"><a class="btn-primary mag" href="diagnostic.html" data-cursor="Book">Brand Alignment Diagnostic, &pound;1,500</a><a class="btn-ghost mag" href="work.html" data-cursor="View">See the work</a></div></div></section>
+</main>
 <footer>
   <div class="foot-top">
     <div class="foot-brand"><img src="Pivitt_white_logo.png" alt="Pivitt"/><p>Brand transformation for businesses that have outgrown their brand. Strategy and execution under one partner.</p></div>
@@ -61,7 +119,29 @@
       <div><span>More</span><a href="diagnostic.html">Diagnostic</a><a href="results.html">Results</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">Compare</a><a href="contact.html">Contact</a></div>
     </div>
   </div>
-  <div class="foot-bot"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></span></div>
-</footer></main>
+  <div class="foot-btm"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></div>
+</footer>
+
 <script src="assets/site.js?v=34"></script>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Parallax */
+  if(!rm){document.querySelectorAll('.sv-parallax img').forEach(function(img){
+    var wrap=img.parentElement;
+    function move(){var r=wrap.getBoundingClientRect(),vh=innerHeight;
+      if(r.bottom<0||r.top>vh)return;
+      var p=(r.top+r.height/2-vh/2)/vh; img.style.transform='translateY('+(p*9)+'%)';}
+    addEventListener('scroll',move,{passive:true});move();
+  });}
+  /* Play videos only in view */
+  if('IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+      var v=e.target; if(e.isIntersecting){v.play&&v.play().catch(function(){});}else{v.pause&&v.pause();}
+    });},{threshold:.2});
+    document.querySelectorAll('video[data-io]').forEach(function(v){vio.observe(v);});
+  }
+})();
+</script>
+
 </body></html>
