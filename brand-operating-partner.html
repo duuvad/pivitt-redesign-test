@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Brand Operating Partner &middot; Pivitt</title><meta name="robots" content="noindex"/>
+<meta name="description" content="The Brand Operating Partner retainer. Ongoing brand operations at three tiers, from governance to a fully embedded brand function. The model behind our eight-year BMW Group partnership."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=34">
+<style>
+/* Page-scoped: Brand Operating Partner */
+.bop-hero{position:relative;overflow:hidden}
+.bop-orbs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.bop-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.32;will-change:transform}
+.bop-orb.o1{width:52vw;height:52vw;left:-14vw;top:-18vw;background:radial-gradient(circle,#3366FF 0%,transparent 70%);animation:bopDrift1 26s ease-in-out infinite alternate}
+.bop-orb.o2{width:38vw;height:38vw;right:-10vw;top:22vh;background:radial-gradient(circle,#06B6D4 0%,transparent 70%);animation:bopDrift2 32s ease-in-out infinite alternate}
+@keyframes bopDrift1{from{transform:translate(0,0)}to{transform:translate(6vw,8vh)}}
+@keyframes bopDrift2{from{transform:translate(0,0)}to{transform:translate(-7vw,-6vh)}}
+.bop-hero .crumb,.bop-hero h1,.bop-hero .lead,.bop-hero .bop-hero-cta{position:relative;z-index:1}
+.bop-tick{position:relative;z-index:1;margin-top:clamp(22px,3vw,40px);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);display:flex;align-items:center;gap:14px}
+.bop-tick .dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(90deg,#3366FF,#06B6D4);flex:none;animation:bopPulse 2.4s ease-in-out infinite}
+@keyframes bopPulse{0%,100%{opacity:.5}50%{opacity:1}}
+.bop-tick .tw{color:var(--t2);min-width:22ch}
+.bop-hero-cta{margin-top:clamp(26px,3vw,44px);display:flex;gap:14px;flex-wrap:wrap}
+
+/* Ledger */
+.bop-ledger{border-top:1px solid var(--bdr)}
+.bop-lrow{display:grid;grid-template-columns:minmax(90px,.55fr) 1fr 1fr;gap:clamp(16px,3vw,56px);padding:clamp(20px,2.4vw,34px) 0;border-bottom:1px solid var(--bdr)}
+.bop-lrow .lk{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);padding-top:4px}
+.bop-lrow p{margin:0;font-size:clamp(14px,1.15vw,17px);font-weight:300;line-height:1.55}
+.bop-lrow .without{color:var(--t3)}
+.bop-lrow .with{color:var(--t1)}
+.bop-lhead{display:grid;grid-template-columns:minmax(90px,.55fr) 1fr 1fr;gap:clamp(16px,3vw,56px);padding-bottom:14px}
+.bop-lhead span{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.bop-lhead .a{color:var(--t3)}
+.bop-lhead .b{background:linear-gradient(90deg,#3366FF,#06B6D4);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:760px){.bop-lrow,.bop-lhead{grid-template-columns:1fr}.bop-lhead .lk-sp{display:none}}
+
+/* Animated proof stats */
+.bop-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,22px)}
+.bop-stat{border:1px solid var(--bdr);border-radius:18px;padding:clamp(26px,2.8vw,46px);background:rgba(255,255,255,0.02);backdrop-filter:blur(8px)}
+.bop-stat .num{font-size:clamp(40px,5.4vw,84px);font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--t1);font-variant-numeric:tabular-nums}
+.bop-stat .num .suf{background:linear-gradient(90deg,#3366FF,#06B6D4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bop-stat .lab{margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--t3)}
+@media(max-width:760px){.bop-stats{grid-template-columns:1fr}}
+
+/* Tiers */
+.bop-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,22px);align-items:stretch}
+.bop-tier{position:relative;border:1px solid var(--bdr);border-radius:20px;padding:clamp(28px,2.6vw,44px);background:rgba(255,255,255,0.025);backdrop-filter:blur(10px);display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s var(--ease);will-change:transform}
+.bop-tier:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.25)}
+.bop-tier.feat{border-color:transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,#3366FF,#06B6D4) border-box;border:1px solid transparent}
+.bop-tier .tname{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t2)}
+.bop-tier.feat .tname{background:linear-gradient(90deg,#3366FF,#06B6D4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bop-tier .tprice{margin-top:18px;font-size:clamp(34px,3vw,48px);font-weight:300;letter-spacing:-.03em;color:var(--t1)}
+.bop-tier .tprice span{font-size:14px;color:var(--t3);letter-spacing:0}
+.bop-tier .tfor{margin:14px 0 0;font-size:14px;font-weight:300;line-height:1.55;color:var(--t2);min-height:3.2em}
+.bop-tier ul{list-style:none;margin:clamp(20px,2vw,30px) 0 0;padding:clamp(20px,2vw,30px) 0 0;border-top:1px solid var(--bdr);display:flex;flex-direction:column;gap:12px;flex:1}
+.bop-tier li{font-size:13.5px;font-weight:300;line-height:1.5;color:var(--t2);padding-left:20px;position:relative}
+.bop-tier li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:1px;background:linear-gradient(90deg,#3366FF,#06B6D4)}
+.bop-tier li.carry{color:var(--t3)}
+.bop-tier .tcta{margin-top:clamp(22px,2.2vw,32px)}
+.bop-tnote{margin-top:clamp(18px,2vw,28px);font-size:13px;font-weight:300;color:var(--t3)}
+@media(max-width:920px){.bop-tiers{grid-template-columns:1fr}}
+
+/* Rhythm timeline */
+.bop-rhythm{position:relative;max-width:820px}
+.bop-rline{position:absolute;left:11px;top:8px;bottom:8px;width:1px;background:var(--dim)}
+.bop-rfill{position:absolute;left:11px;top:8px;width:1px;height:0;background:linear-gradient(180deg,#3366FF,#06B6D4);transition:height .1s linear}
+.bop-rstep{position:relative;padding:0 0 clamp(36px,4vw,60px) 52px}
+.bop-rstep:last-child{padding-bottom:0}
+.bop-rstep .rdot{position:absolute;left:5px;top:6px;width:13px;height:13px;border-radius:50%;border:1px solid var(--bdr);background:var(--bg);transition:border-color .4s,box-shadow .4s}
+.bop-rstep.lit .rdot{border-color:#06B6D4;box-shadow:0 0 14px rgba(6,182,212,.45)}
+.bop-rstep .rk{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+.bop-rstep h4{margin:8px 0 8px;font-size:clamp(19px,1.7vw,26px);font-weight:300;letter-spacing:-.02em;color:var(--t1)}
+.bop-rstep p{margin:0;max-width:52ch;font-size:clamp(14px,1.1vw,16px);font-weight:300;line-height:1.6;color:var(--t2)}
+
+/* Marquee */
+.bop-marquee{overflow:hidden;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:clamp(18px,2vw,28px) 0;position:relative}
+.bop-mtrack{display:flex;gap:0;width:max-content;animation:bopScroll 44s linear infinite}
+.bop-marquee:hover .bop-mtrack{animation-play-state:paused}
+.bop-mtrack span{font-size:clamp(15px,1.5vw,20px);font-weight:300;letter-spacing:-.01em;color:var(--t2);white-space:nowrap;padding:0 clamp(18px,2vw,30px);position:relative}
+.bop-mtrack span::after{content:"\00B7";position:absolute;right:-4px;color:var(--t3)}
+@keyframes bopScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Quote */
+.bop-quote{max-width:880px}
+.bop-quote blockquote{margin:0;font-size:clamp(21px,2.4vw,34px);font-weight:300;line-height:1.4;letter-spacing:-.02em;color:var(--t1)}
+.bop-quote figcaption{margin-top:22px;font-size:13px;color:var(--t3)}
+.bop-quote figcaption b{font-weight:500;color:var(--t2)}
+
+/* Entry routes */
+.bop-routes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.4vw,22px)}
+.bop-route{border:1px solid var(--bdr);border-radius:18px;padding:clamp(26px,2.6vw,42px);background:rgba(255,255,255,0.02)}
+.bop-route .rn{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+.bop-route h4{margin:14px 0 10px;font-size:clamp(19px,1.7vw,25px);font-weight:300;color:var(--t1)}
+.bop-route p{margin:0;font-size:14.5px;font-weight:300;line-height:1.6;color:var(--t2)}
+@media(max-width:760px){.bop-routes{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){
+  .bop-orb,.bop-tick .dot{animation:none}
+  .bop-mtrack{animation:none;flex-wrap:wrap;width:auto}
+  .bop-tier:hover{transform:none}
+}
+</style>
+</head><body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
+<aside class="spine" aria-hidden="true"><div class="spine-label" id="spineLabel">Brand Operating Partner</div><div class="spine-track"><div class="spine-progress" id="spineProgress"></div></div><div class="spine-yr">2026</div></aside>
+<header id="hdr"><div class="brand"><a href="index.html"><img src="Pivitt_white_logo.png" alt="Pivitt"/></a></div>
+<nav class="mainnav">
+<div class="nav-item"><a href="work.html">Work</a></div>
+<div class="nav-item has-dd"><a href="services.html">Services</a><div class="dd"><div class="dd-in">
+<a href="brand-strategy-positioning.html"><b>Strategy &amp; positioning</b><span>The position only you can own</span></a>
+<a href="brand-identity-design.html"><b>Identity &amp; design</b><span>The visual and verbal system</span></a>
+<a href="brand-communication-content.html"><b>Communication &amp; content</b><span>Turn the brand into demand</span></a>
+<a href="digital-brand-experience.html"><b>Digital experience</b><span>The brand, online</span></a>
+<a href="brand-operating-partner.html"><b>Brand Operating Partner</b><span>Your embedded brand team</span></a>
+</div></div></div>
+<div class="nav-item has-dd"><a href="method.html">Method</a><div class="dd"><div class="dd-in">
+<a href="method.html"><b>The method</b><span>Diagnose, Transform, Sustain</span></a>
+<a href="360-model.html"><b>The 360 Model</b><span>Six pillars, three stages</span></a>
+<a href="process.html"><b>Process</b><span>Nine steps end to end</span></a>
+<a href="whats-included.html"><b>What&rsquo;s included</b><span>Deliverables by stage</span></a>
+<a href="compare.html"><b>System vs pieces</b><span>Why an integrated brand wins</span></a>
+</div></div></div>
+<div class="nav-item has-dd dd-r"><a href="about.html">About</a><div class="dd"><div class="dd-in">
+<a href="about.html"><b>About Pivitt</b><span>Who we are</span></a>
+<a href="results.html"><b>Results</b><span>Outcomes and proof</span></a>
+<a href="founder-call.html"><b>A call with the founder</b><span>One hour, one to one</span></a>
+<a href="contact.html"><b>Contact</b><span>Start a conversation</span></a>
+</div></div></div>
+<div class="nav-item"><a href="insights.html">Insights</a></div>
+</nav><a class="hcta" href="diagnostic.html">Diagnostic</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span></button></header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mm-inner">
+<div class="mm-col"><span class="mm-h">Explore</span><a href="index.html">Home</a><a href="work.html">Work</a><a href="insights.html">Insights</a><a href="about.html">About</a></div>
+<div class="mm-col"><span class="mm-h">Services</span><a href="brand-strategy-positioning.html">Strategy &amp; positioning</a><a href="brand-identity-design.html">Identity &amp; design</a><a href="brand-communication-content.html">Communication &amp; content</a><a href="digital-brand-experience.html">Digital experience</a><a href="brand-operating-partner.html">Brand Operating Partner</a></div>
+<div class="mm-col"><span class="mm-h">Method</span><a href="method.html">The method</a><a href="360-model.html">The 360 Model</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">System vs pieces</a></div>
+<div class="mm-col"><span class="mm-h">Start</span><a href="results.html">Results</a><a href="founder-call.html">Founder call</a><a href="contact.html">Contact</a><a class="mm-cta" href="diagnostic.html">Brand Alignment Diagnostic</a></div>
+</div></div><main class="page">
+
+  <section class="phero section-pad bop-hero" data-spine="Brand Operating Partner">
+    <div class="bop-orbs" aria-hidden="true"><div class="bop-orb o1"></div><div class="bop-orb o2"></div></div>
+    <div class="crumb"><a href="index.html">Pivitt</a> / Brand Operating Partner</div>
+    <h1>Every system needs an operator.</h1>
+    <p class="lead">The retainer at the centre of how we work. We stay on after the build to run, protect and improve the brand system as the business scales. Three tiers, one standard, and the model behind our eight-year BMW Group partnership.</p>
+    <div class="bop-tick" aria-hidden="true"><span class="dot"></span><span>Now shipping</span><span class="tw" id="bopTicker">Campaign toolkits</span></div>
+    <div class="bop-hero-cta"><a class="btn-primary mag" href="#tiers" data-cursor="View">See the tiers</a><a class="btn-ghost mag" href="founder-call.html" data-cursor="Book">Talk to the founder</a></div>
+  </section>
+
+  <section class="section-pad pt statement-wrap"><p class="statement reveal">Most brand systems start to decay the day the project ends. Ours come with an <span class="accent">operator</span>.</p></section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">The economics</span><span class="n">What an operator changes</span></div>
+    <div class="bop-lhead reveal"><span class="lk-sp"></span><span class="a">Without an operator</span><span class="b">With one</span></div>
+    <div class="bop-ledger reveal">
+      <div class="bop-lrow"><span class="lk">Standards</span><p class="without">Every new hire and supplier interprets the guidelines their own way, and the system erodes one asset at a time.</p><p class="with">One team holds the standard as volume grows, so year three looks as sharp as launch week.</p></div>
+      <div class="bop-lrow"><span class="lk">Speed</span><p class="without">Every asset is a new brief, a new quote and a new wait while someone relearns the brand.</p><p class="with">A team already inside the brand, producing at pace from the first request.</p></div>
+      <div class="bop-lrow"><span class="lk">Cost</span><p class="without">Ad hoc suppliers, day rates and the rework that follows inconsistent output.</p><p class="with">One predictable monthly investment, scoped to how much the brand actually ships.</p></div>
+      <div class="bop-lrow"><span class="lk">Knowledge</span><p class="without">Context walks out the door with every handover and every departing marketer.</p><p class="with">Institutional memory that compounds. On some brands, we are eight years deep.</p></div>
+    </div>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">The proof</span><span class="n">BMW Group, since 2018</span></div>
+    <div class="bop-stats reveal">
+      <div class="bop-stat"><div class="num"><span class="cnt" data-target="8">0</span><span class="suf">yr</span></div><div class="lab">Continuous partnership</div></div>
+      <div class="bop-stat"><div class="num"><span class="cnt" data-target="200000">0</span><span class="suf">+</span></div><div class="lab">Assets delivered</div></div>
+      <div class="bop-stat"><div class="num"><span class="cnt" data-target="160">0</span><span class="suf">+</span></div><div class="lab">Campaigns shipped</div></div>
+    </div>
+  </section>
+
+  <section class="section-pad pt" id="tiers">
+    <div class="sh reveal"><span class="eyebrow">The tiers</span><span class="n">Three ways to run it</span></div>
+    <div class="bop-tiers reveal">
+      <div class="bop-tier">
+        <span class="tname">Steward</span>
+        <div class="tprice">&pound;2,500<span> /month</span></div>
+        <p class="tfor">For teams who produce in-house and need the system governed and the standard held.</p>
+        <ul>
+          <li>Brand governance and quality control</li>
+          <li>Guideline upkeep as the brand evolves</li>
+          <li>A monthly production allocation</li>
+          <li>Quarterly brand health review</li>
+          <li>Direct line to senior counsel</li>
+        </ul>
+        <div class="tcta"><a class="btn-ghost mag" href="contact.html" data-cursor="Start">Start with Steward</a></div>
+      </div>
+      <div class="bop-tier feat">
+        <span class="tname">Operator</span>
+        <div class="tprice">&pound;5,000<span> /month</span></div>
+        <p class="tfor">For brands shipping every week that need production run to one standard, at pace.</p>
+        <ul>
+          <li class="carry">Everything in Steward</li>
+          <li>Ongoing design and artwork production</li>
+          <li>Campaign rollout and adaptation</li>
+          <li>Motion and social formats</li>
+          <li>Priority turnaround</li>
+          <li>Monthly planning session</li>
+        </ul>
+        <div class="tcta"><a class="btn-primary mag" href="contact.html" data-cursor="Start">Start with Operator</a></div>
+      </div>
+      <div class="bop-tier">
+        <span class="tname">Partner</span>
+        <div class="tprice">&pound;8,500<span> /month</span></div>
+        <p class="tfor">The full BMW Group model. A senior brand function, embedded with your leadership.</p>
+        <ul>
+          <li class="carry">Everything in Operator</li>
+          <li>Embedded senior creative direction</li>
+          <li>Motion and video, end to end</li>
+          <li>Campaign platforms and launches</li>
+          <li>Strategic counsel alongside leadership</li>
+          <li>Quarterly strategy sessions</li>
+        </ul>
+        <div class="tcta"><a class="btn-ghost mag" href="contact.html" data-cursor="Start">Start with Partner</a></div>
+      </div>
+    </div>
+    <p class="bop-tnote reveal">All tiers run on a six-month minimum. Scope is set precisely after the Brand Alignment Diagnostic, so the tier fits the volume the brand actually needs.</p>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">The rhythm</span><span class="n">How it runs</span></div>
+    <div class="bop-rhythm reveal" id="bopRhythm">
+      <div class="bop-rline" aria-hidden="true"></div><div class="bop-rfill" id="bopRfill" aria-hidden="true"></div>
+      <div class="bop-rstep"><span class="rdot" aria-hidden="true"></span><span class="rk">Week one</span><h4>Embed</h4><p>We map the brand, the backlog and the way your team works. Access, tools and standards agreed before the first asset moves.</p></div>
+      <div class="bop-rstep"><span class="rdot" aria-hidden="true"></span><span class="rk">Every day</span><h4>Deliver</h4><p>Work moves through one pipeline with one point of accountability. No re-briefing, no relearning, no drift.</p></div>
+      <div class="bop-rstep"><span class="rdot" aria-hidden="true"></span><span class="rk">Every month</span><h4>Review</h4><p>Output reviewed against the system, a report on what shipped and what it did, and the next month planned.</p></div>
+      <div class="bop-rstep"><span class="rdot" aria-hidden="true"></span><span class="rk">Every quarter</span><h4>Advance</h4><p>A working session on where the brand goes next, so the system improves rather than just survives.</p></div>
+    </div>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">Throughput</span><span class="n">What a month can hold</span></div>
+    <div class="bop-marquee reveal" aria-label="Asset types produced under the retainer">
+      <div class="bop-mtrack">
+        <span>Campaign toolkits</span><span>Print and point of sale</span><span>Launch events</span><span>Window graphics</span><span>Digital invitations</span><span>Social systems</span><span>Motion and film</span><span>Showroom displays</span><span>Sales enablement</span><span>Event collateral</span>
+        <span>Campaign toolkits</span><span>Print and point of sale</span><span>Launch events</span><span>Window graphics</span><span>Digital invitations</span><span>Social systems</span><span>Motion and film</span><span>Showroom displays</span><span>Sales enablement</span><span>Event collateral</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad pt proofline reveal"><span class="pl-lab">In their words</span><p></p>
+    <figure class="bop-quote">
+      <blockquote>&ldquo;The team at Pivitt offer so much more than creative support and production. The ability to offer guidance and advice on bigger strategic objectives is exceptional.&rdquo;</blockquote>
+      <figcaption><b>Duncan Balloch</b> &middot; Group Marketing Manager, BMW Group</figcaption>
+    </figure>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">Where it fits</span><span class="n">Two ways in</span></div>
+    <div class="bop-routes reveal">
+      <div class="bop-route"><span class="rn">01 &middot; Through the method</span><h4>After the transformation</h4><p>Most partners arrive here from a transformation programme. The system is built, the playbook is written, and the retainer begins where the programme ends.</p></div>
+      <div class="bop-route"><span class="rn">02 &middot; Direct</span><h4>With a working system</h4><p>Established brands with a system already in place can start with the diagnostic and move straight to the retainer, at the tier the volume demands.</p></div>
+    </div>
+  </section>
+
+  <section class="section-pad pt">
+    <div class="sh reveal"><span class="eyebrow">Selected work</span><span class="n">The model in practice</span></div>
+    <div class="rwork reveal"><a class="rtile" href="work-bmw.html"><div class="rt-img"><img src="bmw-hero.jpg" alt="BMW Group" loading="lazy"/></div><div class="rt-meta"><b>BMW Group</b><span>Case study</span></div></a><a class="rtile" href="work-mini-electric.html"><div class="rt-img"><img src="images/mini/wge-tile.jpg" alt="MINI Electric" loading="lazy"/></div><div class="rt-meta"><b>MINI Electric</b><span>Case study</span></div></a><a class="rtile" href="work-motorrad.html"><div class="rt-img"><img src="images/motorrad/tile.jpg" alt="BMW Motorrad" loading="lazy"/></div><div class="rt-meta"><b>BMW Motorrad</b><span>Case study</span></div></a></div>
+  </section>
+
+<section class="cta section-pad" data-spine="Start"><span class="eyebrow reveal">Where it starts</span><h2 class="reveal">Decide what your brand does next.</h2>
+    <div class="cta-row reveal"><p>One hour with the founder to talk through the brand, the volume and the tier that fits. If the system needs work first, the diagnostic will show exactly where.</p>
+    <div class="cta-btns"><a class="btn-primary mag" href="founder-call.html" data-cursor="Book">Book a call with the founder</a><a class="btn-ghost mag" href="diagnostic.html" data-cursor="Book">Brand Alignment Diagnostic, &pound;1,500</a></div></div></section>
+</main>
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand"><img src="Pivitt_white_logo.png" alt="Pivitt"/><p>Brand transformation for businesses that have outgrown their brand. Strategy and execution under one partner.</p></div>
+    <div class="foot-nav">
+      <div><span>Explore</span><a href="work.html">Work</a><a href="services.html">Services</a><a href="method.html">Method</a><a href="about.html">About</a><a href="insights.html">Insights</a></div>
+      <div><span>Services</span><a href="brand-strategy-positioning.html">Strategy &amp; positioning</a><a href="brand-identity-design.html">Identity &amp; design</a><a href="brand-communication-content.html">Communication &amp; content</a><a href="digital-brand-experience.html">Digital experience</a><a href="brand-operating-partner.html">Brand Operating Partner</a></div>
+      <div><span>More</span><a href="diagnostic.html">Diagnostic</a><a href="results.html">Results</a><a href="process.html">Process</a><a href="whats-included.html">What&rsquo;s included</a><a href="compare.html">Compare</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+  <div class="foot-btm"><span>Pivitt &middot; Brand consultancy</span><span>Aldgate Tower, Leman Street, London E1 8FA</span><a href="mailto:davuud@pivitt.co.uk">davuud@pivitt.co.uk</a></div>
+</footer>
+<script src="assets/site.js?v=34"></script>
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Hero ticker */
+  var items=['Campaign toolkits','Window graphics','Launch films','Print and POS','Digital invitations','Social systems','Event collateral','Showroom displays'];
+  var tk=document.getElementById('bopTicker'), ti=0;
+  if(tk && !rm){ setInterval(function(){ ti=(ti+1)%items.length; tk.style.opacity=0; setTimeout(function(){ tk.textContent=items[ti]; tk.style.opacity=1; },260); }, 2600); tk.style.transition='opacity .26s'; }
+
+  /* Count-up stats */
+  function fmt(n){ return n.toLocaleString('en-GB'); }
+  var counted=false;
+  function runCounts(){
+    if(counted) return; counted=true;
+    document.querySelectorAll('.cnt').forEach(function(el){
+      var target=parseInt(el.getAttribute('data-target'),10);
+      if(rm){ el.textContent=fmt(target); return; }
+      var start=null, dur=1600;
+      function step(ts){ if(!start) start=ts; var p=Math.min((ts-start)/dur,1); var eased=1-Math.pow(1-p,3); el.textContent=fmt(Math.round(target*eased)); if(p<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsEl=document.querySelector('.bop-stats');
+  if(statsEl){
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en,ob){ en.forEach(function(e){ if(e.isIntersecting){ runCounts(); ob.disconnect(); } }); },{threshold:.35}).observe(statsEl);
+    } else runCounts();
+  }
+
+  /* Rhythm progress line */
+  var rh=document.getElementById('bopRhythm'), rf=document.getElementById('bopRfill');
+  if(rh && rf && !rm){
+    var steps=rh.querySelectorAll('.bop-rstep');
+    function onScroll(){
+      var r=rh.getBoundingClientRect(), vh=window.innerHeight;
+      var prog=Math.min(Math.max((vh*0.72 - r.top)/r.height,0),1);
+      rf.style.height=(prog*100)+'%';
+      steps.forEach(function(s){ var sr=s.getBoundingClientRect(); s.classList.toggle('lit', sr.top < vh*0.72); });
+    }
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  } else if(rf){ rf.style.height='100%'; document.querySelectorAll('.bop-rstep').forEach(function(s){s.classList.add('lit');}); }
+})();
+</script>
+</body></html>
